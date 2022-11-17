@@ -1,0 +1,58 @@
+// Resetting margins, paddings, and borders + Typography
+html {
+  box-sizing: border-box;
+  font-size: 100%; // 16px
+}
+
+* {
+  box-sizing: inherit;
+
+  &:before, &:after {
+    box-sizing: inherit;
+  }
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+// ETC 
+ol, ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+// Attributes & states
+[hidden] {
+  display: none !important;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+// Screen reader only utility
+.sr-only {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  left: -9999px;
+  top: -9999px;
+}
