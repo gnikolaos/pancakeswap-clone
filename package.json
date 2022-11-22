@@ -1,0 +1,17 @@
+{
+  "name": "pancakeswap-clone",
+  "version": "0.0.1",
+  "description": "Pancake swap clone",
+  "main": "index.html",
+  "repository": "https://github.com/dizars1776/pancakeswap-clone.git",
+  "author": "Group1",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "husky": "^8.0.2"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
