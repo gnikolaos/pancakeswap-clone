@@ -1,3 +1,20 @@
 // Imports
 @import "reset"; // minimal reset ruleset
 @import "colors"; // og colors 
+
+// GLOBAL 
+body {
+  background-color: $colors-dark-background;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  &-thumb {
+    background: $colors-dark-textSubtle;
+    border-radius: 0.5rem;
+  }
+  &-track {
+    box-shadow: inset 0 0 0.313rem $colors-dark-input;
+    border-radius: 0.625rem;
+  }
+}
