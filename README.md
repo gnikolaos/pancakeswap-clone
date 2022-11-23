@@ -7,6 +7,7 @@ This is a pair programming exercise.
 [Press here](#) to see the result.
 ### Contributing
 Follow the developer's branch structure. 
+
 Default theme is dark.
 
 > Place:
