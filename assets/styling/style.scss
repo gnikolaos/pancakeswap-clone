@@ -171,15 +171,20 @@ body {
             align-items: center;
             font-size: 1rem;
             gap: 1rem;
-            // li:last-of-type a::after {
-            //   content: "";
-            //   background: $colors-dark-success;
-            //   position: relative;
-            //   height: 0.5rem;
-            //   width: 0.5rem;
-            //   border-radius: 100%;
-            //   margin-left: 0.75rem;
-            // }
+            li:last-of-type a {
+              display: flex;
+              align-items: center;
+              &::after {
+                content: "";
+                background: $colors-dark-success;
+                position: relative;
+                height: 0.5rem;
+                width: 0.5rem;
+                border-radius: 100%;
+                margin-left: 0.75rem;
+                display: block;
+              }
+            }
           }
         }
       }

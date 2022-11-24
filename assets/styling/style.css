@@ -211,6 +211,20 @@ body {
   font-size: 1rem;
   gap: 1rem;
 }
+.content-wrapper .head-area .nav-container .nav-items-menu ul li:last-of-type a {
+  display: flex;
+  align-items: center;
+}
+.content-wrapper .head-area .nav-container .nav-items-menu ul li:last-of-type a::after {
+  content: "";
+  background: #31d0aa;
+  position: relative;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 100%;
+  margin-left: 0.75rem;
+  display: block;
+}
 .content-wrapper .main-content {
   position: relative;
   display: flex;
