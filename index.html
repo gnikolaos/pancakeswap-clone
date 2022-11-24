@@ -1,61 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-  <link rel="stylesheet" href="assets/styling/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap%22" rel="stylesheet">
-  <title>Home | PancakeSwap</title> <!-- update: update this with js! -->
-</head>
-<body>
-  <div class="app">
-
-    <div class="content-wrapper">
-      
-      <div class="head-area">
-        <!-- PHISING - BANNER -->
-        <div class="phishing-warning-container">
-          <!-- text-area -->
-          <div class="phishing-banner">
-            <div class="phishing-banner-text-area">
-              <img src="assets/images/decorations/phishing-warning-bunny.webp" class="phishing-banner-img" alt="phishing-warning" width="92px">
-              <div class="phishing-banner-text">
-                <span class="warning-important">Phishing warning:</span>
-                <span class="warning">please make sure you're visiting</span>
-                <span class="warning-url">https://pancakeswap.finance</span>
-                <span class="warning"> - check the URL carefully.</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <link rel="stylesheet" href="assets/styling/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap%22"
+      rel="stylesheet"
+    />
+    <!-- auto updating via js -->
+    <title>Home | PancakeSwap</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="content-wrapper">
+        <div class="head-area">
+          <!-- PHISING - BANNER -->
+          <div class="phishing-warning-container">
+            <!-- text-area -->
+            <div class="phishing-banner">
+              <div class="phishing-banner-text-area">
+                <img
+                  src="assets/images/decorations/phishing-warning-bunny.webp"
+                  class="phishing-banner-img"
+                  alt="phishing-warning"
+                />
+                <div class="phishing-banner-text">
+                  <span class="warning-important">Phishing warning:</span>
+                  <span class="warning">please make sure you're visiting</span>
+                  <span class="warning-url">https://pancakeswap.finance</span>
+                  <span class="warning"> - check the URL carefully.</span>
+                </div>
+              </div>
+              <!-- close-button -->
+              <button id="phishing-banner-close" class="phishing-banner-close">
+                <img src="assets/images/svg/close-button.svg" alt="close button">
+              </button>
+            </div>
+          </div>
+          <!-- NAVBAR -->
+          <nav class="nav-container">
+            <!-- left - side -->
+            <div class="nav-items">
+              <div class="nav-items-logo">
+                <!-- desktop - logo -->
+                <img
+                  src="assets/images/svg/navbarlogo-desktop.svg"
+                  class="nav-items-logo-desktop"
+                  alt="pancakeswap official logo"
+                />
+                <!-- mobile - logo -->
+                <img
+                  src="assets/images/svg/navbarlogo-mobile.svg"
+                  class="nav-items-logo-mobile"
+                  alt="pancakeswap official logo for mobile devices"
+                />
+              </div>
+              <div class="nav-items-menu">
+                <ul>
+                  <li class="menu-item"><a>Trade</a></li>
+                  <li class="menu-item"><a>Earn</a></li>
+                  <li class="menu-item"><a>Win</a></li>
+                  <li class="menu-item"><a>NFT</a></li>
+                  <li class="menu-item">
+                    <a
+                      ><img
+                        src="assets/images/svg/three-dots.svg"
+                        alt="3 dots logo"
+                    /></a>
+                  </li>
+                </ul>
               </div>
             </div>
-            <!-- close-button -->
-            <button id="phishing-banner-close" class="phishing-banner-close">
-              <svg viewBox="0 0 24 24" color="#FFFFFF" width="20px" xmlns="http://www.w3.org/2000/svg" class="phishing-banner-close-btn">
-                <path fill="currentColor" d="M18.3 5.70997C17.91 5.31997 17.28 5.31997 16.89 5.70997L12 10.59L7.10997 5.69997C6.71997 
-                  5.30997 6.08997 5.30997 5.69997 5.69997C5.30997 6.08997 5.30997 6.71997 5.69997 7.10997L10.59 12L5.69997 16.89C5.30997 
-                  17.28 5.30997 17.91 5.69997 18.3C6.08997 18.69 6.71997 18.69 7.10997 18.3L12 13.41L16.89 18.3C17.28 18.69 17.91 18.69 
-                  18.3 18.3C18.69 17.91 18.69 17.28 18.3 16.89L13.41 12L18.3 7.10997C18.68 6.72997 18.68 6.08997 18.3 5.70997Z">
-                </path>
-              </svg>
-            </button>
-          </div>
+            <!-- right - side -->
+            <div class="nav-options">Options</div>
+          </nav>
         </div>
-        <!-- NAVBAR -->
-        <nav class="nav-container">
 
-        </nav>
+        <div class="main-content"></div>
       </div>
 
-      <div class="main-content"></div>
+      <div class="footer"></div>
 
+      <div class="scroll-to-top"></div>
     </div>
-
-    <div class="footer"></div>
-
-    <div class="scroll-to-top"></div>
-    
-  </div>
-  <!-- JS -->
-  <script src="assets/js/index.js"></script>
-</body>
+    <!-- JS -->
+    <script src="assets/js/index.js"></script>
+  </body>
 </html>
