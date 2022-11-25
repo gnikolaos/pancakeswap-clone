@@ -5,7 +5,7 @@ window.onload = () => {
 
   // UPDATE THE SITE'S TITLE FOR PANCAKES CURRENT PRICE
   let xhr = new XMLHttpRequest();
-  xhr.open("GET","https://api.coingecko.com/api/v3/simple/price?ids=pancakeswap-token&vs_currencies=usd");
+  xhr.open("GET","https://api.coingecko.com/api/v3/simple/price?ids=pancakeswap-token&vs_currencies=usd&precision=3");
 
   xhr.onload = () => {
       if (xhr.status == 200) {
