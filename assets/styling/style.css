@@ -100,9 +100,8 @@ body {
   overflow: hidden;
   display: flex;
   height: 100%;
-  padding: 0.75rem;
   align-items: center;
-  background: linear-gradient(0deg, rgba(39, 38, 44, 0.4), rgba(39, 38, 44, 0.4)), linear-gradient(rgb(128, 81, 214) 0%, rgb(73, 34, 134) 100%);
+  background: linear-gradient(rgb(128, 81, 214) 0%, rgb(73, 34, 134) 100%);
 }
 .content-wrapper .head-area .phishing-warning-container .phishing-banner-text-area {
   width: 100%;

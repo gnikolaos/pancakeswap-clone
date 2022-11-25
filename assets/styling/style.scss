@@ -45,14 +45,10 @@ body {
         overflow: hidden;
         display: flex;
         height: 100%;
-        padding: 0.75rem;
+        // padding: 0.75rem;
         align-items: center;
-        background: linear-gradient(
-            0deg,
-            rgba(39, 38, 44, 0.4),
-            rgba(39, 38, 44, 0.4)
-          ),
-          linear-gradient(rgb(128, 81, 214) 0%, rgb(73, 34, 134) 100%);
+        background: $colors-dark-gradientPhishing;
+          
 
         &-text-area {
           width: 100%;
@@ -101,7 +97,7 @@ body {
         }
 
         &-text {
-          background: rgba(39, 38, 44, 0.4);
+          background: #27262c66;
           border-radius: 1rem;
           padding: 0.5rem;
           width: 60%;
