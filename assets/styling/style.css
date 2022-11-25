@@ -75,6 +75,10 @@ body {
   border-radius: 0.625rem;
 }
 
+.mobile-text {
+  display: none;
+}
+
 .content-wrapper {
   position: relative;
   width: 100%;
@@ -223,6 +227,76 @@ body {
   border-radius: 100%;
   margin-left: 0.75rem;
   display: block;
+}
+.content-wrapper .head-area .nav-container .nav-options {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.content-wrapper .head-area .nav-container .nav-options-price {
+  display: flex;
+  align-items: center;
+  margin-right: 0.75rem;
+}
+.content-wrapper .head-area .nav-container .nav-options-price .price-icon {
+  width: 1.5rem;
+  margin-right: 0.5rem;
+}
+.content-wrapper .head-area .nav-container .nav-options-language {
+  margin-right: 0.5rem;
+  padding: 0 0.5rem;
+}
+.content-wrapper .head-area .nav-container .nav-options-settings {
+  margin-right: 0.5rem;
+}
+.content-wrapper .head-area .nav-container .nav-options-chain {
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  background-color: #353547;
+  margin-right: 0.5rem;
+  color: #f4eeff;
+  border-radius: 16px;
+  box-shadow: inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1);
+  cursor: pointer;
+  height: 32px;
+  padding-left: 32px;
+  padding-right: 8px;
+  position: relative;
+}
+.content-wrapper .head-area .nav-container .nav-options-chain-text {
+  display: block;
+  margin-left: 0.5rem;
+  margin-right: 0.25rem;
+}
+.content-wrapper .head-area .nav-container .nav-options-chain .bnb-chain-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  max-height: 2rem;
+  max-width: 2rem;
+}
+.content-wrapper .head-area .nav-container .nav-options-chain .down-arrow {
+  flex: 0;
+}
+.content-wrapper .head-area .nav-container .nav-options-wallet-connection {
+  height: 2rem;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  background-color: #1fc7d4;
+  color: #191326;
+  border: 0px;
+  border-radius: 1rem;
+  box-shadow: inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03rem;
 }
 .content-wrapper .main-content {
   position: relative;
