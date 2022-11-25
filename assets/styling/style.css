@@ -309,5 +309,53 @@ body {
   max-width: 100vw;
   margin-top: 127px;
 }
+.content-wrapper .main-content-wrapper {
+  flex-grow: 1;
+  transition: margin-top 0.2s ease 0s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  transform: translate3d(0px, 0px, 0px);
+  max-width: 100%;
+}
+.content-wrapper .main-content .home-1-wrapper {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background: radial-gradient(103.12% 50% at 50% 50%, #21193a 0%, #191326 100%);
+  z-index: 1;
+  padding: 3rem 0;
+}
+.content-wrapper .main-content .home-1-container {
+  width: 100%;
+  max-width: 75rem;
+  min-height: auto;
+  padding: 3rem 1.5rem;
+  color: white;
+}
+.content-wrapper .main-content .home-1-container .home-1-scroller-container .scroller-pagination {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+}
+.content-wrapper .main-content .home-1-container .home-1-scroller-container .scroller-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.content-wrapper .main-content .home-1-container .home-1-background {
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.content-wrapper .main-content .home-1-container .home-1-background img {
+  position: absolute;
+  width: 100%;
+  bottom: -0.188rem;
+}
 
 /*# sourceMappingURL=style.css.map */
