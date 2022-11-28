@@ -3,7 +3,7 @@ window.onload = () => {
   const closeButton = document.getElementById("phishing-banner-close");
   closeButton.addEventListener("click", () => closeButton.parentNode.parentNode.style.display = "none");
 
-  // UPDATE THE SITE'S TITLE FOR PANCAKES CURRENT PRICE
+  // GET LATEST PRICE OF CAKE
   let xhr = new XMLHttpRequest();
   xhr.open("GET", "https://api.coingecko.com/api/v3/simple/price?ids=pancakeswap-token&vs_currencies=usd&precision=3");
 
