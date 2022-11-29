@@ -1,0 +1,176 @@
+// Imports
+@import "colors"; // og colors 
+
+.main-content-part1{
+    display:flex;
+    justify-content: center;
+    margin-top:10rem;
+}
+.content{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+.button-link{
+    display:flex;
+    align-items: center;
+   
+    
+}
+span,h2{
+    font-size: 32px;
+    font-weight:600;
+    line-height:1.5;
+    margin-bottom: 24px;
+}
+
+span{
+    color: $colors-dark-secondary;
+}
+   
+h2{
+    color: $colors-dark-text;
+}
+.subtitle{
+    color: $colors-dark-textSubtle;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+.button{
+    align-items: center;
+    border: 0px;
+    border-radius: 16px;
+    box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    height: 48px;
+    padding: 0px 24px;
+    background-color: $colors-dark-primary;
+    color: $colors-dark-invertedContrast;
+    margin-right: 16px;
+}
+a{
+    text-decoration:none;
+}
+.learn-link{
+    color: $colors-dark-primary;
+    font-size:16px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+   
+.images-total{
+    max-height: 512px;
+    max-width:512px;
+    position:relative;
+    /*
+    position: relative;
+    max-height: 512px;
+    border:5px solid purple;*/
+
+}
+.images{
+    width:252px;
+    height:252px;
+    position:absolute;
+    top:0;
+    left:0;
+    /*
+    border:5px solid red;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;*/
+}
+
+.images-total :nth-child(1) {
+        animation: 3s ease-in-out 1s infinite normal none running image1;
+    }
+    @keyframes image1{
+        0%{
+        transform:translate(0px,0px);
+        }
+        50%{
+            transform:translate(3px,15px); 
+        }
+        100%{
+            transform:translate(0px,0px);
+        }
+    }
+    
+    .images-total :nth-child(2) {
+        animation: 3s ease-in-out 0.66s infinite normal none running image2;
+    }
+    
+    @keyframes image2{
+        0%{
+        transform:translate(0px,0px);
+        }
+        50%{
+            transform:translate(5px,10px); 
+        }
+        100%{
+            transform:translate(0px,0px);
+        }
+    }
+    
+    .images-total :nth-child(3) {
+        animation: 3s ease-in-out 0.33s infinite normal none running image3;
+    }
+    
+    
+    @keyframes image3{
+        0%{
+        transform:translate(0px,0px);
+        }
+        50%{
+            transform:translate(6px,5px); 
+        }
+        100%{
+            transform:translate(0px,0px);
+        }
+    }
+
+    .writings{
+      @extend .main-content-part1;
+      flex-direction: row-reverse;
+    }
+   .table-heading{
+display:flex;
+align-items: center;
+margin-top:20rem;
+gap:1rem;
+
+   }
+   .table-content{
+    display:grid;
+    grid-template-columns: repeat(5,auto);
+    gap:1rem;
+   }
+   
+   .content1{
+    display:flex;
+    flex-direction: column;
+    gap:0.5rem;
+   }
+   .content2{
+    @extend .content1;
+    border-left:1px solid $colors-dark-inputSecondary;
+    padding-left:16px;
+   }
+
+   .head{
+    color:$colors-dark-secondary;
+   }
+   .number{
+    color:$colors-dark-text;
+   }
+   .subhead{
+    color:$colors-dark-textSubtle;
+   }
