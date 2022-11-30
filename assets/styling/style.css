@@ -34,7 +34,8 @@ body {
   font-size: 1rem;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -118,7 +119,10 @@ body {
   align-items: center;
   background: linear-gradient(rgb(128, 81, 214) 0%, rgb(73, 34, 134) 100%);
 }
-.content-wrapper .head-area .phishing-warning-container .phishing-banner-text-area {
+.content-wrapper
+  .head-area
+  .phishing-warning-container
+  .phishing-banner-text-area {
   width: 100%;
   height: 100%;
   display: flex;
@@ -154,7 +158,11 @@ body {
   color: #1fc7d4;
   box-shadow: none;
 }
-.content-wrapper .head-area .phishing-warning-container .phishing-banner-close img {
+.content-wrapper
+  .head-area
+  .phishing-warning-container
+  .phishing-banner-close
+  img {
   min-width: 1.25rem;
   align-self: center;
   fill: #fff;
@@ -170,7 +178,11 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
-.content-wrapper .head-area .phishing-warning-container .phishing-banner-text .warning {
+.content-wrapper
+  .head-area
+  .phishing-warning-container
+  .phishing-banner-text
+  .warning {
   flex-shrink: 0;
   margin-right: 0.25rem;
   color: #bdc2c4;
@@ -178,14 +190,22 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
 }
-.content-wrapper .head-area .phishing-warning-container .phishing-banner-text .warning-important {
+.content-wrapper
+  .head-area
+  .phishing-warning-container
+  .phishing-banner-text
+  .warning-important {
   color: #ffb237;
   font-weight: 600;
   line-height: 1.5;
   text-transform: uppercase;
   font-size: 0.875rem;
 }
-.content-wrapper .head-area .phishing-warning-container .phishing-banner-text .warning-url {
+.content-wrapper
+  .head-area
+  .phishing-warning-container
+  .phishing-banner-text
+  .warning-url {
   color: #fff;
   font-weight: 600;
   line-height: 1.5;
@@ -227,14 +247,33 @@ body {
   font-size: 1rem;
   gap: 2rem;
 }
-.content-wrapper .head-area .nav-container .nav-items-menu ul li:last-of-type a {
+.content-wrapper
+  .head-area
+  .nav-container
+  .nav-items-menu
+  ul
+  li:last-of-type
+  a {
   display: flex;
   align-items: center;
 }
-.content-wrapper .head-area .nav-container .nav-items-menu ul li:last-of-type a img {
+.content-wrapper
+  .head-area
+  .nav-container
+  .nav-items-menu
+  ul
+  li:last-of-type
+  a
+  img {
   width: 1.25rem;
 }
-.content-wrapper .head-area .nav-container .nav-items-menu ul li:last-of-type a::after {
+.content-wrapper
+  .head-area
+  .nav-container
+  .nav-items-menu
+  ul
+  li:last-of-type
+  a::after {
   content: "";
   background: #31d0aa;
   position: relative;
@@ -322,7 +361,8 @@ body {
 }
 .content-wrapper .main-content-container {
   flex-grow: 1;
-  transition: margin-top 0.2s ease 0s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  transition: margin-top 0.2s ease 0s,
+    margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
   transform: translate3d(0px, 0px, 0px);
   max-width: 100%;
 }
@@ -352,25 +392,43 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, rgb(69, 42, 122) 0%, rgb(118, 69, 217) 100%);
+  background: linear-gradient(
+    0deg,
+    rgb(69, 42, 122) 0%,
+    rgb(118, 69, 217) 100%
+  );
   border-radius: 2rem;
   inset: 0px;
 }
 .content-wrapper .main-content .home-1-wrapper .home-1-scroller-container {
   position: relative;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-wrapper {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
   box-sizing: content-box;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-wrapper .scroller-slide-1 {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .scroller-slide-1 {
   position: relative;
   padding: 1.25rem;
   max-height: 12rem;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-wrapper .scroller-slide-text {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .scroller-slide-text {
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -378,10 +436,22 @@ body {
   align-items: flex-start;
   padding-block: 2.5rem;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-wrapper .scroller-slide-text a {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .scroller-slide-text
+  a {
   text-decoration: none;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-wrapper .scroller-slide-text .text {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .scroller-slide-text
+  .text {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.1;
@@ -391,7 +461,13 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-wrapper .scroller-slide-text .subtext {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .scroller-slide-text
+  .subtext {
   font-size: 2.5rem;
   min-height: auto;
   margin-bottom: 1rem;
@@ -400,12 +476,22 @@ body {
   text-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
   font-weight: 600;
   line-height: 1.1;
-  background: -webkit-linear-gradient(top, rgb(118, 69, 217) 0%, rgb(69, 42, 122) 100%);
+  background: -webkit-linear-gradient(
+    top,
+    rgb(118, 69, 217) 0%,
+    rgb(69, 42, 122) 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-stroke: 6px transparent;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-wrapper .scroller-slide-text button {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .scroller-slide-text
+  button {
   display: flex;
   align-items: center;
   width: fit-content;
@@ -420,23 +506,48 @@ body {
   box-shadow: inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1);
   font-size: 1rem;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-wrapper .scroller-slide-text button .button-text {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .scroller-slide-text
+  button
+  .button-text {
   color: #191326;
   margin-right: 0.25rem;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-wrapper .scroller-slide-text button .button-image {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .scroller-slide-text
+  button
+  .button-image {
   fill: #191326;
   flex-shrink: 0;
   align-self: center;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-wrapper .scroller-slide-image-container {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .scroller-slide-image-container {
   position: absolute;
   height: 120%;
   min-height: 100%;
   right: 0px;
   bottom: 0px;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-wrapper .scroller-slide-image-container .scroller-slide-image {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .scroller-slide-image-container
+  .scroller-slide-image {
   box-sizing: border-box;
   display: inline-block;
   position: relative;
@@ -446,17 +557,31 @@ body {
   min-height: 100%;
   max-height: 100%;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-wrapper .scroller-slide-image-container img {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .scroller-slide-image-container
+  img {
   object-fit: contain;
   position: absolute;
   inset: 0px;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-pagination {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-pagination {
   display: flex;
   position: absolute;
   justify-content: center;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-scroller-container .scroller-pagination-bullet {
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-pagination-bullet {
   width: 0.5rem;
   height: 0.5rem;
   display: inline-block;
