@@ -9,7 +9,8 @@ html {
 * {
   box-sizing: inherit;
   font-family: Kanit, sans-serif;
-  &:before, &:after {
+  &:before,
+  &:after {
     box-sizing: inherit;
   }
 }
@@ -25,8 +26,9 @@ body {
   font-size: 1rem;
 }
 
-// ETC 
-ol, ul {
+// ETC
+ol,
+ul {
   list-style: none;
 }
 
