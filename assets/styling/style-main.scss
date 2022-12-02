@@ -5,6 +5,18 @@
     display:flex;
     justify-content: center;
     margin-top:10rem;
+   
+}
+.main-content-part2{
+    background-color: $colors-dark-backgroundDisabled;
+}
+.main-content-part1 svg{
+    fill: #201335;
+
+}
+.main-content-part2 svg{
+    fill: #201335;
+
 }
 .content{
     display:flex;

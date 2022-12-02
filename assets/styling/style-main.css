@@ -4,6 +4,18 @@
   margin-top: 10rem;
 }
 
+.main-content-part2 {
+  background-color: #3c3742;
+}
+
+.main-content-part1 svg, .writings svg {
+  fill: #201335;
+}
+
+.main-content-part2 svg {
+  fill: #201335;
+}
+
 .content {
   display: flex;
   flex-direction: column;
