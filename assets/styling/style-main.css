@@ -1,25 +1,26 @@
 .main-content-part1, .writings {
   display: flex;
   justify-content: center;
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 
 .main-content-part2 {
   background-color: #3c3742;
 }
 
-.main-content-part1 svg, .writings svg {
-  fill: #201335;
+.main-content svg {
+  fill: #08060b;
 }
 
 .main-content-part2 svg {
-  fill: #201335;
+  fill: #08060b;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 5rem;
 }
 
 .button-link {
@@ -82,29 +83,34 @@ a {
   max-height: 512px;
   max-width: 512px;
   position: relative;
-  /*
-  position: relative;
-  max-height: 512px;
-  border:5px solid purple;*/
-} /* min-width: 100%;
-                max-width: 100%;
-                min-height: 100%;
-                max-height: 100%;
-and then add object-fit: contain; to the img*/
-.images {
-  width: 252px;
-  height: 252px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  /*
-  border:5px solid red;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;*/
+  border: 5px solid red;
 }
 
+.images {
+  max-width: 100%;
+  height: auto;
+}
+
+.images img {
+  width: 100%;
+  height: auto;
+}
+
+/*these are what I try 
+width:252px;
+height:252px;
+
+position:absolute;
+top:0;
+left:0;
+object-fit: contain;
+vertical-align: baseline;
+border:5px solid red;
+height: 100%;
+position: absolute;
+top: 0px;
+left: 0px;
+object-fit: contain;*/
 .images-total :nth-child(1) {
   -webkit-animation: 3s ease-in-out 1s infinite normal none running image1;
           animation: 3s ease-in-out 1s infinite normal none running image1;
@@ -227,4 +233,8 @@ and then add object-fit: contain; to the img*/
 
 .subhead {
   color: #b8add2;
+}
+
+.second-table {
+  display: none;
 }/*# sourceMappingURL=style-main.css.map */
