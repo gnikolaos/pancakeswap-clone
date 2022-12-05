@@ -87,24 +87,23 @@ a {
 }
 
 .images {
-  max-width: 100%;
-  height: auto;
+  width: 252px;
+  height: 252px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+  vertical-align: baseline;
 }
 
+/*
 .images img {
-  width: 100%;
-  height: auto;
-}
-
+    width:100%;
+    height:auto;
+}*/
 /*these are what I try 
-width:252px;
-height:252px;
 
-position:absolute;
-top:0;
-left:0;
-object-fit: contain;
-vertical-align: baseline;
 border:5px solid red;
 height: 100%;
 position: absolute;
