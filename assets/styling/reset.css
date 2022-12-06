@@ -6,7 +6,8 @@ html {
 * {
   box-sizing: inherit;
 }
-*:before, *:after {
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -53,4 +54,4 @@ video {
   clip: rect(1px, 1px, 1px, 1px);
   left: -9999px;
   top: -9999px;
-}/*# sourceMappingURL=reset.css.map */
+} /*# sourceMappingURL=reset.css.map */
