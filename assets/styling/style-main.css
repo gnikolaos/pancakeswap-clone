@@ -1,4 +1,5 @@
-.main-content-part1, .writings {
+.main-content-part1,
+.writings {
   display: flex;
   justify-content: center;
   margin-top: 5rem;
@@ -6,6 +7,9 @@
 
 .main-content-part2 {
   background-color: #3c3742;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
 }
 
 .main-content svg {
@@ -28,7 +32,8 @@
   align-items: center;
 }
 
-span, h2 {
+span,
+h2 {
   font-size: 32px;
   font-weight: 600;
   line-height: 1.5;
@@ -84,6 +89,7 @@ a {
   max-width: 512px;
   position: relative;
   border: 5px solid red;
+  width: 252px;
 }
 
 .images {
@@ -92,8 +98,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   vertical-align: baseline;
 }
 
@@ -104,27 +109,14 @@ a {
 }*/
 /*these are what I try 
 
-border:5px solid red;
-height: 100%;
-position: absolute;
-top: 0px;
-left: 0px;
-object-fit: contain;*/
+    border:5px solid red;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    object-fit: contain;*/
 .images-total :nth-child(1) {
-  -webkit-animation: 3s ease-in-out 1s infinite normal none running image1;
-          animation: 3s ease-in-out 1s infinite normal none running image1;
-}
-
-@-webkit-keyframes image1 {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(3px, 15px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
+  animation: 3s ease-in-out 1s infinite normal none running image1;
 }
 
 @keyframes image1 {
@@ -139,20 +131,7 @@ object-fit: contain;*/
   }
 }
 .images-total :nth-child(2) {
-  -webkit-animation: 3s ease-in-out 0.66s infinite normal none running image2;
-          animation: 3s ease-in-out 0.66s infinite normal none running image2;
-}
-
-@-webkit-keyframes image2 {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(5px, 10px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
+  animation: 3s ease-in-out 0.66s infinite normal none running image2;
 }
 
 @keyframes image2 {
@@ -167,20 +146,7 @@ object-fit: contain;*/
   }
 }
 .images-total :nth-child(3) {
-  -webkit-animation: 3s ease-in-out 0.33s infinite normal none running image3;
-          animation: 3s ease-in-out 0.33s infinite normal none running image3;
-}
-
-@-webkit-keyframes image3 {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(6px, 5px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
+  animation: 3s ease-in-out 0.33s infinite normal none running image3;
 }
 
 @keyframes image3 {
@@ -211,7 +177,8 @@ object-fit: contain;*/
   gap: 1rem;
 }
 
-.content1, .content2 {
+.content1,
+.content2 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -236,4 +203,6 @@ object-fit: contain;*/
 
 .second-table {
   display: none;
-}/*# sourceMappingURL=style-main.css.map */
+}
+
+/*# sourceMappingURL=style-main.css.map */

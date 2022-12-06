@@ -1,4 +1,5 @@
-# PancakeSwap  
+# PancakeSwap
+
 A clone of [PancakeSwap's front page ](https://pancakeswap.finance/) using HTML, SCSS and JS.
 
 This is a pair programming exercise.
@@ -21,14 +22,17 @@ Pre-commit hooks:
 - the files will need to be pretty before a commit. please run `yarn lint` before you commit otherwise you won't be able to commit
 
 ### Contributing
-Follow the developer's branch structure. 
+
+Follow the developer's branch structure.
 
 Default theme is dark.
 
 > Place:
-> * Images to: assets/images
-> * Js files to: assets/js
-> * Scss files to: assets/styling
+>
+> - Images to: assets/images
+> - Js files to: assets/js
+> - Scss files to: assets/styling
 
 #### Live demo
+
 [Press here](#) to see the result.
