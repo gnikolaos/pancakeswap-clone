@@ -1,64 +1,91 @@
 // Imports
 @import "colors"; // og colors
+//mixins for text properties
+@mixin text($fontSize, $fontWeight, $lineHeight, $marginBottom) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  margin-bottom: $marginBottom;
+}
 
-.main-content-part1 {
+.tradeAnything {
   display: flex;
   justify-content: center;
   margin-top: 5rem;
 }
-.main-content-part2 {
-  background-color: $colors-dark-backgroundDisabled;
-  display: flex;
-  justify-content: center;
-  margin-top: 5rem;
-}
-.main-content svg {
-  fill: #08060b;
-}
-.main-content-part2 svg {
-  fill: #08060b;
-}
-.content {
+.paragraphOne{
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 5rem;
 }
+.paragraphTwo{
+  @extend .paragraphOne;
+  margin-top: 10rem;
+}
+.containerOfCoinImages {
+  max-height: 512px;
+  max-width: 512px;
+  position: relative;
+  width: 252px;
+ 
+}
+.containerOfSecondImages {
+ @extend .containerOfCoinImages;
+  margin-top:10rem;
+}
+.images{
+  width: 252px;
+  height: 252px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+  vertical-align: baseline;
+ 
+}
+.secondPart{
+  background-color: $colors-dark-backgroundDisabled;
+}
+.earnPassive {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  margin-bottom:5rem;
+}
+/*
+.main-content svg {
+  fill: #08060b;
+}
+.svgImage svg {
+  fill: #08060b;
+}*/
 
-.button-link {
+.tradeNow,.explore{
   display: flex;
   align-items: center;
 }
 span,
 h2 {
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 1.5;
-  margin-bottom: 24px;
+  @include text(32px, 600, 1.5, 24px);
 }
-
 span {
   color: $colors-dark-secondary;
 }
-
 h2 {
   color: $colors-dark-text;
 }
-.subtitle {
+.subTitle{
   color: $colors-dark-textSubtle;
-  font-weight: 400;
-  line-height: 1.5;
-  margin-bottom: 24px;
-  font-size: 16px;
+  @include text(16px, 400, 1.5, 24px);
 }
-.button {
+.buttonTrade,.buttonExplore {
+  @include text(16px, 600, 0, 0);
   align-items: center;
   border: 0px;
   border-radius: 16px;
   box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
   letter-spacing: 0.03em;
   transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
   height: 48px;
@@ -70,96 +97,56 @@ h2 {
 a {
   text-decoration: none;
 }
-.learn-link {
+.learnLink {
   color: $colors-dark-primary;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.5;
+  @include text(16px, 600, 1.5, 0);
 }
 
-.images-total {
-  max-height: 512px;
-  max-width: 512px;
-  position: relative;
-  border: 5px solid red;
-  width: 252px;
-}
-.images {
-  //I fix this but know I can not control images so row-reverse command is not effected images
-  width: 252px;
-  height: 252px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  object-fit: contain;
-  vertical-align: baseline;
-}
-/*
-.images img {
-    width:100%;
-    height:auto;
-}*/
 
-/*these are what I try 
+//mixin for animation properties
+@mixin animation($animationName, $parameterX, $parameterY) {
+  @keyframes #{$animationName} {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate($parameterX, $parameterY);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+}
+.containerOfCoinImages :nth-child(1) {
+  animation: 3s ease-in-out 1s infinite normal none running image;
+  @include animation(image, 3px, 15px);
+}
+
+.containerOfCoinImages :nth-child(2) {
+  animation: 3s ease-in-out 1s infinite normal none running image;
+  @include animation(image, 5px, 10px);
+}
+
+.containerOfCoinImages :nth-child(3) {
+  animation: 3s ease-in-out 1s infinite normal none running image;
+  @include animation(image, 6px, 5px);
+}
+
+.containerOfSecondImages :nth-child(1) {
+  animation: 3s ease-in-out 1s infinite normal none running image;
+   @include animation(image, 3px, 15px);
+}
     
-    border:5px solid red;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    object-fit: contain;*/
-
-.images-total :nth-child(1) {
-  animation: 3s ease-in-out 1s infinite normal none running image1;
+.containerOfSecondImages :nth-child(2) {
+  animation: 3s ease-in-out 1s infinite normal none running image;
+  @include animation(image, 5px, 10px);
 }
-@keyframes image1 {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(3px, 15px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
+    
+  .containerOfSecondImages :nth-child(3) {
+  animation: 3s ease-in-out 1s infinite normal none running image;
+   @include animation(image, 6px, 5px);
 }
 
-.images-total :nth-child(2) {
-  animation: 3s ease-in-out 0.66s infinite normal none running image2;
-}
-
-@keyframes image2 {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(5px, 10px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
-}
-
-.images-total :nth-child(3) {
-  animation: 3s ease-in-out 0.33s infinite normal none running image3;
-}
-
-@keyframes image3 {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(6px, 5px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
-}
-
-.writings {
-  @extend .main-content-part1;
-  flex-direction: row-reverse;
-}
 .table-heading {
   display: flex;
   align-items: center;

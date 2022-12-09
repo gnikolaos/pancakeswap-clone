@@ -6,8 +6,7 @@ html {
 * {
   box-sizing: inherit;
 }
-*:before,
-*:after {
+*:before, *:after {
   box-sizing: inherit;
 }
 
@@ -70,4 +69,4 @@ body {
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0.313rem #372f47;
   border-radius: 0.625rem;
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
