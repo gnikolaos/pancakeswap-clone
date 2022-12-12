@@ -434,7 +434,7 @@ body {
   flex-flow: column;
   justify-content: center;
   align-items: flex-start;
-  padding-block: 2.5rem;
+  padding-block: 0.5rem;
 }
 .content-wrapper
   .main-content
