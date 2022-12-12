@@ -576,18 +576,43 @@ body {
   display: flex;
   position: absolute;
   justify-content: center;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .content-wrapper
   .main-content
   .home-1-wrapper
   .home-1-scroller-container
   .scroller-pagination-bullet {
-  width: 0.5rem;
-  height: 0.5rem;
   display: inline-block;
-  background-color: #fff;
-  border-radius: 50%;
+  width: 2.25rem;
+  height: 0.5rem;
+  flex-basis: 6.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 0px;
   cursor: pointer;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-pagination-bullet:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-pagination-bullet:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-pagination-bullet-active {
+  background: #fff;
 }
 .content-wrapper .main-content .home-1-wrapper .home-1-background {
   z-index: -1;
