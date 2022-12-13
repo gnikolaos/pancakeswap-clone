@@ -23,6 +23,38 @@ body {
 .mobile-text {
   display: none;
 }
+// MIXINS
+@mixin graphicPositioning {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@mixin heroTextSizing($textSize: 1.25rem) {
+  font-size: $textSize;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+@mixin baseButton {
+  position: relative;
+  align-items: center;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  opacity: 1;
+  outline: 0px;
+  height: 3rem;
+  padding: 0 1.5rem;
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+}
 
 // HEAD - AREA STYLING
 .content-wrapper {
@@ -476,17 +508,117 @@ body {
         z-index: -1;
         // overflow: hidden;
         position: absolute;
-        bottom: 0;
-        left: 0;
         width: 100%;
         height: 100%;
-        img {
+        bottom: 0;
+        left: 0;
+
+        &-container {
           position: absolute;
           width: 100%;
           bottom: -0.188rem;
+
+          img {
+            width: 100%;
+          }
         }
       }
       .home-1-hero {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &-content {
+          flex: 1 1 0%;
+          display: flex;
+          flex-direction: column;
+
+          h2 {
+            @include heroTextSizing($textSize: 3rem);
+            color: $colors-dark-secondary;
+          }
+
+          h3 {
+            @include heroTextSizing;
+          }
+
+          &-buttons {
+            display: flex;
+            .connect {
+              @include baseButton;
+              border: 0px;
+              box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+              background-color: $colors-dark-primary;
+              color: $colors-dark-invertedContrast;
+              margin-right: 0.5rem;
+            }
+
+            a {
+              text-decoration: none;
+              color: inherit;
+            }
+
+            .trade {
+              @include baseButton;
+              background-color: transparent;
+              border-width: 0.125rem;
+              border-style: solid;
+              border-image: initial;
+              border-color: $colors-dark-primary;
+              color: $colors-dark-primary;
+            }
+          }
+        }
+
+        &-graphics {
+          flex: 1 1 0%;
+          display: flex;
+          position: relative;
+          height: 12rem;
+          width: 12rem;
+          margin-bottom: 1.5rem;
+        }
+
+        &-graphics-bunny {
+          width: 100%;
+          // span {
+          //   max-width: 100%;
+          //   position: relative;
+          //   img {
+          //     position: absolute;
+          //   }
+          // }
+        }
+
+        &-graphics-stars {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .stars-container {
+          position: relative;
+          max-height: 32rem;
+
+          .stars {
+            max-height: 32rem;
+            visibility: hidden;
+          }
+
+          .left-star {
+            @include graphicPositioning;
+          }
+
+          .right-star {
+            @include graphicPositioning;
+          }
+
+          .top-right-star {
+            @include graphicPositioning;
+          }
+        }
       }
     }
   }

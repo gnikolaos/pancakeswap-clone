@@ -617,15 +617,169 @@ body {
 .content-wrapper .main-content .home-1-wrapper .home-1-background {
   z-index: -1;
   position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  bottom: 0;
+  left: 0;
 }
-.content-wrapper .main-content .home-1-wrapper .home-1-background img {
+.content-wrapper .main-content .home-1-wrapper .home-1-background-container {
   position: absolute;
   width: 100%;
   bottom: -0.188rem;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-background-container
+  img {
+  width: 100%;
+}
+.content-wrapper .main-content .home-1-wrapper .home-1-hero {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.content-wrapper .main-content .home-1-wrapper .home-1-hero-content {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+}
+.content-wrapper .main-content .home-1-wrapper .home-1-hero-content h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: #9a6aff;
+}
+.content-wrapper .main-content .home-1-wrapper .home-1-hero-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.content-wrapper .main-content .home-1-wrapper .home-1-hero-content-buttons {
+  display: flex;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-hero-content-buttons
+  .connect {
+  position: relative;
+  align-items: center;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  opacity: 1;
+  outline: 0px;
+  height: 3rem;
+  padding: 0 1.5rem;
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  border: 0px;
+  box-shadow: rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset;
+  background-color: #1fc7d4;
+  color: #191326;
+  margin-right: 0.5rem;
+}
+.content-wrapper .main-content .home-1-wrapper .home-1-hero-content-buttons a {
+  text-decoration: none;
+  color: inherit;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-hero-content-buttons
+  .trade {
+  position: relative;
+  align-items: center;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  opacity: 1;
+  outline: 0px;
+  height: 3rem;
+  padding: 0 1.5rem;
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  background-color: transparent;
+  border-width: 0.125rem;
+  border-style: solid;
+  border-image: initial;
+  border-color: #1fc7d4;
+  color: #1fc7d4;
+}
+.content-wrapper .main-content .home-1-wrapper .home-1-hero-graphics {
+  flex: 1 1 0%;
+  display: flex;
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+  margin-bottom: 1.5rem;
+}
+.content-wrapper .main-content .home-1-wrapper .home-1-hero-graphics-bunny {
+  width: 100%;
+}
+.content-wrapper .main-content .home-1-wrapper .home-1-hero-graphics-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.content-wrapper .main-content .home-1-wrapper .home-1-hero .stars-container {
+  position: relative;
+  max-height: 32rem;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-hero
+  .stars-container
+  .stars {
+  max-height: 32rem;
+  visibility: hidden;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-hero
+  .stars-container
+  .left-star {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-hero
+  .stars-container
+  .right-star {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-hero
+  .stars-container
+  .top-right-star {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
