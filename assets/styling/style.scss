@@ -5,7 +5,8 @@
 //BREAK-POINTS
 $screen-sm: 36rem; // Small. Window width >=576px
 $screen-md: 53.25rem; // Medium. Window width >=852px
-$screen-lg: 60.5rem; // Large Desktops. Window width >=968px
+$screen-lg: 60.5rem; // Large. Window width >=968px
+$screen-xl: 67.5rem; // Large Desktops. Window width >=1080px
 
 // GLOBAL
 body {
@@ -22,10 +23,6 @@ body {
     box-shadow: inset 0 0 0.313rem $colors-dark-input;
     border-radius: 0.625rem;
   }
-}
-
-.mobile-text {
-  display: none;
 }
 
 // MIXINS
@@ -48,6 +45,13 @@ body {
 // Large devices
 @mixin lg {
   @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+// XLarge devices
+@mixin xl {
+  @media (min-width: #{$screen-xl}) {
     @content;
   }
 }
