@@ -1,4 +1,5 @@
-# PancakeSwap  
+# PancakeSwap
+
 A clone of [PancakeSwap's front page ](https://pancakeswap.finance/) using HTML, SCSS and JS.
 
 This is a pair programming exercise.
@@ -21,14 +22,55 @@ Pre-commit hooks:
 - the files will need to be pretty before a commit. please run `yarn lint` before you commit otherwise you won't be able to commit
 
 ### Contributing
-Follow the developer's branch structure. 
+
+Follow the developer's branch structure.
 
 Default theme is dark.
 
 > Place:
-> * Images to: assets/images
-> * Js files to: assets/js
-> * Scss files to: assets/styling
+>
+> - Images to: assets/images
+> - Js files to: assets/js
+> - Scss files to: assets/styling
+
+<br>
+
+Media - Queries.
+
+<br>
+
+> Break - Points are:
+>
+> - Small: window width >=576px
+> - Medium: window width >=852px
+> - Large: window width >=968px
+
+<br>
+
+Usage example for the break-point mixins in a basic SCSS code:
+
+```
+.main-content {
+    padding: 0 1.5rem;
+
+    // window width >=576px
+    @include sm {
+      padding: 0 2rem;
+    }
+
+    // window width >=852px
+    @include md {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    // window width >=968px
+    @include lg {
+      background: white;
+    }
+}
+```
 
 #### Live demo
+
 [Press here](#) to see the result.
