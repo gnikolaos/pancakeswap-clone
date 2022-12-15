@@ -47,7 +47,7 @@
 .secondPart {
   background-color: $colors-dark-backgroundDisabled;
 }
-.secondPart svg {
+.secondPart > svg {
   fill: $colors-dark-background;
   width: 150%;
   height: 100%;
@@ -161,6 +161,7 @@ a {
 .table-heading {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   margin-top: 20rem;
   gap: 1rem;
 }
@@ -192,4 +193,14 @@ a {
 }
 .second-table {
   display: none;
+}
+.arrow-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.arrow {
+  align-self: center;
+  fill: $colors-dark-textSubtle;
 }
