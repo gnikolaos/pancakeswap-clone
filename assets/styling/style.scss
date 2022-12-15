@@ -1,7 +1,11 @@
 // Imports
 @import "colors"; // og colors
 @import "reset"; // minimal reset ruleset
-@import "fonts"; // og fonts
+
+//BREAK-POINTS
+$screen-sm: 36rem; // Small. Window width >=576px
+$screen-md: 53.25rem; // Medium. Window width >=852px
+$screen-lg: 60.5rem; // Large Desktops. Window width >=968px
 
 //BREAK-POINTS
 $screen-sm: 36rem; // Small. Window width >=576px
@@ -31,7 +35,7 @@ body {
 
 // MIXINS
 
-// Break-point mixins
+// for Break-Points
 // Small devices
 @mixin sm {
   @media (min-width: #{$screen-sm}) {
@@ -53,7 +57,7 @@ body {
   }
 }
 
-// rest
+// for the rest
 @mixin graphicPositioning {
   height: 100%;
   position: absolute;
@@ -366,6 +370,7 @@ body {
       }
     }
   }
+
   // MAIN - CONTENT STYLING
   .main-content {
     position: relative;

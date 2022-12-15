@@ -33,6 +33,44 @@ Default theme is dark.
 > - Js files to: assets/js
 > - Scss files to: assets/styling
 
+<br>
+
+Media - Queries.
+
+<br>
+
+> Break - Points are:
+>
+> - Small: window width >=576px
+> - Medium: window width >=852px
+> - Large: window width >=968px
+
+<br>
+
+Usage example for the break-point mixins in a basic SCSS code:
+
+```
+.main-content {
+    padding: 0 1.5rem;
+
+    // window width >=576px
+    @include sm {
+      padding: 0 2rem;
+    }
+
+    // window width >=852px
+    @include md {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    // window width >=968px
+    @include lg {
+      background: white;
+    }
+}
+```
+
 #### Live demo
 
 [Press here](#) to see the result.
