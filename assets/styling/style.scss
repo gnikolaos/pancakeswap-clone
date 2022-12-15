@@ -69,40 +69,29 @@ body {
     top: 0px;
     left: 0px;
     transition: top 0.2s ease 0s;
-    height: 7.875rem; //126px
+    height: 8.75rem; //140px
     width: 100%;
     z-index: 20;
 
     .phishing-warning-container {
-      height: 4.375rem; //70px
-      min-height: 4.375rem;
-      max-height: 4.375rem;
+      height: 5.25rem; //84px
+      min-height: 5.25rem;
+      max-height: 5.25rem;
       width: 100%;
       .phishing-banner {
         overflow: hidden;
         display: flex;
         height: 100%;
-        // padding: 0.75rem;
+        padding: 0.75rem;
         align-items: center;
-        background: $colors-dark-gradientPhishing;
-
-        &-text-area {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+        background: $colors-dark-gradientPhishingDarker;
 
         &-img {
-          width: 5.75rem;
-          max-width: 100%;
-          height: auto;
+          display: none;
         }
 
         &-close {
-          padding: 0px;
-          width: 3rem;
+          width: 1.5rem;
           position: relative;
           align-items: center;
           border: 0rem;
@@ -118,8 +107,8 @@ body {
           opacity: 1;
           outline: 0rem;
           transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
-          height: 3rem;
-          padding: 0rem 1.5rem;
+          height: 1.5rem;
+          padding: 0rem 1.1rem;
           background-color: transparent;
           color: $colors-dark-primary;
           box-shadow: none;
@@ -133,18 +122,8 @@ body {
         }
 
         &-text {
-          background: #27262c66;
-          border-radius: 1rem;
-          padding: 0.5rem;
-          width: 60%;
-          height: 80%;
-          display: flex;
-          align-items: center;
-          flex-wrap: wrap;
-
           .warning {
             flex-shrink: 0;
-            margin-right: 0.25rem;
             color: $colors-light-textDisabled;
             font-weight: 400;
             line-height: 1.5;
@@ -313,7 +292,7 @@ body {
     position: relative;
     display: flex;
     max-width: 100vw;
-    margin-top: 127px;
+    margin-top: 3.563rem;
 
     &-container {
       flex-grow: 1;
@@ -624,13 +603,80 @@ body {
     }
   }
 }
+
 // MEDIA-QUERIES
+
 // 576px
 @media screen and (width >= 36rem) {
+  .content-wrapper {
+    .head-area {
+      .phishing-warning-container {
+        height: 4.375rem;
+        min-height: 4.375rem;
+        max-height: 4.375rem;
+        .phishing-banner {
+          &-text-area {
+          }
+
+          &-img {
+          }
+
+          &-text {
+            .warning {
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // 852px
 @media screen and (width >= 53.25rem) {
+  .content-wrapper {
+    .head-area {
+      .phishing-warning-container {
+        .phishing-banner {
+          background: $colors-dark-gradientPhishing;
+          padding: 0;
+
+          &-close {
+            padding: 0rem 1.46rem;
+          }
+
+          &-text-area {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          &-img {
+            display: block;
+            width: 5.75rem;
+            max-width: 100%;
+            height: auto;
+          }
+
+          &-text {
+            width: 60%;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            background: #27262c66;
+            border-radius: 1rem;
+            padding: 0.5rem;
+
+            .warning {
+              margin-right: 0.25rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // 968px

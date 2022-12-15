@@ -3,7 +3,7 @@ window.onload = () => {
   const closeButton = document.getElementById("phishing-banner-close");
   closeButton.addEventListener("click", () => {
     closeButton.parentNode.parentNode.style.display = "none";
-    document.querySelector("div.main-content").style.marginTop = "3.563rem";
+    closeButton.parentNode.parentNode.parentNode.style.height = "3.5rem";
   });
 
   // GET LATEST PRICE OF CAKE

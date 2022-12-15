@@ -100,6 +100,12 @@ $colors-dark-gradientPhishing: linear-gradient(
   rgb(128, 81, 214) 0%,
   rgb(73, 34, 134) 100%
 );
+$colors-dark-gradientPhishingDarker: linear-gradient(
+    0deg,
+    rgba(39, 38, 44, 0.4),
+    rgba(39, 38, 44, 0.4)
+  ),
+  linear-gradient(rgb(128, 81, 214) 0%, rgb(73, 34, 134) 100%);
 $colors-dark-gradientHero: radial-gradient(
   103.12%50%at 50%50%,
   #21193a 0%,
