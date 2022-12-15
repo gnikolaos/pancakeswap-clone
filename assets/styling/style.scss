@@ -62,6 +62,7 @@ body {
   width: 100%;
   display: grid;
   grid-template-rows: auto 1fr;
+  min-height: auto;
 
   .head-area {
     position: fixed;
@@ -622,4 +623,16 @@ body {
       }
     }
   }
+}
+// MEDIA-QUERIES
+// 576px
+@media screen and (width >= 36rem) {
+}
+
+// 852px
+@media screen and (width >= 53.25rem) {
+}
+
+// 968px
+@media screen and (width >= 60.5rem) {
 }
