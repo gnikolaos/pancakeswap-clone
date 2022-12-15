@@ -3,6 +3,11 @@
 @import "reset"; // minimal reset ruleset
 @import "fonts"; // og fonts
 
+//BREAK-POINTS
+$screen-sm: 36rem; // Small. Window width >=576px
+$screen-md: 53.25rem; // Medium. Window width >=852px
+$screen-lg: 60.5rem; // Large Desktops. Window width >=968px
+
 // GLOBAL
 body {
   background-color: $colors-dark-background;
@@ -23,7 +28,32 @@ body {
 .mobile-text {
   display: none;
 }
+
 // MIXINS
+
+// Break-point mixins
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+// rest
 @mixin graphicPositioning {
   height: 100%;
   position: absolute;
@@ -78,6 +108,13 @@ body {
       min-height: 5.25rem;
       max-height: 5.25rem;
       width: 100%;
+
+      @include sm {
+        height: 4.375rem;
+        min-height: 4.375rem;
+        max-height: 4.375rem;
+      }
+
       .phishing-banner {
         overflow: hidden;
         display: flex;
@@ -86,8 +123,30 @@ body {
         align-items: center;
         background: $colors-dark-gradientPhishingDarker;
 
+        @include md {
+          background: $colors-dark-gradientPhishing;
+          padding: 0;
+        }
+
+        &-text-area {
+          @include md {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
         &-img {
           display: none;
+
+          @include md {
+            display: block;
+            width: 5.75rem;
+            max-width: 100%;
+            height: auto;
+          }
         }
 
         &-close {
@@ -113,6 +172,10 @@ body {
           color: $colors-dark-primary;
           box-shadow: none;
 
+          @include md {
+            padding: 0rem 1.46rem;
+          }
+
           img {
             min-width: 1.25rem;
             align-self: center;
@@ -122,12 +185,28 @@ body {
         }
 
         &-text {
+          @include md {
+            width: 60%;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            background: #27262c66;
+            border-radius: 1rem;
+            padding: 0.5rem;
+          }
+
           .warning {
             flex-shrink: 0;
             color: $colors-light-textDisabled;
             font-weight: 400;
             line-height: 1.5;
             font-size: 0.875rem;
+
+            @include md {
+              margin-right: 0.25rem;
+            }
+
             &-important {
               color: $colors-light-warning;
               font-weight: 600;
@@ -602,71 +681,4 @@ body {
       }
     }
   }
-}
-
-// MEDIA-QUERIES
-
-// 576px
-@media screen and (width >= 36rem) {
-  .content-wrapper {
-    .head-area {
-      .phishing-warning-container {
-        height: 4.375rem;
-        min-height: 4.375rem;
-        max-height: 4.375rem;
-      }
-    }
-  }
-}
-
-// 852px
-@media screen and (width >= 53.25rem) {
-  .content-wrapper {
-    .head-area {
-      .phishing-warning-container {
-        .phishing-banner {
-          background: $colors-dark-gradientPhishing;
-          padding: 0;
-
-          &-close {
-            padding: 0rem 1.46rem;
-          }
-
-          &-text-area {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-
-          &-img {
-            display: block;
-            width: 5.75rem;
-            max-width: 100%;
-            height: auto;
-          }
-
-          &-text {
-            width: 60%;
-            height: 80%;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            background: #27262c66;
-            border-radius: 1rem;
-            padding: 0.5rem;
-
-            .warning {
-              margin-right: 0.25rem;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-// 968px
-@media screen and (width >= 60.5rem) {
 }
