@@ -87,10 +87,6 @@ body {
   border-radius: 0.625rem;
 }
 
-.mobile-text {
-  display: none;
-}
-
 .content-wrapper {
   position: relative;
   width: 100%;
@@ -273,27 +269,54 @@ body {
 }
 .content-wrapper .head-area .nav-container .nav-items {
   display: flex;
-  height: 48px;
-  align-items: center;
+  height: 100%;
 }
 .content-wrapper .head-area .nav-container .nav-items-logo {
   display: flex;
+  align-items: center;
+  height: 100%;
+}
+.content-wrapper .head-area .nav-container .nav-items-logo a {
+  display: flex;
+}
+.content-wrapper .head-area .nav-container .nav-items-logo img {
+  flex-shrink: 0;
 }
 .content-wrapper .head-area .nav-container .nav-items-logo img:first-of-type {
+  min-width: 10rem;
   width: 10rem;
+  display: none;
+}
+@media (min-width: 60.5rem) {
+  .content-wrapper .head-area .nav-container .nav-items-logo img:first-of-type {
+    display: block;
+  }
 }
 .content-wrapper .head-area .nav-container .nav-items-logo img:last-of-type {
+  min-width: 2rem;
   width: 2rem;
-  display: none;
+}
+@media (min-width: 60.5rem) {
+  .content-wrapper .head-area .nav-container .nav-items-logo img:last-of-type {
+    display: none;
+  }
 }
 .content-wrapper .head-area .nav-container .nav-items-menu {
   margin-left: 2.5rem;
+  height: 100%;
+  display: none;
+}
+@media (min-width: 53.25rem) {
+  .content-wrapper .head-area .nav-container .nav-items-menu {
+    display: block;
+  }
 }
 .content-wrapper .head-area .nav-container .nav-items-menu ul {
   display: flex;
   align-items: center;
   font-size: 1rem;
   gap: 2rem;
+  height: 100%;
 }
 .content-wrapper
   .head-area
@@ -315,21 +338,23 @@ body {
   img {
   width: 1.25rem;
 }
-.content-wrapper
-  .head-area
-  .nav-container
-  .nav-items-menu
-  ul
-  li:last-of-type
-  a::after {
-  content: "";
-  background: #31d0aa;
-  position: relative;
-  height: 0.5rem;
-  width: 0.5rem;
-  border-radius: 100%;
-  margin-left: 0.75rem;
-  display: block;
+@media (min-width: 60.5rem) {
+  .content-wrapper
+    .head-area
+    .nav-container
+    .nav-items-menu
+    ul
+    li:last-of-type
+    a::after {
+    content: "";
+    background: #31d0aa;
+    position: relative;
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 100%;
+    margin-left: 0.75rem;
+    display: block;
+  }
 }
 .content-wrapper .head-area .nav-container .nav-options {
   height: 100%;
@@ -338,9 +363,14 @@ body {
   font-weight: 600;
 }
 .content-wrapper .head-area .nav-container .nav-options-price {
-  display: flex;
+  display: none;
   align-items: center;
   margin-right: 0.75rem;
+}
+@media (min-width: 60.5rem) {
+  .content-wrapper .head-area .nav-container .nav-options-price {
+    display: inline-flex;
+  }
 }
 .content-wrapper .head-area .nav-container .nav-options-price .price-icon {
   width: 1.5rem;
@@ -354,7 +384,6 @@ body {
   margin: 0.15rem 0.75rem 0 0;
 }
 .content-wrapper .head-area .nav-container .nav-options-chain {
-  height: 100%;
   display: inline-flex;
   align-items: center;
   background-color: #353547;
@@ -369,9 +398,39 @@ body {
   position: relative;
 }
 .content-wrapper .head-area .nav-container .nav-options-chain-text {
-  display: block;
   margin-left: 0.5rem;
   margin-right: 0.25rem;
+  display: none;
+}
+@media (min-width: 36rem) {
+  .content-wrapper .head-area .nav-container .nav-options-chain-text {
+    display: block;
+  }
+}
+.content-wrapper
+  .head-area
+  .nav-container
+  .nav-options-chain-text
+  .desktop-text {
+  display: none;
+}
+@media (min-width: 67.5rem) {
+  .content-wrapper
+    .head-area
+    .nav-container
+    .nav-options-chain-text
+    .desktop-text {
+    display: block;
+  }
+}
+@media (min-width: 67.5rem) {
+  .content-wrapper
+    .head-area
+    .nav-container
+    .nav-options-chain-text
+    .mobile-text {
+    display: none;
+  }
 }
 .content-wrapper .head-area .nav-container .nav-options-chain .bnb-chain-icon {
   position: absolute;
@@ -400,6 +459,32 @@ body {
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.03rem;
+}
+.content-wrapper
+  .head-area
+  .nav-container
+  .nav-options-wallet-connection
+  .desktop-text {
+  display: none;
+  line-height: 1;
+}
+@media (min-width: 53.25rem) {
+  .content-wrapper
+    .head-area
+    .nav-container
+    .nav-options-wallet-connection
+    .desktop-text {
+    display: block;
+  }
+}
+@media (min-width: 53.25rem) {
+  .content-wrapper
+    .head-area
+    .nav-container
+    .nav-options-wallet-connection
+    .mobile-text {
+    display: none;
+  }
 }
 .content-wrapper .main-content {
   position: relative;
