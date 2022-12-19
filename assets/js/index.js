@@ -1,9 +1,25 @@
 window.onload = () => {
+  // CHECK PHISHING WARNING POPUP'S STATUS
+  let phishingPopUp = "Enabled";
+  const mainContent = document.querySelector(".main-content");
+  const phishingWarning = document.querySelector(".phishing-warning-container");
+  if (localStorage.getItem("phishingPopUp")) {
+    phishingPopUp = localStorage.getItem("phishingPopUp");
+    if (phishingPopUp === "Disabled") {
+      phishingWarning.style.display = "none";
+      mainContent.style.marginTop = "3.563rem";
+    } else {
+      phishingWarning.style.display = "block";
+    }
+  }
+
   // HIDE THE PHISHING WARNING CONTAINER
   const closeButton = document.getElementById("phishing-banner-close");
   closeButton.addEventListener("click", () => {
     closeButton.parentNode.parentNode.style.display = "none";
     closeButton.parentNode.parentNode.parentNode.style.height = "3.5rem";
+    mainContent.style.marginTop = "3.563rem";
+    phishingPopUp = localStorage.setItem("phishingPopUp", "Disabled");
   });
 
   // GET LATEST PRICE OF CAKE

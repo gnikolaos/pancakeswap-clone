@@ -138,6 +138,11 @@ body {
   width: 100%;
   z-index: 20;
 }
+@media (min-width: 36rem) {
+  .content-wrapper .head-area {
+    height: 7.875rem;
+  }
+}
 .content-wrapper .head-area .phishing-warning-container {
   height: 5.25rem;
   min-height: 5.25rem;
@@ -525,7 +530,7 @@ body {
   position: relative;
   display: flex;
   max-width: 100vw;
-  margin-top: 3.563rem;
+  margin-top: 7.938rem;
 }
 .content-wrapper .main-content-container {
   flex-grow: 1;
