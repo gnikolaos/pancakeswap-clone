@@ -3,6 +3,7 @@
 @import "colors"; // og colors
 
 //BREAK-POINTS
+$screen-xs: 23.125rem; // XSmall. Window width >=370px
 $screen-sm: 36rem; // Small. Window width >=576px
 $screen-md: 53.25rem; // Medium. Window width >=852px
 $screen-lg: 60.5rem; // Large. Window width >=968px
@@ -28,6 +29,13 @@ body {
 // MIXINS
 
 // for Break-Points
+// XSmall devices
+@mixin xs {
+  @media (min-width: #{$screen-xs}) {
+    @content;
+  }
+}
+
 // Small devices
 @mixin sm {
   @media (min-width: #{$screen-sm}) {
