@@ -3,10 +3,11 @@
 @import "reset"; // minimal reset ruleset
 
 //BREAK-POINTS
+$screen-xs: 23.125rem; // XSmall. Window width >=370px
 $screen-sm: 36rem; // Small. Window width >=576px
 $screen-md: 53.25rem; // Medium. Window width >=852px
 $screen-lg: 60.5rem; // Large. Window width >=968px
-$screen-xl: 67.5rem; // Large Desktops. Window width >=1080px
+$screen-xl: 67.5rem; // XLarge. Window width >=1080px
 
 // GLOBAL
 body {
@@ -28,6 +29,13 @@ body {
 // MIXINS
 
 // for Break-Points
+// XSmall devices
+@mixin xs {
+  @media (min-width: #{$screen-xs}) {
+    @content;
+  }
+}
+
 // Small devices
 @mixin sm {
   @media (min-width: #{$screen-sm}) {
@@ -405,12 +413,14 @@ body {
             margin-left: 0.5rem;
             margin-right: 0.25rem;
             display: none;
+
             @include sm {
               display: block;
             }
 
             .desktop-text {
               display: none;
+
               @include xl {
                 display: block;
               }
@@ -494,25 +504,50 @@ body {
       align-items: center;
       background: $colors-dark-gradientHero;
       z-index: 1;
-      padding: 3rem 0;
+      padding: 1rem 0rem 3rem 0rem;
+
+      @include md {
+        padding-top: 3rem;
+      }
     }
 
     .home-1-wrapper {
       width: 100%;
       max-width: 75rem;
       min-height: auto;
-      padding: 3rem 1.5rem;
+      padding: 1rem;
       color: white;
+
+      @include xs {
+        padding-inline: 1.5rem;
+      }
+
+      @include sm {
+        padding-block: 2rem;
+      }
+
+      @include lg {
+        padding-block: 3rem;
+      }
+
       .home-1-scroller {
         position: relative;
-        width: 100%;
-        height: 100%;
-        // height: 14.5rem;
+        height: 11.188rem;
+        margin-block: 0px;
+
+        @include sm {
+          margin-block: -2rem 1.875rem;
+          height: 13.813rem;
+        }
+
+        @include lg {
+          height: 14.5rem;
+          padding-top: 0px;
+        }
+
         &::before {
           content: "";
           position: absolute;
-          width: 100%;
-          height: 100%;
           background: linear-gradient(
             0deg,
             rgb(69, 42, 122) 0%,
@@ -520,43 +555,79 @@ body {
           );
           border-radius: 2rem;
           inset: 0px;
+
+          @include sm {
+            inset: 1.25rem;
+          }
         }
 
         &-container {
           position: relative;
-          // opacity: 0;
+          overflow: visible;
+          margin-inline: auto;
+          padding: 0px;
+
           .scroller-wrapper {
             position: relative;
             width: 100%;
             height: 100%;
-            // z-index: 1;
-            // display: flex;
+            z-index: 1;
+            display: flex;
             box-sizing: content-box;
 
             .scroller-slide-1 {
               position: relative;
-              padding: 1.25rem;
+              width: 100%;
+              height: 100%;
+              flex-shrink: 0;
+              padding: 0px;
               max-height: 12rem;
-              // width: 1152px;
+
+              @include sm {
+                padding: 1.25rem;
+              }
+
+              &-container {
+                border-radius: 2rem;
+                width: 100%;
+                max-height: max-content;
+                overflow: visible;
+              }
+
+              &-wrapper {
+                display: flex;
+                position: relative;
+                padding: 1.5rem;
+                flex-flow: row;
+                justify-content: space-between;
+                max-height: 12rem;
+              }
             }
 
             .scroller-slide-text {
+              z-index: 1;
               width: 100%;
               display: flex;
               flex-flow: column;
               justify-content: center;
               align-items: flex-start;
-              padding-block: 0.5rem;
+
+              @include md {
+                padding-block: 2.5rem;
+              }
 
               a {
                 text-decoration: none;
+                width: fit-content;
+                font-weight: 600;
+                line-height: 1.5;
               }
 
               .text {
                 font-size: 1.5rem;
                 font-weight: 600;
                 line-height: 1.1;
-                margin-bottom: 8px;
+                margin-bottom: 0.5rem;
                 background: -webkit-linear-gradient(
                   top,
                   rgb(255, 216, 0),
@@ -565,14 +636,21 @@ body {
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
+                -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+
+                @include sm {
+                  -webkit-text-stroke: unset;
+                }
               }
+
               .subtext {
-                font-size: 2.5rem;
-                min-height: auto;
-                margin-bottom: 1rem;
+                font-size: 1.25rem;
+                width: 10rem;
+                min-height: 2.75rem;
+                margin-bottom: 0.5rem;
                 text-transform: uppercase;
                 color: $colors-dark-white;
-                text-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+                text-shadow: rgba(0, 0, 0, 0.25) 0rem 0.25rem 0.25rem;
                 font-weight: 600;
                 line-height: 1.1;
                 background: -webkit-linear-gradient(
@@ -583,14 +661,28 @@ body {
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-stroke: 6px transparent;
+
+                @include xs {
+                  width: 10rem;
+                }
+
+                @include sm {
+                  font-size: 2.5rem;
+                  min-height: auto;
+                  margin-bottom: 1rem;
+                  width: auto;
+                }
               }
 
               button {
-                display: flex;
+                display: inline-flex;
+                position: relative;
                 align-items: center;
-                width: fit-content;
+                justify-content: center;
+                cursor: pointer;
+                font-size: 1rem;
                 font-weight: 600;
-                line-height: 1.5;
+                line-height: 1;
                 background-color: $colors-dark-primary;
                 height: 3rem;
                 padding: 0 1.5rem;
@@ -598,12 +690,15 @@ body {
                 border: 0px;
                 border-radius: 1rem;
                 box-shadow: $shadows-inset;
-                font-size: 1rem;
+                outline: 0px;
+
                 .button-text {
                   color: $colors-dark-invertedContrast;
                   margin-right: 0.25rem;
                 }
+
                 .button-image {
+                  width: 1.25rem;
                   fill: $colors-dark-invertedContrast;
                   flex-shrink: 0;
                   align-self: center;
@@ -613,24 +708,72 @@ body {
 
             .scroller-slide-image-container {
               position: absolute;
-              height: 120%;
               min-height: 100%;
               right: 0px;
               bottom: 0px;
-              .scroller-slide-image {
+
+              @include sm {
+                bottom: 0.513rem;
+              }
+
+              @include md {
+                bottom: 0.563rem;
+              }
+
+              .image-wrapper {
                 box-sizing: border-box;
                 display: inline-block;
+                overflow: hidden;
+                width: initial;
+                height: initial;
+                background: none;
+                opacity: 1;
+                border: 0px;
+                margin: 0px;
+                padding: 0px;
                 position: relative;
                 max-width: 100%;
-                min-width: 100%;
-                max-width: 100%;
-                min-height: 100%;
-                max-height: 100%;
-              }
-              img {
-                object-fit: contain;
-                position: absolute;
-                inset: 0px;
+
+                .dump-image {
+                  box-sizing: border-box;
+                  display: block;
+                  width: initial;
+                  height: initial;
+                  background: none;
+                  opacity: 1;
+                  border: 0px;
+                  margin: 0px;
+                  padding: 0px;
+                  max-width: 100%;
+
+                  img {
+                    display: block;
+                    max-width: 100%;
+                    width: initial;
+                    height: initial;
+                    background: none;
+                    opacity: 1;
+                    border: 0px;
+                    margin: 0px;
+                    padding: 0px;
+                  }
+                }
+
+                .scroller-slide-image {
+                  position: absolute;
+                  inset: 0px;
+                  box-sizing: border-box;
+                  padding: 0px;
+                  border: none;
+                  margin: auto;
+                  display: block;
+                  width: 0px;
+                  height: 0px;
+                  min-width: 100%;
+                  max-width: 100%;
+                  min-height: 100%;
+                  max-height: 100%;
+                }
               }
             }
           }
@@ -639,18 +782,30 @@ body {
             display: flex;
             position: absolute;
             justify-content: center;
-            // width: 6.75rem;
+            width: 6.75rem;
             bottom: 0.75rem;
             left: 50%;
             transform: translateX(-50%);
+            text-align: center;
+            z-index: 10;
+
+            @include sm {
+              bottom: -0.188rem;
+            }
+            @include md {
+              bottom: 0.3rem;
+            }
+            @include lg {
+              bottom: -0.3rem;
+            }
 
             &-bullet {
               display: inline-block;
               width: 2.25rem;
               height: 0.5rem;
-              // margin: 0px!important;
+              margin: 0px !important;
               flex-basis: 6.75rem;
-              background: rgba($colors-dark-white, 0.15);
+              background: rgba($colors-dark-white, 0.2);
               border-radius: 0px;
               cursor: pointer;
 
@@ -671,7 +826,7 @@ body {
       }
       .home-1-background {
         z-index: -1;
-        // overflow: hidden;
+        overflow: hidden;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -688,21 +843,34 @@ body {
           }
         }
       }
+
       .home-1-hero {
         display: flex;
-        flex-flow: row;
+        flex-flow: column-reverse;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
         position: relative;
+        margin-top: 3.125rem;
+
+        @include sm {
+          margin-top: 0px;
+        }
+        @include md {
+          flex-flow: row;
+          align-items: center;
+        }
 
         &-content {
-          flex: 1 1 0%;
           display: flex;
+          flex: 1 1 0%;
           flex-direction: column;
 
           h2 {
             @include heroTextSizing($textSize: 3rem);
             color: $colors-dark-secondary;
+            @include lg {
+              font-size: 4rem;
+            }
           }
 
           h3 {
@@ -738,12 +906,18 @@ body {
         }
 
         &-graphics {
-          flex: 1 1 0%;
           display: flex;
           position: relative;
-          // height: 12rem;
-          // width: 12rem;
+          height: 12rem;
+          width: 12rem;
           margin-bottom: 1.5rem;
+
+          @include md {
+            flex: 1 1 0%;
+            margin-bottom: 0px;
+            height: 100%;
+            width: 100%;
+          }
         }
 
         &-graphics-bunny {

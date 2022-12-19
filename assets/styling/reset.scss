@@ -7,11 +7,11 @@ html {
 }
 
 * {
-  box-sizing: inherit;
+  box-sizing: border-box;
   font-family: Kanit, sans-serif;
   &:before,
   &:after {
-    box-sizing: inherit;
+    box-sizing: border-box;
   }
 }
 
