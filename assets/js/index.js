@@ -1,14 +1,17 @@
 window.onload = () => {
   // CHECK PHISHING-WARNING POPUP'S STATUS
-  let phishingPopUp = "Enabled";
+  let hasPhishingPopUp = "true";
   const mainContent = document.querySelector(".main-content");
   const phishingWarning = document.querySelector(".phishing-warning-container");
-  if (localStorage.getItem("phishingPopUp")) {
-    phishingPopUp = localStorage.getItem("phishingPopUp");
-    if (phishingPopUp === "Disabled") {
+  if (localStorage.getItem("hasPhishingPopUp")) {
+    hasPhishingPopUp = localStorage.getItem("hasPhishingPopUp");
+    console.log("POP UP IS " + hasPhishingPopUp);
+    if (hasPhishingPopUp === "false") {
+      console.log("iamIN FALSE");
       phishingWarning.style.display = "none";
       mainContent.style.marginTop = "3.563rem";
     } else {
+      console.log("iamIN TRUE");
       phishingWarning.style.display = "block";
     }
   }
@@ -19,7 +22,7 @@ window.onload = () => {
     closeButton.parentNode.parentNode.style.display = "none";
     closeButton.parentNode.parentNode.parentNode.style.height = "3.5rem";
     mainContent.style.marginTop = "3.563rem";
-    phishingPopUp = localStorage.setItem("phishingPopUp", "Disabled");
+    hasPhishingPopUp = localStorage.setItem("hasPhishingPopUp", "false");
   });
 
   // GET LATEST PRICE OF CAKE
@@ -49,7 +52,7 @@ window.onload = () => {
   let prevScrollPos = window.pageYOffset;
   window.onscroll = () => {
     let currentScrollPos = window.pageYOffset;
-    if (phishingPopUp === "Enabled") {
+    if (hasPhishingPopUp === "true") {
       if (prevScrollPos > currentScrollPos || currentScrollPos <= 126) {
         document.getElementById("head-area").style.top = "0";
       } else {
