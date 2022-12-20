@@ -1222,6 +1222,7 @@ body {
   background: linear-gradient(180deg, #09070c 22%, #201335 100%);
 }
 .content-wrapper .main-content .home-2-container .home-2-wrapper {
+  width: 100%;
   max-width: 75rem;
   padding: 1rem;
   min-height: auto;
@@ -1229,6 +1230,16 @@ body {
 @media (min-width: 23.125rem) {
   .content-wrapper .main-content .home-2-container .home-2-wrapper {
     padding-inline: 1.5rem;
+  }
+}
+@media (min-width: 36rem) {
+  .content-wrapper .main-content .home-2-container .home-2-wrapper {
+    padding-block: 2rem;
+  }
+}
+@media (min-width: 60.5rem) {
+  .content-wrapper .main-content .home-2-container .home-2-wrapper {
+    padding-block: 3rem;
   }
 }
 .content-wrapper
@@ -1272,6 +1283,20 @@ body {
   font-weight: 600;
   line-height: 1.1;
   text-align: center;
+}
+@media (min-width: 60.5rem) {
+  .content-wrapper
+    .main-content
+    .home-2-container
+    .home-2-wrapper
+    .home-2-content-header,
+  .content-wrapper
+    .main-content
+    .home-2-container
+    .home-2-wrapper
+    .home-2-content-subheader {
+    font-size: 2.5rem;
+  }
 }
 .content-wrapper
   .main-content
@@ -1341,6 +1366,16 @@ body {
   display: flex;
   flex-flow: column;
 }
+@media (min-width: 53.25rem) {
+  .content-wrapper
+    .main-content
+    .home-2-container
+    .home-2-wrapper
+    .home-2-content
+    .usage-stats {
+    flex-flow: row;
+  }
+}
 .content-wrapper
   .main-content
   .home-2-container
@@ -1354,8 +1389,27 @@ body {
   color: #f4eeff;
   overflow: hidden;
   position: relative;
-  padding: 0.063rem 0.063rem 0.188rem;
+  padding: 0.063rem 0.063rem 0.25rem;
   margin-bottom: 1rem;
+}
+@media (min-width: 53.25rem) {
+  .content-wrapper
+    .main-content
+    .home-2-container
+    .home-2-wrapper
+    .home-2-content
+    .usage-stats-box {
+    margin-right: 1rem;
+    margin-bottom: 0rem;
+  }
+  .content-wrapper
+    .main-content
+    .home-2-container
+    .home-2-wrapper
+    .home-2-content
+    .usage-stats-box:last-of-type {
+    margin: 0;
+  }
 }
 .content-wrapper
   .main-content
@@ -1401,6 +1455,18 @@ body {
   width: fit-content;
   min-width: 14.5rem;
 }
+@media (min-width: 53.25rem) {
+  .content-wrapper
+    .main-content
+    .home-2-container
+    .home-2-wrapper
+    .home-2-content
+    .usage-stats-box-wrapper
+    .box-text {
+    min-height: 10.5rem;
+    margin-top: 4rem;
+  }
+}
 .content-wrapper
   .main-content
   .home-2-container
@@ -1412,6 +1478,18 @@ body {
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.1;
+}
+@media (min-width: 60.5rem) {
+  .content-wrapper
+    .main-content
+    .home-2-container
+    .home-2-wrapper
+    .home-2-content
+    .usage-stats-box-wrapper
+    .box-text
+    h2 {
+    font-size: 2.5rem;
+  }
 }
 .content-wrapper
   .main-content

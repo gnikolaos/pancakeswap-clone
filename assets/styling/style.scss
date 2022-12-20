@@ -974,12 +974,21 @@ body {
       background: $colors-dark-home2Background;
 
       .home-2-wrapper {
+        width: 100%;
         max-width: 75rem;
         padding: 1rem;
         min-height: auto;
 
         @include xs {
           padding-inline: 1.5rem;
+        }
+
+        @include sm {
+          padding-block: 2rem;
+        }
+
+        @include lg {
+          padding-block: 3rem;
         }
 
         .home-2-content {
@@ -1003,6 +1012,10 @@ body {
             font-weight: 600;
             line-height: 1.1;
             text-align: center;
+
+            @include lg {
+              font-size: 2.5rem;
+            }
           }
 
           &-subheader {
@@ -1045,6 +1058,10 @@ body {
             display: flex;
             flex-flow: column;
 
+            @include md {
+              flex-flow: row;
+            }
+
             &-box {
               height: fit-content;
               padding: 0.063rem 0.063rem 0.25rem;
@@ -1053,8 +1070,16 @@ body {
               color: $colors-dark-text;
               overflow: hidden;
               position: relative;
-              padding: 0.063rem 0.063rem 0.188rem;
+              padding: 0.063rem 0.063rem 0.25rem;
               margin-bottom: 1rem;
+
+              @include md {
+                margin-right: 1rem;
+                margin-bottom: 0rem;
+                &:last-of-type {
+                  margin: 0;
+                }
+              }
 
               &-container {
                 width: 100%;
@@ -1080,10 +1105,19 @@ body {
                   width: fit-content;
                   min-width: 14.5rem;
 
+                  @include md {
+                    min-height: 10.5rem;
+                    margin-top: 4rem;
+                  }
+
                   h2 {
                     font-size: 2rem;
                     font-weight: 600;
                     line-height: 1.1;
+
+                    @include lg {
+                      font-size: 2.5rem;
+                    }
                   }
 
                   h2:last-of-type {
@@ -1111,12 +1145,6 @@ body {
                   }
                 }
               }
-            }
-
-            &-box-2 {
-            }
-
-            &-box-3 {
             }
           }
         }
