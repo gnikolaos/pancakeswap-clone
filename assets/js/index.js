@@ -1,29 +1,27 @@
 window.onload = () => {
   // CHECK PHISHING-WARNING POPUP'S STATUS
-  let hasPhishingPopUp = "true";
+  let hasPhishingPopUp = "false";
   const mainContent = document.querySelector(".main-content");
   const phishingWarning = document.querySelector(".phishing-warning-container");
-  if (localStorage.getItem("hasPhishingPopUp")) {
-    hasPhishingPopUp = localStorage.getItem("hasPhishingPopUp");
-    console.log("POP UP IS " + hasPhishingPopUp);
-    if (hasPhishingPopUp === "false") {
-      console.log("iamIN FALSE");
+
+  /** If there isn't a hasPhishingPopUp key in the local storage
+   * make the phishingWarning container a block else check the value
+   * of the key and act accordingly.
+   */
+  if (!Boolean(localStorage.getItem("hasPhishingPopUp"))) {
+    hasPhishingPopUp = "true";
+    phishingWarning.style.display = "block";
+    mainContent.style.marginTop = "7.938rem";
+  } else {
+    if (localStorage.getItem("hasPhishingPopUp") === "true") {
+      hasPhishingPopUp = "true";
+      phishingWarning.style.display = "block";
+      mainContent.style.marginTop = "7.938rem";
+    } else {
       phishingWarning.style.display = "none";
       mainContent.style.marginTop = "3.563rem";
-    } else {
-      console.log("iamIN TRUE");
-      phishingWarning.style.display = "block";
     }
   }
-
-  // HIDE THE PHISHING WARNING CONTAINER
-  const closeButton = document.getElementById("phishing-banner-close");
-  closeButton.addEventListener("click", () => {
-    closeButton.parentNode.parentNode.style.display = "none";
-    closeButton.parentNode.parentNode.parentNode.style.height = "3.5rem";
-    mainContent.style.marginTop = "3.563rem";
-    hasPhishingPopUp = localStorage.setItem("hasPhishingPopUp", "false");
-  });
 
   // GET LATEST PRICE OF CAKE
   let xhr = new XMLHttpRequest();
@@ -68,3 +66,11 @@ window.onload = () => {
     prevScrollPos = currentScrollPos;
   };
 };
+
+// HIDE THE PHISHING WARNING CONTAINER
+function closeBanner() {
+  document.querySelector(".phishing-warning-container").style.display = "none";
+  document.querySelector(".head-area").style.height = "3.5rem";
+  document.querySelector(".main-content").style.marginTop = "3.563rem";
+  hasPhishingPopUp = localStorage.setItem("hasPhishingPopUp", "false");
+}
