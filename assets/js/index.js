@@ -1,5 +1,5 @@
 window.onload = () => {
-  // CHECK PHISHING WARNING POPUP'S STATUS
+  // CHECK PHISHING-WARNING POPUP'S STATUS
   let phishingPopUp = "Enabled";
   const mainContent = document.querySelector(".main-content");
   const phishingWarning = document.querySelector(".phishing-warning-container");
@@ -44,4 +44,24 @@ window.onload = () => {
     }
   };
   xhr.send();
+
+  // SHOW & HIDE THE NAVBAR ON SCROLL
+  let prevScrollPos = window.pageYOffset;
+  window.onscroll = () => {
+    let currentScrollPos = window.pageYOffset;
+    if (phishingPopUp === "Enabled") {
+      if (prevScrollPos > currentScrollPos || currentScrollPos <= 126) {
+        document.getElementById("head-area").style.top = "0";
+      } else {
+        document.getElementById("head-area").style.top = "-7.875rem"; // 126px
+      }
+    } else {
+      if (prevScrollPos > currentScrollPos || currentScrollPos <= 56) {
+        document.getElementById("head-area").style.top = "0";
+      } else {
+        document.getElementById("head-area").style.top = "-3.5rem"; // 56px
+      }
+    }
+    prevScrollPos = currentScrollPos;
+  };
 };
