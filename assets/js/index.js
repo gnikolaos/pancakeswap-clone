@@ -15,3 +15,17 @@ function changeTable() {
     table2.style.display = "block";
   }
 }
+
+//change table simultaneously
+//element.classList.add("my-class")
+/*
+let content1=document.querySelector(".content1");
+
+for(let i=0;i<5000000;i++){
+if(i<10000){
+content1.classList.add("changeClass");
+}
+else{
+  content1.classList.remove("changeClass");
+}
+}*/
