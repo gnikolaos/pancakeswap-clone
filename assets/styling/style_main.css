@@ -48,6 +48,7 @@
 
 .secondPart {
   background-color: #3c3742;
+  width: 100%;
 }
 
 .secondPart > svg {
@@ -250,7 +251,8 @@ a {
   align-items: center;
 }
 
-.table-heading {
+.table-heading,
+.table-heading2 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -258,7 +260,8 @@ a {
   gap: 1rem;
 }
 
-.table-content {
+.table-content,
+.table-content2 {
   display: grid;
   grid-template-columns: repeat(5, auto);
   gap: 1rem;
@@ -292,14 +295,57 @@ a {
   display: none;
 }
 
-.arrow-button {
+.arrow-button,
+.arrow-button2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.arrow {
+.arrow,
+.arrow2 {
   align-self: center;
   fill: #b8add2;
-} /*# sourceMappingURL=style-main.css.map */
+}
+
+@media screen and (max-width: 852px) {
+  .tradeAnything {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .paragraphOne,
+  .paragraphTwo {
+    align-self: center;
+    margin-right: 64px;
+    margin-top: 5rem;
+  }
+  .paragraphTwo {
+    margin-top: 0;
+    margin-left: 64px;
+    margin-top: 10rem;
+  }
+  .earnPassive {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .containerOfCoinImages,
+  .containerOfSecondImages {
+    height: 192px;
+    width: 192px;
+    margin-bottom: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .images {
+    width: 160px;
+    height: 160px;
+  }
+  .containerOfSecondImages {
+    margin-top: 35rem;
+  }
+  .table {
+    flex: column wrap;
+  }
+} /*# sourceMappingURL=style_main.css.map */

@@ -8,7 +8,20 @@
   line-height: $lineHeight;
   margin-bottom: $marginBottom;
 }
-
+//mixin for animation properties
+@mixin animation($animationName, $parameterX, $parameterY) {
+  @keyframes #{$animationName} {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate($parameterX, $parameterY);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+}
 .tradeAnything {
   display: flex;
   justify-content: center;
@@ -46,6 +59,7 @@
 }
 .secondPart {
   background-color: $colors-dark-backgroundDisabled;
+  width: 100%;
 }
 .secondPart > svg {
   fill: $colors-dark-background;
@@ -109,20 +123,6 @@ a {
   @include text(16px, 600, 1.5, 0);
 }
 
-//mixin for animation properties
-@mixin animation($animationName, $parameterX, $parameterY) {
-  @keyframes #{$animationName} {
-    0% {
-      transform: translate(0px, 0px);
-    }
-    50% {
-      transform: translate($parameterX, $parameterY);
-    }
-    100% {
-      transform: translate(0px, 0px);
-    }
-  }
-}
 .containerOfCoinImages :nth-child(1) {
   animation: 3s ease-in-out 1s infinite normal none running image;
   @include animation(image, 3px, 15px);
@@ -165,10 +165,16 @@ a {
   margin-top: 20rem;
   gap: 1rem;
 }
+.table-heading2 {
+  @extend .table-heading;
+}
 .table-content {
   display: grid;
   grid-template-columns: repeat(5, auto);
   gap: 1rem;
+}
+.table-content2 {
+  @extend .table-content;
 }
 
 .content1 {
@@ -191,6 +197,7 @@ a {
 .subhead {
   color: $colors-dark-textSubtle;
 }
+
 .second-table {
   display: none;
 }
@@ -200,7 +207,54 @@ a {
   align-items: center;
   margin-bottom: 1rem;
 }
+.arrow-button2 {
+  @extend .arrow-button;
+}
 .arrow {
   align-self: center;
   fill: $colors-dark-textSubtle;
+}
+.arrow2 {
+  @extend .arrow;
+}
+
+@media screen and (max-width: 852px) {
+  .tradeAnything {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .paragraphOne {
+    align-self: center;
+    margin-right: 64px;
+    margin-top: 5rem;
+  }
+  .paragraphTwo {
+    @extend .paragraphOne;
+    margin-top: 0;
+    margin-left: 64px;
+    margin-top: 10rem;
+  }
+  .earnPassive {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .containerOfCoinImages {
+    height: 192px;
+    width: 192px;
+    margin-bottom: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .images {
+    width: 160px;
+    height: 160px;
+  }
+  .containerOfSecondImages {
+    @extend .containerOfCoinImages;
+    margin-top: 35rem;
+  }
+  .table {
+    flex: column wrap;
+  }
 }
