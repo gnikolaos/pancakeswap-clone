@@ -866,6 +866,16 @@ body {
     bottom: 0.563rem;
   }
 }
+@media (min-width: 60.5rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    .scroller-wrapper
+    .scroller-slide-image-container {
+    bottom: -0.125rem;
+  }
+}
 .content-wrapper
   .main-content
   .home-1-wrapper
@@ -904,6 +914,19 @@ body {
   margin: 0px;
   padding: 0px;
   max-width: 100%;
+}
+@media (min-width: 60.5rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    .scroller-wrapper
+    .scroller-slide-image-container
+    .image-wrapper
+    .dump-image {
+    width: 392px;
+    height: 232px;
+  }
 }
 .content-wrapper
   .main-content

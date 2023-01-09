@@ -725,6 +725,10 @@ body {
                 bottom: 0.563rem;
               }
 
+              @include lg {
+                bottom: -0.125rem;
+              }
+
               .image-wrapper {
                 box-sizing: border-box;
                 display: inline-block;
@@ -750,6 +754,11 @@ body {
                   margin: 0px;
                   padding: 0px;
                   max-width: 100%;
+
+                  @include lg {
+                    width: 392px;
+                    height: 232px;
+                  }
 
                   img {
                     display: block;
