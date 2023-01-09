@@ -291,6 +291,10 @@ a {
   color: #b8add2;
 }
 
+.first-table {
+  width: 853px;
+}
+
 .second-table {
   display: none;
 }
@@ -311,7 +315,14 @@ a {
   fill: #b8add2;
 }
 
-.changeClass {
+.section1Class {
+  opacity: 1;
+  margin-top: 0px;
+  transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s;
+}
+
+.section1_vsClass {
+  opacity: 0;
   margin-top: 50%;
   transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s;
 }
