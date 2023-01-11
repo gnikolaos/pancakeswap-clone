@@ -1,0 +1,604 @@
+@use "colors.scss" as c;
+
+html {
+  /* width */
+&::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+&::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px rgb(88, 88, 88); 
+  border-radius: 2px;
+}
+
+/* Handle */
+&::-webkit-scrollbar-thumb {
+  background-color: #b8add2; 
+  border-radius: 10px;
+}
+
+&::-webkit-scrollbar-button {
+  height: 10px;
+}
+}
+
+body {
+    // min-width: 967px;
+    margin: 0;
+    padding: 0;
+    font-family: Kanit, sans-serif;
+    background-color: #08060b;
+}
+
+.bgColor {
+  background-color: white;
+}
+
+// #footer {
+//   min-width: 1200px;
+// }
+
+.flyingCake {
+  max-height: 100%;
+  position: relative;
+  animation-name: flyingcake;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  .cake1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .cake2 {
+    position: absolute;
+    left: 0;
+  }
+  .cake3 {
+    position: absolute;
+    left: 0px;
+  }
+}
+
+#pancakeFlyingTop {
+  position: relative;
+  bottom: 400px;
+  margin-bottom: 400px;
+}
+#pancakeFlyingBottom {
+  position: relative;
+  left: 2000px;
+  margin-bottom: 60px;
+}
+
+@keyframes flyingcake {
+  0% {left: 0; top: 0;}
+  50% {left: 3; top: 20px;}
+  100% {left: 0; top: 0;}
+} 
+
+@mixin footerBg ($bgColor) {
+    width: 100%;
+    background: $bgColor;
+}
+
+#startInSeconds {
+    @include footerBg(c.$footerBgTop);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: space-between;
+    svg {
+      position: absolute;
+      width: 100%;
+      overflow-y: hidden;
+      display: block;
+      top: -450px;
+      left: 0;
+      opacity: 11;
+    }
+}
+
+#startInSecondsMain {
+  text-align: center;
+  // margin: 80px 20px;
+  line-height: 1.5;
+  h1 {
+    font-size: 2.5rem;
+  }
+  h1, &:nth-child(2) {
+    color: c.$color;
+  }
+  button {
+    font-size: 16px;
+    font-weight: 600;
+    background-color: c.$btn_color;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    &:hover {
+      background-color: #41a0a7;
+    }
+  }
+}
+
+#learn {
+  color: #1fc7d4;
+  font-weight: 600;
+}
+
+#mainFooter {
+  position: relative;
+    z-index: 5;
+    @include footerBg(c.$btm-bg-bg-change_color);
+    margin-bottom: 0;
+}
+
+#startInContainer {
+    // min-width: 1200px;
+    position: relative;
+    // height: 400px;
+    display: flex;
+    margin: 10px 0 70px;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+  }
+  
+  img {
+    width: 240px;
+    height: 224px;
+    margin: 0;
+  }
+
+  #mainfooterContents {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #mainFooterUp {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+  }
+
+  @mixin footerGap($display, $gap) {
+    display: $display;
+    gap: $gap;
+  }
+
+  #mainFooterUpLinks {
+    @include footerGap(flex, 0px);
+    justify-content: space-between;
+    margin: 0 50px;
+  }
+
+  #mainFooterUpIcons {
+    fill: c.$sm-icons_color;
+    @include footerGap(flex, 25px);
+    padding-left: 50px;
+  //  justify-content: center;
+    // margin-left: 0;
+    // min-width: 1200px;
+    margin: 30px 0;
+    #telegramRegions {
+      position: relative;
+      #telegramRegionChannel {
+        display: none;
+      }
+      #telegramRegionChannel {
+        position: relative;
+          bottom: 30px;
+        a {
+          color: #b8add2;
+        }
+      }
+      &:hover #telegramRegionChannel {
+        display: inline-flex;
+        flex-direction: column;
+        text-align: left;
+        position: relative;
+        line-height: 1.5;
+        color: #b8add2;
+
+      }
+    }
+  }
+
+  #logoFooter > svg {
+    margin-top: 25px;
+    color: rosybrown;
+  }
+
+  #logoFooter > svg > path:first-child {
+    fill: c.$pancakes_color;
+  }
+
+  ul {
+    list-style-type: none;
+    line-height: 2;
+    padding-left: 0;
+  }
+
+  a {
+    text-decoration: none;
+  } 
+
+  ul > li:nth-child(7) {
+    width: 1.5ch;
+    text-align: left;
+  }
+
+  ul > li {
+    a {
+      color: c.$color;
+    }
+    #contact {
+      color: c.$contact_color;
+    }
+    .footerHeader {
+      color: c.$header_color;
+      font-weight: 600;
+    }
+  }
+
+  #mainFooterDown {
+    @include footerGap(flex, 0px);
+    margin: 40px 50px 10px;
+    align-items: cent;
+    justify-content: space-between;
+  }
+
+  #downFirstCol {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    #changeColor {
+      width: 56px;
+      height: 32px;
+      border-radius: 25px;
+      display: inline-flex;
+      background-color: #807a90;
+      &:hover {
+        background-image: linear-gradient(to right, #807a90,#9a6aff);
+      }
+      position: relative;
+      input {
+        opacity: 0;
+        position: absolute;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+      }
+      
+      #likeMoon {
+        height: 20px;
+        width: 20px;
+        margin: 3px;
+        padding: 3px;
+        border-radius: 50px;
+        background-color: #27262c;
+        fill: #9a6aff;
+      }
+
+      #warningNo {
+        position: relative;
+        // bottom: 200px;
+        height: 10x;
+        width: 20px;
+        margin: 3px;
+        fill: #27262c;
+      }
+
+      #warning {
+        position: relative;
+        z-index: 4;
+        fill: #ffb237;
+        display: none;
+          height: 10px;
+          width: 20px;
+          margin: 3px;
+          padding: 3px;
+          border-radius: 50px;
+        background-color: #27262c;
+      }
+   
+    }
+  }
+
+  #buyCake {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  #hr {
+    border-bottom: 1px solid #343434;
+    margin: 0 50px;
+    // min-width: 1200px;
+  }
+
+  #cakePrice {
+   a {
+    color: c.$sm-icons_color;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+   }
+   svg {
+    &:hover {
+      transition: all .2s ease-in-out;
+      transform: scale(1.2);
+    }
+   }
+    
+  }
+
+  #lang {
+    position: relative;
+    &:hover {
+      #langBtn {
+        button {
+        display: block;
+      }
+     }
+    }
+
+    #langEn {
+      color: c.$sm-icons_color;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
+      background: none;
+      border: none;
+      gap: 5px;
+      cursor: pointer;
+      svg {
+        fill: c.$sm-icons_color;
+      }
+    }
+  
+    #langBtn {
+      position: absolute;
+      z-index: 1;
+      display: inline-flex;
+      bottom: 30px;
+      left: 0px;
+      right: 20px;
+      flex-direction: column;
+      align-items: center;
+      max-height: 290px;
+      width: 250px;
+      overflow-x: hidden;
+      &:hover {
+        display: block;
+        position: absolute;
+        z-index: 10;
+      }
+       /* width */
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px rgb(88, 88, 88); 
+        border-radius: 2px;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background-color: #b8add2; 
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-button {
+        height: 10px;
+      }
+
+      &:hover {
+        border-radius: 20px;
+        width: 160px;
+        position: relative;
+      }
+      .languages {
+        display: none;
+        color: c.$color;
+        text-align: center;
+        font-size: 16px;
+        height: 200px;
+        border: none;
+        padding: 0 20px;
+        background-color: #27262c;
+        &:hover {
+          text-align: center;
+          display: block;
+          cursor: pointer;
+          color: c.$sm-icons_color;
+        }
+      }
+    }
+  }  
+
+  #buyCakeBtn {
+    @include footerGap(flex, 8px);
+    background-color: c.$btn_color;
+    border-radius: 20px;
+    padding: 2px 16px 0;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #000;
+    svg {
+      margin-top: 3px;
+    }  
+    &:hover {
+      background-color: #41a0a7;
+    }
+  }
+
+  #scrollUp {
+    // visibility: hidden;
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    z-index: 999;
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+    background-color: c.$btn_color;
+    position: fixed;
+    bottom: 110px;
+    right: 70px;
+    cursor: pointer;
+    &:hover {
+      background-color: #41a0a7;
+    }
+  }
+
+
+  $lg-screen: 968px;
+  $md-screen: 852px;
+  $sm-screen: 576px;
+
+  // #on-sm-screen {
+  //   visibility: hidden;
+  //   display: none;
+  // }
+  
+  @media (min-width: $md-screen) {
+    #on-sm-screen {
+      display: none;
+    }
+    #mainFooter-smScreens {
+      display: none;
+    }
+  }
+
+  @mixin sm-screen-items {
+    #trade, #earn, #win, #nft, #hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 1.5;
+      color: c.$lang_color;
+      svg {
+        fill: c.$lang_color;
+      }
+    }
+  }
+
+  @mixin sm-screen-sizes {
+    #on-sm-screen {
+      @include sm-screen-items();
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px 40px;
+      background-color: c.$btm-bg-bg-change_color;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      border-top: 1px solid #343434;
+    }
+    #pancakeFlyingBottom, #pancakeFlyingTop {
+      display: none;
+    }
+  }
+
+  @media (min-width: $sm-screen) and (max-width: 851px) {
+    @include sm-screen-sizes();
+    #on-sm-screen {
+      padding: 10px 90px;
+    }
+    #mainFooter-smScreens {
+      display: none;
+    }
+    // #svgBg {
+    //   position: absolute;
+    //   width: 100%;
+    //   overflow-y: hidden;
+    //   // display: block;
+    //   top: -450px;
+    //   left: 0;
+    //   opacity: 11;
+    // }
+  }
+
+  @media (max-width: 575px) {
+    @include sm-screen-sizes();
+    #mainFooterUpLinks {
+      display: flex;
+      flex-direction: column;
+    }
+    #logoFooter {
+      order: 1;
+    }
+    #mainfooterContents {
+      display: none;
+    }
+    #mainFooter-smScreens {
+      display: flex;
+      flex-direction: column;
+      #logoFooter {
+        order: 1;
+        margin: 20px 25px 0;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #343434;
+      }
+      #mainFooterDown {
+        display: flex;
+        flex-direction: column;
+        order: 2;
+        border-bottom: 1px solid #343434;
+        margin: 0 10px;
+        padding: 30px 10px;
+        #buyCake {
+          order: 1;
+          justify-content: space-between;
+        }
+        #downFirstCol {
+          order: 2;
+          gap: 20px;
+          margin-top: 30px;
+        }
+      }
+      #about,  #help, #developers {
+        order: 3;
+        margin-left: 25px;
+      }
+      #mainFooterUpIcons {
+        order: 4;
+        padding-left: 25px;
+        // padding-top: 30px;
+      }
+      #hr {
+        order: 5;
+        margin-bottom: 90px;
+        margin-left: 25px;
+      }
+    }
+    #startInSecondsMain {
+      margin: 0 25px;
+      h1 {
+        font-size: 30px;
+        font-weight: 600;
+      }
+    }
+    #scrollUp {
+      right: 20px;
+    }
+  }
+
+  
