@@ -16,7 +16,7 @@ function changeColor() {
 
 window.onscroll = () => {
     let goUp = document.getElementById('scrollUp');
-    if (document.documentElement.scrollTop > 400 || document.body.scrollTop > 400) {
+    if (document.documentElement.scrollTop > 200 || document.body.scrollTop > 200) {
         goUp.style.display = "inline-flex";
     } else {
         goUp.style.display = "none";
