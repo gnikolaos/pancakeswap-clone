@@ -114,28 +114,39 @@ window.onload = () => {
     }
   }
 
-  // slider - event listeners
+  // Slider - event listeners
   firstBullet.addEventListener("click", clickHandler);
   middleBullet.addEventListener("click", clickHandler);
   lastBullet.addEventListener("click", clickHandler);
 
   function clickHandler(e) {
-    // Get the active button
+    // Get the active bullet
     let activeBullet = document.querySelector(
       ".scroller-pagination-bullet-active"
     );
-    // If the even target is an actual bullet (button)
-    if (e.target.classList.contains("scroller-pagination-bullet")) {
+    // If the event target is auto triggered
+    if (e.target.classList.contains("autoSlide")) {
+      console.log("i am in auto");
+      // Remove the active class from the previous active bullet
+      if (activeBullet) {
+        activeBullet.classList.remove("scroller-pagination-bullet-active");
+      }
+      // Assume that the target is the new active bullet
+      activeBullet = e.target;
+      activeBullet.classList.remove("autoSlide");
+      // Add the active class to the new active bullet
+      activeBullet.classList.add("scroller-pagination-bullet-active");
+    } else {
+      // If the event target is an actual bullet click
       if (activeBullet) {
         activeBullet.classList.remove("scroller-pagination-bullet-active");
       }
       e.target.classList.add("scroller-pagination-bullet-active");
       // Clear the interval when a bullet is clicked
       clearInterval(slideInterval);
-    } else {
-      // Assume that the target is the new active bullet
-      activeBullet = e.target;
     }
+
+    console.log("clickHandler: active bullet is: " + activeBullet.id);
 
     // Update the slide bases on the active bullet
     switch (activeBullet) {
@@ -162,16 +173,18 @@ window.onload = () => {
     let activeBullet = document.querySelector(
       ".scroller-pagination-bullet-active"
     );
+    console.log("auto: active bullet is: " + activeBullet.id);
     // Get the index of the active bullet
     let activeIndex = Array.from(
       document.querySelectorAll(".scroller-pagination-bullet")
     ).indexOf(activeBullet);
     slideInterval = setInterval(() => {
       activeIndex = (activeIndex + 1) % 3;
-      let newActiveButton = document.querySelectorAll(
+      let newActiveBullet = document.querySelectorAll(
         ".scroller-pagination-bullet"
       )[activeIndex];
-      clickHandler({ target: newActiveButton });
+      newActiveBullet.classList.add("autoSlide");
+      clickHandler({ target: newActiveBullet });
     }, 2000);
   }
 };
