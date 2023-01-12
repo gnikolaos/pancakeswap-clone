@@ -596,10 +596,9 @@ body {
 .content-wrapper .main-content .home-1-wrapper .home-1-scroller::before {
   content: "";
   position: absolute;
-  background: linear-gradient(
-    0deg,
-    rgb(69, 42, 122) 0%,
-    rgb(118, 69, 217) 100%
+  background: var(
+    --sliderBg,
+    linear-gradient(rgb(0, 191, 165) 0%, rgb(0, 90, 90) 100%)
   );
   border-radius: 2rem;
   inset: 0px;
@@ -632,7 +631,37 @@ body {
   .home-1-wrapper
   .home-1-scroller-container
   .scroller-wrapper
-  .scroller-slide-1 {
+  #slide-2,
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  #slide-3 {
+  display: none;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .slideOut {
+  display: none;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .slideIn {
+  display: block;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  .scroller-wrapper
+  .scroller-slide {
   position: relative;
   width: 100%;
   height: 100%;
@@ -646,7 +675,7 @@ body {
     .home-1-wrapper
     .home-1-scroller-container
     .scroller-wrapper
-    .scroller-slide-1 {
+    .scroller-slide {
     padding: 1.25rem;
   }
 }
@@ -655,7 +684,7 @@ body {
   .home-1-wrapper
   .home-1-scroller-container
   .scroller-wrapper
-  .scroller-slide-1-container {
+  .scroller-slide-container {
   border-radius: 2rem;
   width: 100%;
   max-height: max-content;
@@ -666,7 +695,7 @@ body {
   .home-1-wrapper
   .home-1-scroller-container
   .scroller-wrapper
-  .scroller-slide-1-wrapper {
+  .scroller-slide-wrapper {
   display: flex;
   position: relative;
   padding: 1.5rem;
@@ -968,6 +997,224 @@ body {
   max-width: 100%;
   min-height: 100%;
   max-height: 100%;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  #slide-1
+  .scroller-slide-image-container {
+  right: 0rem;
+  bottom: 0.2rem;
+  max-width: 63.125rem;
+  min-height: auto;
+}
+@media (min-width: 23.125rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-1
+    .scroller-slide-image-container {
+    bottom: 0rem;
+  }
+}
+@media (min-width: 36rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-1
+    .scroller-slide-image-container {
+    bottom: -0.5rem;
+  }
+}
+@media (min-width: 53.25rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-1
+    .scroller-slide-image-container {
+    bottom: -0.5rem;
+  }
+}
+@media (min-width: 60.5rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-1
+    .scroller-slide-image-container {
+    bottom: -1.3rem;
+  }
+}
+@media (min-width: 67.5rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-1
+    .scroller-slide-image-container {
+    bottom: -1.5rem;
+  }
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  #slide-1
+  .text {
+  max-width: 13.188rem;
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  #slide-1
+  .subtext {
+  text-transform: capitalize;
+  font-size: 1.313rem;
+  width: fit-content;
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(0, 0, 0, 0.25) 0rem 0.125rem 0.125rem;
+  background: none;
+  margin-block: 1.313rem 1rem;
+}
+@media (min-width: 36rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-1
+    .subtext {
+    margin-top: 0.625rem;
+    font-size: 2.188rem;
+  }
+}
+@media (min-width: 53.25rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-1
+    .subtext {
+    font-size: 2.5rem;
+  }
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  #slide-3
+  .scroller-slide-image-container {
+  right: 0rem;
+  bottom: -2.1rem;
+}
+@media (min-width: 36rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-3
+    .scroller-slide-image-container {
+    right: 0.063rem;
+  }
+}
+@media (min-width: 53.25rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-3
+    .scroller-slide-image-container {
+    right: 0rem;
+  }
+}
+@media (min-width: 60.5rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-3
+    .scroller-slide-image-container {
+    bottom: -0.313rem;
+  }
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  #slide-3
+  .text {
+  text-shadow: rgba(0, 0, 0, 0.25) 0rem 0.25rem 0.25rem;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  background: none;
+  font-size: 1.25rem;
+  margin-block: 0rem 0.5rem;
+}
+@media (min-width: 36rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-3
+    .text {
+    -webkit-text-stroke: unset;
+  }
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  #slide-3
+  .subtext {
+  text-transform: none;
+  color: rgb(194, 194, 70);
+  background: none;
+  margin-block: 0rem 0.5rem;
+}
+@media (min-width: 36rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-3
+    .subtext {
+    margin-bottom: 1rem;
+  }
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  #slide-3
+  .dump-image {
+  width: 190px;
+  height: 144px;
+}
+@media (min-width: 60.5rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-3
+    .dump-image {
+    min-width: 934px;
+    min-height: 188px;
+  }
+}
+@media (min-width: 67.5rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-3
+    .dump-image {
+    min-width: 1112px;
+    min-height: 224px;
+  }
 }
 .content-wrapper
   .main-content

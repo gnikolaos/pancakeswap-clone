@@ -65,6 +65,115 @@ window.onload = () => {
     }
     prevScrollPos = currentScrollPos;
   };
+
+  // SLIDER
+  const SLIDERTIME = 500;
+  const firstBullet = document.querySelector("#first");
+  const middleBullet = document.querySelector("#middle");
+  const lastBullet = document.querySelector("#last");
+  const allSlides = [...document.querySelectorAll(".slides")];
+  let slideInterval;
+
+  function initSlider() {
+    allSlides.forEach((slide) => {
+      slide.setAttribute(
+        "style",
+        `transition: transform ${SLIDERTIME}ms ease;
+                     animation-duration: ${SLIDERTIME}ms
+        `
+      );
+    });
+  }
+
+  // Change slide upon click
+  function changeSlide(e) {
+    const sliderBox = document.querySelector(".home-1-scroller");
+    const sliderBgGreen =
+      "linear-gradient(rgb(0, 191, 165) 0%, rgb(0, 90, 90) 100%)";
+    const sliderBgPurple =
+      "linear-gradient(0deg, rgb(69, 42, 122) 0%, rgb(118, 69, 217) 100%)";
+    switch (e) {
+      case "first":
+        document.getElementById("slide-2").style.display = "none";
+        document.getElementById("slide-3").style.display = "none";
+        sliderBox.style.setProperty("--sliderBg", sliderBgGreen);
+        document.getElementById("slide-1").style.display = "block";
+        break;
+      case "middle":
+        document.getElementById("slide-1").style.display = "none";
+        document.getElementById("slide-3").style.display = "none";
+        sliderBox.style.setProperty("--sliderBg", sliderBgPurple);
+        document.getElementById("slide-2").style.display = "block";
+        break;
+      case "last":
+        document.getElementById("slide-2").style.display = "none";
+        document.getElementById("slide-1").style.display = "none";
+        sliderBox.style.setProperty("--sliderBg", sliderBgPurple);
+        document.getElementById("slide-3").style.display = "block";
+        break;
+    }
+  }
+
+  // slider - event listeners
+  firstBullet.addEventListener("click", clickHandler);
+  middleBullet.addEventListener("click", clickHandler);
+  lastBullet.addEventListener("click", clickHandler);
+
+  function clickHandler(e) {
+    // Get the active button
+    let activeBullet = document.querySelector(
+      ".scroller-pagination-bullet-active"
+    );
+    // If the even target is an actual bullet (button)
+    if (e.target.classList.contains("scroller-pagination-bullet")) {
+      if (activeBullet) {
+        activeBullet.classList.remove("scroller-pagination-bullet-active");
+      }
+      e.target.classList.add("scroller-pagination-bullet-active");
+      // Clear the interval when a bullet is clicked
+      clearInterval(slideInterval);
+    } else {
+      // Assume that the target is the new active bullet
+      activeBullet = e.target;
+    }
+
+    // Update the slide bases on the active bullet
+    switch (activeBullet) {
+      case firstBullet:
+        changeSlide("first");
+        break;
+      case middleBullet:
+        changeSlide("middle");
+        break;
+      case lastBullet:
+        changeSlide("last");
+        break;
+    }
+  }
+
+  // init the slider
+  initSlider();
+
+  // Start automatic slides
+  startAutoSlide();
+
+  function startAutoSlide() {
+    // Get the active bullet
+    let activeBullet = document.querySelector(
+      ".scroller-pagination-bullet-active"
+    );
+    // Get the index of the active bullet
+    let activeIndex = Array.from(
+      document.querySelectorAll(".scroller-pagination-bullet")
+    ).indexOf(activeBullet);
+    slideInterval = setInterval(() => {
+      activeIndex = (activeIndex + 1) % 3;
+      let newActiveButton = document.querySelectorAll(
+        ".scroller-pagination-bullet"
+      )[activeIndex];
+      clickHandler({ target: newActiveButton });
+    }, 2000);
+  }
 };
 
 // HIDE THE PHISHING WARNING CONTAINER

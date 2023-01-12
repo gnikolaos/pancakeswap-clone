@@ -553,11 +553,7 @@ body {
         &::before {
           content: "";
           position: absolute;
-          background: linear-gradient(
-            0deg,
-            rgb(69, 42, 122) 0%,
-            rgb(118, 69, 217) 100%
-          );
+          background: var(--sliderBg, $colors-dark-gradientSliderBg);
           border-radius: 2rem;
           inset: 0px;
 
@@ -580,7 +576,20 @@ body {
             display: flex;
             box-sizing: content-box;
 
-            .scroller-slide-1 {
+            #slide-2,
+            #slide-3 {
+              display: none;
+            }
+
+            .slideOut {
+              display: none;
+            }
+
+            .slideIn {
+              display: block;
+            }
+
+            .scroller-slide {
               position: relative;
               width: 100%;
               height: 100%;
@@ -788,6 +797,116 @@ body {
                   min-height: 100%;
                   max-height: 100%;
                 }
+              }
+            }
+          }
+
+          #slide-1 {
+            .scroller-slide-image-container {
+              right: 0rem;
+              bottom: 0.2rem;
+              max-width: 63.125rem;
+              min-height: auto;
+
+              @include xs {
+                bottom: 0rem;
+              }
+
+              @include sm {
+                bottom: -0.5rem;
+              }
+
+              @include md {
+                bottom: -0.5rem;
+              }
+
+              @include lg {
+                bottom: -1.3rem;
+              }
+
+              @include xl {
+                bottom: -1.5rem;
+              }
+            }
+
+            .text {
+              max-width: 13.188rem; //211px
+            }
+
+            .subtext {
+              text-transform: capitalize;
+              font-size: 1.313rem;
+              width: fit-content;
+              color: rgb(255, 255, 255);
+              text-shadow: rgb(0 0 0 / 25%) 0rem 0.125rem 0.125rem;
+              background: none;
+              margin-block: 1.313rem 1rem;
+
+              @include sm {
+                margin-top: 0.625rem;
+                font-size: 2.188rem;
+              }
+
+              @include md {
+                font-size: 2.5rem;
+              }
+            }
+          }
+
+          #slide-3 {
+            .scroller-slide-image-container {
+              right: 0rem;
+              bottom: -2.1rem;
+
+              @include sm {
+                right: 0.063rem;
+              }
+
+              @include md {
+                right: 0rem;
+              }
+
+              @include lg {
+                bottom: -0.313rem;
+              }
+            }
+
+            .text {
+              text-shadow: rgb(0 0 0 / 25%) 0rem 0.25rem 0.25rem;
+              color: $colors-dark-white;
+              -webkit-text-fill-color: $colors-dark-white;
+              background: none;
+              font-size: 1.25rem;
+              margin-block: 0rem 0.5rem;
+
+              @include sm {
+                -webkit-text-stroke: unset;
+              }
+            }
+
+            .subtext {
+              text-transform: none;
+              color: rgb(194, 194, 70);
+              background: none;
+              margin-block: 0rem 0.5rem;
+
+              @include sm {
+                margin-bottom: 1rem;
+              }
+            }
+
+            .dump-image {
+              width: 190px;
+              height: 144px;
+
+              @include lg {
+                min-width: 934px;
+                min-height: 188px;
+              }
+
+              @include xl {
+                min-width: 1112px;
+                min-height: 224px;
               }
             }
           }
