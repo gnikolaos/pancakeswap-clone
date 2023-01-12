@@ -142,8 +142,11 @@ window.onload = () => {
         activeBullet.classList.remove("scroller-pagination-bullet-active");
       }
       e.target.classList.add("scroller-pagination-bullet-active");
+      activeBullet = e.target;
       // Clear the interval when a bullet is clicked
       clearInterval(slideInterval);
+      // Start the auto slide again
+      startAutoSlide();
     }
 
     console.log("clickHandler: active bullet is: " + activeBullet.id);
