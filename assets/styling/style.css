@@ -610,7 +610,7 @@ body {
 }
 .content-wrapper .main-content .home-1-wrapper .home-1-scroller-container {
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   margin-inline: auto;
   padding: 0px;
 }
@@ -625,36 +625,6 @@ body {
   z-index: 1;
   display: flex;
   box-sizing: content-box;
-}
-.content-wrapper
-  .main-content
-  .home-1-wrapper
-  .home-1-scroller-container
-  .scroller-wrapper
-  #slide-2,
-.content-wrapper
-  .main-content
-  .home-1-wrapper
-  .home-1-scroller-container
-  .scroller-wrapper
-  #slide-3 {
-  display: none;
-}
-.content-wrapper
-  .main-content
-  .home-1-wrapper
-  .home-1-scroller-container
-  .scroller-wrapper
-  .slideOut {
-  display: none;
-}
-.content-wrapper
-  .main-content
-  .home-1-wrapper
-  .home-1-scroller-container
-  .scroller-wrapper
-  .slideIn {
-  display: block;
 }
 .content-wrapper
   .main-content

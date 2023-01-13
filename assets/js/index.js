@@ -67,22 +67,51 @@ window.onload = () => {
   };
 
   // SLIDER
-  const SLIDERTIME = 500;
+
+  // Event listener to detect screen's window resize
+  let sliderWidth = document.querySelector(".scroller-wrapper").offsetWidth;
+  function updateSliderWidth() {
+    let sliderWidth = document.querySelector(".scroller-wrapper").offsetWidth;
+    return sliderWidth;
+  }
+  window.onresize = updateSliderWidth;
+
+  // Slider's variables
+  const SLIDERTIME = 600;
+  // Pagination bullets
   const firstBullet = document.querySelector("#first");
   const middleBullet = document.querySelector("#middle");
   const lastBullet = document.querySelector("#last");
   const allSlides = [...document.querySelectorAll(".slides")];
+  let sliderWrapper = document.querySelector(".scroller-wrapper");
   let slideInterval;
 
   function initSlider() {
-    allSlides.forEach((slide) => {
-      slide.setAttribute(
-        "style",
-        `transition: transform ${SLIDERTIME}ms ease;
+    sliderWrapper.setAttribute(
+      "style",
+      `transition: transform ${SLIDERTIME}ms ease;
                      animation-duration: ${SLIDERTIME}ms
         `
-      );
-    });
+    );
+  }
+
+  // Function to move the slides
+  function moveSlide(slide) {
+    // Get the full width of the slider (all slides inlcuded)
+    width = updateSliderWidth();
+    switch (slide) {
+      case "first":
+        sliderWrapper.style.transform = "translate3d(0px, 0px, 0px)";
+        break;
+      case "middle":
+        sliderWrapper.style.transform =
+          "translate3d(-" + width + "px" + ", 0px, 0px)";
+        break;
+      case "last":
+        sliderWrapper.style.transform =
+          "translate3d(-" + width * 2 + "px" + ", 0px, 0px)";
+        break;
+    }
   }
 
   // Change slide upon click
@@ -94,22 +123,25 @@ window.onload = () => {
       "linear-gradient(0deg, rgb(69, 42, 122) 0%, rgb(118, 69, 217) 100%)";
     switch (e) {
       case "first":
-        document.getElementById("slide-2").style.display = "none";
-        document.getElementById("slide-3").style.display = "none";
+        document.getElementById("slide-2").style.opacity = "0";
+        document.getElementById("slide-3").style.opacity = "0";
         sliderBox.style.setProperty("--sliderBg", sliderBgGreen);
-        document.getElementById("slide-1").style.display = "block";
+        document.getElementById("slide-1").style.opacity = "1";
+        moveSlide(e);
         break;
       case "middle":
-        document.getElementById("slide-1").style.display = "none";
-        document.getElementById("slide-3").style.display = "none";
+        document.getElementById("slide-1").style.opacity = "0";
+        document.getElementById("slide-3").style.opacity = "0";
         sliderBox.style.setProperty("--sliderBg", sliderBgPurple);
-        document.getElementById("slide-2").style.display = "block";
+        document.getElementById("slide-2").style.opacity = "1";
+        moveSlide(e);
         break;
       case "last":
-        document.getElementById("slide-2").style.display = "none";
-        document.getElementById("slide-1").style.display = "none";
+        document.getElementById("slide-1").style.opacity = "0";
+        document.getElementById("slide-2").style.opacity = "0";
         sliderBox.style.setProperty("--sliderBg", sliderBgPurple);
-        document.getElementById("slide-3").style.display = "block";
+        document.getElementById("slide-3").style.opacity = "1";
+        moveSlide(e);
         break;
     }
   }
@@ -126,7 +158,6 @@ window.onload = () => {
     );
     // If the event target is auto triggered
     if (e.target.classList.contains("autoSlide")) {
-      console.log("i am in auto");
       // Remove the active class from the previous active bullet
       if (activeBullet) {
         activeBullet.classList.remove("scroller-pagination-bullet-active");
@@ -148,8 +179,6 @@ window.onload = () => {
       // Start the auto slide again
       startAutoSlide();
     }
-
-    console.log("clickHandler: active bullet is: " + activeBullet.id);
 
     // Update the slide bases on the active bullet
     switch (activeBullet) {
@@ -176,7 +205,6 @@ window.onload = () => {
     let activeBullet = document.querySelector(
       ".scroller-pagination-bullet-active"
     );
-    console.log("auto: active bullet is: " + activeBullet.id);
     // Get the index of the active bullet
     let activeIndex = Array.from(
       document.querySelectorAll(".scroller-pagination-bullet")
@@ -188,7 +216,7 @@ window.onload = () => {
       )[activeIndex];
       newActiveBullet.classList.add("autoSlide");
       clickHandler({ target: newActiveBullet });
-    }, 2000);
+    }, 4000);
   }
 };
 

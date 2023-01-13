@@ -564,7 +564,7 @@ body {
 
         &-container {
           position: relative;
-          overflow: visible;
+          overflow: hidden;
           margin-inline: auto;
           padding: 0px;
 
@@ -575,19 +575,6 @@ body {
             z-index: 1;
             display: flex;
             box-sizing: content-box;
-
-            #slide-2,
-            #slide-3 {
-              display: none;
-            }
-
-            .slideOut {
-              display: none;
-            }
-
-            .slideIn {
-              display: block;
-            }
 
             .scroller-slide {
               position: relative;
