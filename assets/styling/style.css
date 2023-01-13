@@ -560,6 +560,7 @@ body {
   min-height: auto;
   padding: 1rem;
   color: white;
+  overflow: hidden;
 }
 @media (min-width: 23.125rem) {
   .content-wrapper .main-content .home-1-wrapper {
@@ -610,7 +611,6 @@ body {
 }
 .content-wrapper .main-content .home-1-wrapper .home-1-scroller-container {
   position: relative;
-  overflow: hidden;
   margin-inline: auto;
   padding: 0px;
 }

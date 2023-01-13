@@ -522,6 +522,7 @@ body {
       min-height: auto;
       padding: 1rem;
       color: white;
+      overflow: hidden;
 
       @include xs {
         padding-inline: 1.5rem;
@@ -564,7 +565,6 @@ body {
 
         &-container {
           position: relative;
-          overflow: hidden;
           margin-inline: auto;
           padding: 0px;
 
