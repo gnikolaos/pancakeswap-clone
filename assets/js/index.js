@@ -85,6 +85,11 @@ window.onload = () => {
   const allSlides = [...document.querySelectorAll(".slides")];
   let sliderWrapper = document.querySelector(".scroller-wrapper");
   let slideInterval;
+  let posX1 = 0;
+  let posX2 = 0;
+  let posInitial;
+  let posFinal;
+  let threshold = 100;
 
   function initSlider() {
     sliderWrapper.setAttribute(
@@ -147,6 +152,7 @@ window.onload = () => {
   }
 
   // Slider - event listeners
+  // Click events
   firstBullet.addEventListener("click", clickHandler);
   middleBullet.addEventListener("click", clickHandler);
   lastBullet.addEventListener("click", clickHandler);
@@ -192,6 +198,55 @@ window.onload = () => {
         changeSlide("last");
         break;
     }
+  }
+  // mouse and touch events
+  sliderWrapper.onmousedown = dragStart;
+  sliderWrapper.addEventListener("touchstart", dragStart);
+  sliderWrapper.addEventListener("touchend", dragEnd);
+  sliderWrapper.addEventListener("touchmove", dragAction);
+
+  function dragStart(e) {
+    e = e || window.event;
+    e.preventDefault();
+    let slideWrapperEl = window.getComputedStyle(sliderWrapper);
+    offsetPos = new WebKitCSSMatrix(slideWrapperEl.transform).e;
+
+    posInitial = sliderWrapper.offsetLeft;
+
+    if (e.type === "touchstart") {
+      posX1 = e.touches[0].clientX;
+    } else {
+      posX1 = e.clientX;
+      document.onmouseup = dragEnd;
+      document.onmousedown = dragAction;
+    }
+  }
+
+  function dragAction(e) {
+    e = e || window.event;
+    if (e.type === "touchmove") {
+      posX2 = posX1 - e.touches[0].clientX;
+      posX2 = e.touches[0].clientX;
+    } else {
+      posX2 = posX1 - e.clientX;
+      posX1 = e.clientX;
+    }
+    sliderWrapper.style.transform =
+      "translate3d(-" + offsetPos - posX2 + "px" + ", 0px, 0px)";
+  }
+
+  function dragEnd(e) {
+    posFinal = offsetPos;
+    if (posFinal - posInitial < -threshold) {
+      //call a function to change slide
+    } else if (posFinal - posInitial > threshold) {
+      //call a function to change slide
+    } else {
+      sliderWrapper.style.transform =
+        "translate3d(-" + posInitial + "px" + ", 0px, 0px)";
+    }
+    document.onmouseup = null;
+    document.onmousemove = null;
   }
 
   // init the slider
