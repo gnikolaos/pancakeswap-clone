@@ -30,11 +30,25 @@ function timer(className, condition) {
     }
   }
 }
-timer(".number1", 127);
+/* timer(".number1", 127);
 timer(".number2", 121);
 timer(".number3", 114);
 timer(".number4", 103);
-timer(".number5", 91);
+timer(".number5", 91);  */
+
+const callBackFunction = function (entries) {
+  console.log(entries[0]);
+  timer(".number1", 127);
+  timer(".number2", 121);
+  timer(".number3", 114);
+  timer(".number4", 103);
+  timer(".number5", 91);
+};
+const observer = new IntersectionObserver(callBackFunction, {
+  threshold: 0.5,
+});
+observer.observe(table1);
+setTimeout(() => observer.unobserve(table1), 5000);
 
 let section1 = document.querySelector(".section1");
 let section1_vs = document.querySelector(".section1_vs");
