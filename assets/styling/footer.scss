@@ -35,20 +35,20 @@ body {
   background-color: white;
 }
 
-.active-sun{
-  fill:#ffb237 !important;
-  height: 20px;
-  width: 20px;
-  margin: 3px;
-  padding: 3px;
-  border-radius: 50px;
-  background-color: #27262c;
+  .active-sun{
+    fill:#ffb237 !important;
+    height: 20px;
+    width: 20px;
+    margin: 3px;
+    padding: 3px;
+    border-radius: 50px;
+    background-color: #27262c;
 
-}
-.disabled-moon {
-  background-color: transparent !important;
-  fill: #27262c !important;
-}
+  }
+  .disabled-moon {
+    background-color: transparent !important;
+    fill: #27262c !important;
+  }
 // #footer {
 //   min-width: 1200px;
 // }
