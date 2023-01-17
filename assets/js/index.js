@@ -84,6 +84,10 @@ window.onload = () => {
   const SLIDERTIME = 600;
   const allSlides = [...document.querySelectorAll(".slides")];
   let sliderWrapper = document.querySelector(".scroller-wrapper");
+  // Get the active bullet
+  let activeBullet = document.querySelector(
+    ".scroller-pagination-bullet-active"
+  );
   let slideInterval;
   let posX1 = 0;
   let posX2 = 0;
@@ -164,10 +168,8 @@ window.onload = () => {
   sliderWrapper.addEventListener("touchmove", actionHandler);
 
   function actionHandler(e) {
-    // Get the active bullet
-    let activeBullet = document.querySelector(
-      ".scroller-pagination-bullet-active"
-    );
+    // Get the latest active bullet
+    activeBullet = document.querySelector(".scroller-pagination-bullet-active");
     // If the event target is auto triggered
     if (e.target.classList.contains("autoSlide")) {
       // Remove the active class from the previous active bullet
@@ -219,21 +221,28 @@ window.onload = () => {
       }
 
       function dragEnd() {
+        sliderWrapper.onmouseup = null;
+        sliderWrapper.onmousemove = null;
+
         movedBy = posX1 - posX2;
 
         // Remove the active status
         activeBullet.classList.remove("scroller-pagination-bullet-active");
+
         if (movedBy > threshold) {
           // Go to the next slide
           switch (activeBullet) {
             case firstBullet:
               activeBullet = document.querySelector("#middle");
+              activeBullet.classList.add("scroller-pagination-bullet-active");
               break;
             case middleBullet:
               activeBullet = document.querySelector("#last");
+              activeBullet.classList.add("scroller-pagination-bullet-active");
               break;
             case lastBullet:
               activeBullet = document.querySelector("#first");
+              activeBullet.classList.add("scroller-pagination-bullet-active");
               break;
           }
         } else if (movedBy < -threshold) {
@@ -241,20 +250,22 @@ window.onload = () => {
           switch (activeBullet) {
             case firstBullet:
               activeBullet = document.querySelector("#last");
+              activeBullet.classList.add("scroller-pagination-bullet-active");
               break;
             case middleBullet:
               activeBullet = document.querySelector("#first");
+              activeBullet.classList.add("scroller-pagination-bullet-active");
               break;
             case lastBullet:
               activeBullet = document.querySelector("#middle");
+              activeBullet.classList.add("scroller-pagination-bullet-active");
               break;
           }
         } else {
           // Cancel slide change
           activeBullet = posInitial;
+          activeBullet.classList.add("scroller-pagination-bullet-active");
         }
-        sliderWrapper.onmouseup = null;
-        sliderWrapper.onmousemove = null;
       }
       // Handle the event type
       if (e.type === "touchstart" || e.type === "mousedown") {
