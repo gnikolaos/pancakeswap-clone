@@ -11,6 +11,10 @@
 function changeColor() {
     let color = document.querySelector('body').classList.toggle('bgColor');
     let color2 = document.getElementById('on-sm-screen').classList.toggle('bgColor');
+    document.getElementById('warningNo').classList.toggle('active-sun');
+    document.getElementById('likeMoon').classList.toggle('disabled-moon');
+
+    console.log(document.getElementById("warningNo").classList);
 }
 
 
