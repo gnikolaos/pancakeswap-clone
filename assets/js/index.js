@@ -74,7 +74,24 @@ window.onload = () => {
     let sliderWidth = document.querySelector(".scroller-wrapper").offsetWidth;
     return sliderWidth;
   }
-  window.onresize = updateSliderWidth;
+
+  function resizeSlider() {
+    let width = updateSliderWidth();
+    switch ("middle") {
+      case "first":
+        sliderWrapper.style.transform = "translate3d(0px, 0px, 0px)";
+        break;
+      case "middle":
+        sliderWrapper.style.transform =
+          `translate3d(-${width}px, 0px, 0px)`;
+        break;
+      case "last":
+        sliderWrapper.style.transform =
+          `translate3d(-${width * 2 }px, 0px, 0px)`;
+        break;
+    }
+  }
+  window.onresize = resizeSlider;
 
   // Pagination bullets
   const firstBullet = document.querySelector("#first");
