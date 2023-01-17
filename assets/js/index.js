@@ -76,19 +76,19 @@ window.onload = () => {
   }
   window.onresize = updateSliderWidth;
 
-  // Slider's variables
-  const SLIDERTIME = 600;
   // Pagination bullets
   const firstBullet = document.querySelector("#first");
   const middleBullet = document.querySelector("#middle");
   const lastBullet = document.querySelector("#last");
+  // Slider's variables
+  const SLIDERTIME = 600;
   const allSlides = [...document.querySelectorAll(".slides")];
   let sliderWrapper = document.querySelector(".scroller-wrapper");
   let slideInterval;
   let posX1 = 0;
   let posX2 = 0;
+  let movedBy = 0;
   let posInitial;
-  let posFinal;
   let threshold = 100;
 
   function initSlider() {
@@ -153,11 +153,17 @@ window.onload = () => {
 
   // Slider - event listeners
   // Click events
-  firstBullet.addEventListener("click", clickHandler);
-  middleBullet.addEventListener("click", clickHandler);
-  lastBullet.addEventListener("click", clickHandler);
+  firstBullet.addEventListener("click", actionHandler);
+  middleBullet.addEventListener("click", actionHandler);
+  lastBullet.addEventListener("click", actionHandler);
 
-  function clickHandler(e) {
+  // Mouse and Touch events
+  sliderWrapper.onmousedown = actionHandler;
+  sliderWrapper.addEventListener("touchstart", actionHandler);
+  sliderWrapper.addEventListener("touchend", actionHandler);
+  sliderWrapper.addEventListener("touchmove", actionHandler);
+
+  function actionHandler(e) {
     // Get the active bullet
     let activeBullet = document.querySelector(
       ".scroller-pagination-bullet-active"
@@ -173,7 +179,7 @@ window.onload = () => {
       activeBullet.classList.remove("autoSlide");
       // Add the active class to the new active bullet
       activeBullet.classList.add("scroller-pagination-bullet-active");
-    } else {
+    } else if (e.target instanceof HTMLSpanElement) {
       // If the event target is an actual bullet click
       if (activeBullet) {
         activeBullet.classList.remove("scroller-pagination-bullet-active");
@@ -184,9 +190,65 @@ window.onload = () => {
       clearInterval(slideInterval);
       // Start the auto slide again
       startAutoSlide();
+    } else {
+      // Handle the touch events and mouse drag
+      e = e || window.event;
+      e.preventDefault();
+
+      switch (e.type) {
+        case "touchstart":
+          // Get the active slide
+          posInitial = activeBullet;
+          // Get the touch event's initial position
+          posX1 = e.touches[0].clientX;
+          break;
+        case "touchmove":
+          posX2 = e.touches[0].clientX;
+          break;
+        case "touchend":
+          movedBy = posX1 - posX2;
+          // Remove the active status
+          activeBullet.classList.remove("scroller-pagination-bullet-active");
+          if (movedBy > threshold) {
+            switch (activeBullet) {
+              case firstBullet:
+                activeBullet = document.querySelector("#middle");
+                break;
+              case middleBullet:
+                activeBullet = document.querySelector("#last");
+                break;
+              case lastBullet:
+                activeBullet = document.querySelector("#first");
+                break;
+            }
+          } else if (movedBy < -threshold) {
+            switch (activeBullet) {
+              case firstBullet:
+                activeBullet = document.querySelector("#last");
+                break;
+              case middleBullet:
+                activeBullet = document.querySelector("#first");
+                break;
+              case lastBullet:
+                activeBullet = document.querySelector("#middle");
+                break;
+            }
+          } else {
+            activeBullet = posInitial;
+          }
+          break;
+      }
+
+      // Add active status to the newly selected slide
+      activeBullet.classList.add("scroller-pagination-bullet-active");
+      // Clear the interval when a bullet is clicked
+      clearInterval(slideInterval);
+      // Start the auto slide again
+      startAutoSlide();
     }
 
     // Update the slide bases on the active bullet
+    console.log("change slide to: " + activeBullet.id);
     switch (activeBullet) {
       case firstBullet:
         changeSlide("first");
@@ -199,59 +261,9 @@ window.onload = () => {
         break;
     }
   }
-  // mouse and touch events
-  sliderWrapper.onmousedown = dragStart;
-  sliderWrapper.addEventListener("touchstart", dragStart);
-  sliderWrapper.addEventListener("touchend", dragEnd);
-  sliderWrapper.addEventListener("touchmove", dragAction);
-
-  function dragStart(e) {
-    e = e || window.event;
-    e.preventDefault();
-    let slideWrapperEl = window.getComputedStyle(sliderWrapper);
-    offsetPos = new WebKitCSSMatrix(slideWrapperEl.transform).e;
-
-    posInitial = sliderWrapper.offsetLeft;
-
-    if (e.type === "touchstart") {
-      posX1 = e.touches[0].clientX;
-    } else {
-      posX1 = e.clientX;
-      document.onmouseup = dragEnd;
-      document.onmousedown = dragAction;
-    }
-  }
-
-  function dragAction(e) {
-    e = e || window.event;
-    if (e.type === "touchmove") {
-      posX2 = posX1 - e.touches[0].clientX;
-      posX2 = e.touches[0].clientX;
-    } else {
-      posX2 = posX1 - e.clientX;
-      posX1 = e.clientX;
-    }
-    sliderWrapper.style.transform =
-      "translate3d(-" + offsetPos - posX2 + "px" + ", 0px, 0px)";
-  }
-
-  function dragEnd(e) {
-    posFinal = offsetPos;
-    if (posFinal - posInitial < -threshold) {
-      //call a function to change slide
-    } else if (posFinal - posInitial > threshold) {
-      //call a function to change slide
-    } else {
-      sliderWrapper.style.transform =
-        "translate3d(-" + posInitial + "px" + ", 0px, 0px)";
-    }
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
 
   // init the slider
   initSlider();
-
   // Start automatic slides
   startAutoSlide();
 
@@ -270,7 +282,7 @@ window.onload = () => {
         ".scroller-pagination-bullet"
       )[activeIndex];
       newActiveBullet.classList.add("autoSlide");
-      clickHandler({ target: newActiveBullet });
+      actionHandler({ target: newActiveBullet });
     }, 4000);
   }
 };
