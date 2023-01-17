@@ -192,51 +192,77 @@ window.onload = () => {
       startAutoSlide();
     } else {
       // Handle the touch events and mouse drag
-      e = e || window.event;
-      e.preventDefault();
+      // Get the active slide
+      posInitial = activeBullet;
 
-      switch (e.type) {
-        case "touchstart":
-          // Get the active slide
-          posInitial = activeBullet;
-          // Get the touch event's initial position
+      // Event type functions
+      function dragStart(e) {
+        e = e || window.event;
+        e.preventDefault();
+        if (e.type === "touchstart") {
           posX1 = e.touches[0].clientX;
-          break;
-        case "touchmove":
+        } else {
+          posX1 = e.clientX;
+          sliderWrapper.onmouseup = dragEnd;
+          sliderWrapper.onmousemove = dragAction;
+        }
+      }
+
+      function dragAction(e) {
+        e = e || window.event;
+        if (e.type === "touchmove") {
           posX2 = e.touches[0].clientX;
-          break;
-        case "touchend":
-          movedBy = posX1 - posX2;
-          // Remove the active status
-          activeBullet.classList.remove("scroller-pagination-bullet-active");
-          if (movedBy > threshold) {
-            switch (activeBullet) {
-              case firstBullet:
-                activeBullet = document.querySelector("#middle");
-                break;
-              case middleBullet:
-                activeBullet = document.querySelector("#last");
-                break;
-              case lastBullet:
-                activeBullet = document.querySelector("#first");
-                break;
-            }
-          } else if (movedBy < -threshold) {
-            switch (activeBullet) {
-              case firstBullet:
-                activeBullet = document.querySelector("#last");
-                break;
-              case middleBullet:
-                activeBullet = document.querySelector("#first");
-                break;
-              case lastBullet:
-                activeBullet = document.querySelector("#middle");
-                break;
-            }
-          } else {
-            activeBullet = posInitial;
+        } else {
+          posX2 = e.clientX;
+          console.log(posX2);
+        }
+      }
+
+      function dragEnd() {
+        movedBy = posX1 - posX2;
+
+        // Remove the active status
+        activeBullet.classList.remove("scroller-pagination-bullet-active");
+        if (movedBy > threshold) {
+          // Go to the next slide
+          switch (activeBullet) {
+            case firstBullet:
+              activeBullet = document.querySelector("#middle");
+              break;
+            case middleBullet:
+              activeBullet = document.querySelector("#last");
+              break;
+            case lastBullet:
+              activeBullet = document.querySelector("#first");
+              break;
           }
-          break;
+        } else if (movedBy < -threshold) {
+          // Go to the previous slide
+          switch (activeBullet) {
+            case firstBullet:
+              activeBullet = document.querySelector("#last");
+              break;
+            case middleBullet:
+              activeBullet = document.querySelector("#first");
+              break;
+            case lastBullet:
+              activeBullet = document.querySelector("#middle");
+              break;
+          }
+        } else {
+          // Cancel slide change
+          activeBullet = posInitial;
+        }
+        sliderWrapper.onmouseup = null;
+        sliderWrapper.onmousemove = null;
+      }
+      // Handle the event type
+      if (e.type === "touchstart" || e.type === "mousedown") {
+        dragStart(e);
+      } else if (e.type === "touchmove") {
+        dragAction(e);
+      } else if (e.type === "touchend") {
+        dragEnd();
       }
 
       // Add active status to the newly selected slide
@@ -248,7 +274,6 @@ window.onload = () => {
     }
 
     // Update the slide bases on the active bullet
-    console.log("change slide to: " + activeBullet.id);
     switch (activeBullet) {
       case firstBullet:
         changeSlide("first");
