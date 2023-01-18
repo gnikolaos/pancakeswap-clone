@@ -1,6 +1,5 @@
 @media screen and (max-width: 852px) {
-  .paragraphOne,
-  .paragraphTwo {
+  .paragraphOne, .paragraphTwo {
     align-self: center;
   }
 }
@@ -10,8 +9,7 @@
   margin-top: 5rem;
 }
 
-.paragraphOne,
-.paragraphTwo {
+.paragraphOne, .paragraphTwo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,8 +21,7 @@
   margin-top: 10rem;
 }
 
-.containerOfCoinImages,
-.containerOfSecondImages {
+.containerOfCoinImages, .containerOfSecondImages {
   max-height: 512px;
   max-width: 512px;
   position: relative;
@@ -41,7 +38,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  -o-object-fit: contain;
   object-fit: contain;
   vertical-align: baseline;
 }
@@ -134,21 +130,8 @@ a {
   margin-bottom: 0;
 }
 
-.containerOfCoinImages :nth-child(1),
-.containerOfSecondImages :nth-child(1) {
-  -webkit-animation: 3s ease-in-out 1s infinite normal none running image;
+.containerOfCoinImages :nth-child(1), .containerOfSecondImages :nth-child(1) {
   animation: 3s ease-in-out 1s infinite normal none running image;
-}
-@-webkit-keyframes image {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(3px, 15px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
 }
 @keyframes image {
   0% {
@@ -162,9 +145,7 @@ a {
   }
 }
 
-.containerOfCoinImages :nth-child(2),
-.containerOfSecondImages :nth-child(2) {
-  -webkit-animation: 3s ease-in-out 1s infinite normal none running image;
+.containerOfCoinImages :nth-child(2), .containerOfSecondImages :nth-child(2) {
   animation: 3s ease-in-out 1s infinite normal none running image;
 }
 @keyframes image {
@@ -179,9 +160,7 @@ a {
   }
 }
 
-.containerOfCoinImages :nth-child(3),
-.containerOfSecondImages :nth-child(3) {
-  -webkit-animation: 3s ease-in-out 1s infinite normal none running image;
+.containerOfCoinImages :nth-child(3), .containerOfSecondImages :nth-child(3) {
   animation: 3s ease-in-out 1s infinite normal none running image;
 }
 @keyframes image {
@@ -197,7 +176,6 @@ a {
 }
 
 .containerOfSecondImages :nth-child(1) {
-  -webkit-animation: 3s ease-in-out 1s infinite normal none running image;
   animation: 3s ease-in-out 1s infinite normal none running image;
 }
 @keyframes image {
@@ -213,7 +191,6 @@ a {
 }
 
 .containerOfSecondImages :nth-child(2) {
-  -webkit-animation: 3s ease-in-out 1s infinite normal none running image;
   animation: 3s ease-in-out 1s infinite normal none running image;
 }
 @keyframes image {
@@ -229,7 +206,6 @@ a {
 }
 
 .containerOfSecondImages :nth-child(3) {
-  -webkit-animation: 3s ease-in-out 1s infinite normal none running image;
   animation: 3s ease-in-out 1s infinite normal none running image;
 }
 @keyframes image {
@@ -251,24 +227,21 @@ a {
   align-items: center;
 }
 
-.table-heading,
-.table-heading2 {
+.table-heading, .table-heading2 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin-top: 10rem;
 }
 
-.table-content,
-.table-content2 {
+.table-content, .table-content2 {
   display: grid;
   grid-template-columns: repeat(5, auto);
   gap: 1rem;
   margin-bottom: 10rem;
 }
 
-.content1,
-.content2 {
+.content1, .content2 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -299,8 +272,7 @@ a {
   display: none;
 }
 
-.arrow-button,
-.arrow-button2 {
+.arrow-button, .arrow-button2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -309,8 +281,7 @@ a {
   border: none;
 }
 
-.arrow,
-.arrow2 {
+.arrow, .arrow2 {
   align-self: center;
   fill: #b8add2;
 }
@@ -332,8 +303,7 @@ a {
     flex-direction: column-reverse;
     align-items: center;
   }
-  .paragraphOne,
-  .paragraphTwo {
+  .paragraphOne, .paragraphTwo {
     align-self: center;
     margin-right: 64px;
     margin-top: 5rem;
@@ -347,8 +317,7 @@ a {
     flex-direction: row-reverse;
     align-items: center;
   }
-  .containerOfCoinImages,
-  .containerOfSecondImages {
+  .containerOfCoinImages, .containerOfSecondImages {
     height: 192px;
     width: 192px;
     margin-bottom: 24px;
@@ -363,4 +332,33 @@ a {
   .containerOfSecondImages {
     margin-top: 35rem;
   }
-} /*# sourceMappingURL=style_main.css.map */
+}
+@keyframes moveDownFadeOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}
+@keyframes moveUpFadeIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animated-table-fade-out {
+  animation: moveDownFadeOut 1s ease-in-out;
+}
+
+.animated-table-fade-in {
+  animation: moveUpFadeIn 1s ease-in-out;
+}
+
+/*# sourceMappingURL=style_main.css.map */

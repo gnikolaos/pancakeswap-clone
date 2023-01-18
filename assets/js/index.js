@@ -89,8 +89,24 @@ function change(element1, element2) {
   }, interval);
 }
 
-change(section1, section1_vs);
-change(section2, section2_vs);
-change(section3, section3_vs);
-change(section4, section4_vs);
-change(section5, section5_vs);
+// change(section1, section1_vs);
+// change(section2, section2_vs);
+// change(section3, section3_vs);
+// change(section4, section4_vs);
+// change(section5, section5_vs);
+
+setInterval(function(){
+  setTimeout(() => {
+    changeTable();
+  }, 1000);
+  if (document.getElementsByClassName('first-table')[0].style.display !== 'none'){
+  document.getElementsByClassName('first-table')[0].classList.add('animated-table-fade-out');
+  document.getElementsByClassName('second-table')[0].classList.remove('animated-table-fade-out');
+
+
+  }
+  else {
+    document.getElementsByClassName('first-table')[0].classList.remove('animated-table-fade-out');
+    document.getElementsByClassName('second-table')[0].classList.add('animated-table-fade-out');
+  }
+}, 5000);

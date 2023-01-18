@@ -270,3 +270,33 @@ a {
     margin-top: 35rem;
   }
 }
+
+
+@keyframes moveDownFadeOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes moveUpFadeIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animated-table-fade-out {
+  animation: moveDownFadeOut 1s ease-in-out;
+}
+.animated-table-fade-in {
+  animation: moveUpFadeIn 1s ease-in-out;
+}
