@@ -90,6 +90,10 @@ $colors-dark-gradientInverseBubblegum: linear-gradient(
   #3d2a54,
   #313d5c
 );
+$colors-dark-gradientSliderBg: linear-gradient(
+  rgb(0, 191, 165) 0%,
+  rgb(0, 90, 90) 100%
+);
 $colors-dark-gradientCardHeader: linear-gradient(166.77deg, #3b4155, #3a3045);
 $colors-dark-gradientBlue: linear-gradient(180deg, #00707f, #19778c);
 $colors-dark-gradientViolet: linear-gradient(180deg, #6c4999, #6d4db2);
@@ -110,6 +114,11 @@ $colors-dark-gradientHero: radial-gradient(
   103.12%50%at 50%50%,
   #21193a 0%,
   #191326 100%
+);
+$colors-dark-home2Background: linear-gradient(
+  180deg,
+  #09070c 22%,
+  #201335 100%
 );
 $fonts-normal: "Kanit", sans-serif;
 $fonts-mono: SFMono, ui-monospace, monospace;

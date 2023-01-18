@@ -41,9 +41,11 @@ Media - Queries.
 
 > Break - Points are:
 >
+> - XSmall: window width >=370px
 > - Small: window width >=576px
 > - Medium: window width >=852px
 > - Large: window width >=968px
+> - XLarge: window width >=1080px
 
 <br>
 
