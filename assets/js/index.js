@@ -85,6 +85,9 @@ window.onload = () => {
   const allSlides = [...document.querySelectorAll(".slides")];
   let sliderWrapper = document.querySelector(".scroller-wrapper");
   let slideInterval;
+  let activeBullet = document.querySelector(
+    ".scroller-pagination-bullet-active"
+  );
   let posX1 = 0;
   let posX2 = 0;
   let movedBy = 0;
@@ -165,9 +168,7 @@ window.onload = () => {
 
   function actionHandler(e) {
     // Get the active bullet
-    let activeBullet = document.querySelector(
-      ".scroller-pagination-bullet-active"
-    );
+    activeBullet = document.querySelector(".scroller-pagination-bullet-active");
     // If the event target is auto triggered
     if (e.target.classList.contains("autoSlide")) {
       // Remove the active class from the previous active bullet
@@ -194,7 +195,6 @@ window.onload = () => {
       // Handle the touch events and mouse drag
       // Get the active slide
       posInitial = activeBullet;
-
       // Event type functions
       function dragStart(e) {
         e = e || window.event;
@@ -217,53 +217,55 @@ window.onload = () => {
         }
       }
 
-      function dragEnd() {
+      function dragEnd(e) {
         // Stop the mouse actions
         sliderWrapper.onmouseup = null;
         sliderWrapper.onmousemove = null;
         // Calcute the events position's difference
         movedBy = posX1 - posX2;
+        // Remove the active status
+        activeBullet.classList.remove("scroller-pagination-bullet-active");
         // Go to the next slide
         if (movedBy > threshold) {
-          // Remove the active status
-          activeBullet.classList.remove("scroller-pagination-bullet-active");
           switch (activeBullet) {
             case firstBullet:
               activeBullet = document.querySelector("#middle");
-              activeBullet.classList.add("scroller-pagination-bullet-active");
               break;
             case middleBullet:
               activeBullet = document.querySelector("#last");
-              activeBullet.classList.add("scroller-pagination-bullet-active");
               break;
             case lastBullet:
               activeBullet = document.querySelector("#first");
-              activeBullet.classList.add("scroller-pagination-bullet-active");
               break;
           }
+          // Set the new active bullet
+          activeBullet.classList.add("scroller-pagination-bullet-active");
         } else if (movedBy < -threshold) {
-          // Remove the active status
-          activeBullet.classList.remove("scroller-pagination-bullet-active");
           // Go to the previous slide
           switch (activeBullet) {
             case firstBullet:
               activeBullet = document.querySelector("#last");
-              activeBullet.classList.add("scroller-pagination-bullet-active");
               break;
             case middleBullet:
               activeBullet = document.querySelector("#first");
-              activeBullet.classList.add("scroller-pagination-bullet-active");
               break;
             case lastBullet:
               activeBullet = document.querySelector("#middle");
-              activeBullet.classList.add("scroller-pagination-bullet-active");
               break;
           }
+          // Set the new active bullet
+          activeBullet.classList.add("scroller-pagination-bullet-active");
         } else {
           // Cancel slide change
           activeBullet = posInitial;
+          activeBullet.classList.add("scroller-pagination-bullet-active");
         }
-        console.log("seting: " + activeBullet.id);
+        // Set the the new active bullet as the target
+        actionHandler({ target: activeBullet });
+        // Clear the interval when the active bullet has changed
+        clearInterval(slideInterval);
+        // Start the auto slide again
+        startAutoSlide();
       }
 
       // Handle the event type and call the correct function
@@ -272,13 +274,8 @@ window.onload = () => {
       } else if (e.type === "touchmove") {
         dragAction(e);
       } else if (e.type === "touchend") {
-        dragEnd();
+        dragEnd(e);
       }
-      console.log("bullet is: " + activeBullet.id);
-      // Clear the interval when a bullet is clicked
-      clearInterval(slideInterval);
-      // Start the auto slide again
-      startAutoSlide();
     }
 
     // Update the slide bases on the active bullet
@@ -302,9 +299,7 @@ window.onload = () => {
 
   function startAutoSlide() {
     // Get the active bullet
-    let activeBullet = document.querySelector(
-      ".scroller-pagination-bullet-active"
-    );
+    activeBullet = document.querySelector(".scroller-pagination-bullet-active");
     // Get the index of the active bullet
     let activeIndex = Array.from(
       document.querySelectorAll(".scroller-pagination-bullet")
