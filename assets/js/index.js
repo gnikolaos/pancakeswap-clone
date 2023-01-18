@@ -68,13 +68,12 @@ window.onload = () => {
 
   // SLIDER
 
-  // Event listener to detect screen's window resize
+  // Get the latest slider's width
   let sliderWidth = document.querySelector(".scroller-wrapper").offsetWidth;
   function updateSliderWidth() {
-    let sliderWidth = document.querySelector(".scroller-wrapper").offsetWidth;
+    sliderWidth = document.querySelector(".scroller-wrapper").offsetWidth;
     return sliderWidth;
   }
-  window.onresize = updateSliderWidth;
 
   // Pagination bullets
   const firstBullet = document.querySelector("#first");
@@ -88,11 +87,15 @@ window.onload = () => {
   let activeBullet = document.querySelector(
     ".scroller-pagination-bullet-active"
   );
+  let activeSlide = "first";
   let posX1 = 0;
   let posX2 = 0;
   let movedBy = 0;
   let posInitial;
   let threshold = 100;
+
+  // Event listener to detect window resize and handle it
+  window.onresize = () => moveSlide(activeSlide);
 
   function initSlider() {
     sliderWrapper.setAttribute(
@@ -109,15 +112,15 @@ window.onload = () => {
     width = updateSliderWidth();
     switch (slide) {
       case "first":
-        sliderWrapper.style.transform = "translate3d(0px, 0px, 0px)";
+        sliderWrapper.style.transform = `translate3d(0px, 0px, 0px)`;
         break;
       case "middle":
-        sliderWrapper.style.transform =
-          "translate3d(-" + width + "px" + ", 0px, 0px)";
+        sliderWrapper.style.transform = `translate3d(-${width}px, 0px, 0px)`;
         break;
       case "last":
-        sliderWrapper.style.transform =
-          "translate3d(-" + width * 2 + "px" + ", 0px, 0px)";
+        sliderWrapper.style.transform = `translate3d(-${
+          width * 2
+        }px, 0px, 0px)`;
         break;
     }
   }
@@ -217,7 +220,7 @@ window.onload = () => {
         }
       }
 
-      function dragEnd(e) {
+      function dragEnd() {
         // Stop the mouse actions
         sliderWrapper.onmouseup = null;
         sliderWrapper.onmousemove = null;
@@ -274,7 +277,7 @@ window.onload = () => {
       } else if (e.type === "touchmove") {
         dragAction(e);
       } else if (e.type === "touchend") {
-        dragEnd(e);
+        dragEnd();
       }
     }
 
@@ -282,12 +285,15 @@ window.onload = () => {
     switch (activeBullet) {
       case firstBullet:
         changeSlide("first");
+        activeSlide = "first";
         break;
       case middleBullet:
         changeSlide("middle");
+        activeSlide = "middle";
         break;
       case lastBullet:
         changeSlide("last");
+        activeSlide = "last";
         break;
     }
   }
