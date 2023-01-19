@@ -362,7 +362,7 @@ window.onload = () => {
       )[activeIndex];
       newActiveBullet.classList.add("autoSlide");
       actionHandler({ target: newActiveBullet });
-    }, 5000);
+    }, 555000);
   }
 };
 

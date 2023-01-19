@@ -520,7 +520,7 @@ body {
       width: 100%;
       max-width: 75rem;
       min-height: auto;
-      padding: 1rem;
+      padding: 1rem 1.5rem;
       color: white;
       overflow: hidden;
 
@@ -567,6 +567,7 @@ body {
           position: relative;
           margin-inline: auto;
           padding: 0px;
+          height: 100%;
 
           .scroller-wrapper {
             position: relative;
@@ -591,17 +592,17 @@ body {
               &-container {
                 border-radius: 2rem;
                 width: 100%;
-                max-height: max-content;
+                max-height: 100%;
                 overflow: visible;
               }
 
               &-wrapper {
                 display: flex;
                 position: relative;
-                padding: 1.5rem;
+                padding: 1.476rem;
                 flex-flow: row;
                 justify-content: space-between;
-                max-height: 12rem;
+                max-height: 192px;
               }
             }
 
@@ -791,12 +792,12 @@ body {
           #slide-1 {
             .scroller-slide-image-container {
               right: 0rem;
-              bottom: 0.2rem;
+              bottom: -0.7rem;
               max-width: 63.125rem;
               min-height: auto;
 
               @include xs {
-                bottom: 0rem;
+                bottom: -1.3rem;
               }
 
               @include sm {
@@ -822,15 +823,15 @@ body {
 
             .subtext {
               text-transform: capitalize;
-              font-size: 1.313rem;
+              font-size: 1.438rem;
               width: fit-content;
               color: rgb(255, 255, 255);
               text-shadow: rgb(0 0 0 / 25%) 0rem 0.125rem 0.125rem;
               background: none;
-              margin-block: 1.313rem 1rem;
+              margin-block: 0.6rem 0rem;
 
               @include sm {
-                margin-top: 0.625rem;
+                margin-block: 0.625rem 1.313rem;
                 font-size: 2.188rem;
               }
 
@@ -942,13 +943,13 @@ body {
             z-index: 10;
 
             @include sm {
-              bottom: -0.188rem;
+              bottom: 2.188rem;
             }
             @include md {
-              bottom: 0.3rem;
+              bottom: 2.813rem;
             }
             @include lg {
-              bottom: -0.3rem;
+              bottom: 2.188rem;
             }
 
             &-bullet {

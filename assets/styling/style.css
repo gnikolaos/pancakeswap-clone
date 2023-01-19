@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
   border: 0;
-  font-size: 100%;
+  font-size: 16px;
   vertical-align: baseline;
 }
 
@@ -558,7 +558,7 @@ body {
   width: 100%;
   max-width: 75rem;
   min-height: auto;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   color: white;
   overflow: hidden;
 }
@@ -613,6 +613,7 @@ body {
   position: relative;
   margin-inline: auto;
   padding: 0px;
+  height: 100%;
 }
 .content-wrapper
   .main-content
@@ -657,7 +658,7 @@ body {
   .scroller-slide-container {
   border-radius: 2rem;
   width: 100%;
-  max-height: max-content;
+  max-height: 100%;
   overflow: visible;
 }
 .content-wrapper
@@ -668,10 +669,10 @@ body {
   .scroller-slide-wrapper {
   display: flex;
   position: relative;
-  padding: 1.5rem;
+  padding: 1.476rem;
   flex-flow: row;
   justify-content: space-between;
-  max-height: 12rem;
+  max-height: 192px;
 }
 .content-wrapper
   .main-content
@@ -975,7 +976,7 @@ body {
   #slide-1
   .scroller-slide-image-container {
   right: 0rem;
-  bottom: 0.2rem;
+  bottom: -0.7rem;
   max-width: 63.125rem;
   min-height: auto;
 }
@@ -986,7 +987,7 @@ body {
     .home-1-scroller-container
     #slide-1
     .scroller-slide-image-container {
-    bottom: 0rem;
+    bottom: -1.3rem;
   }
 }
 @media (min-width: 36rem) {
@@ -1044,12 +1045,12 @@ body {
   #slide-1
   .subtext {
   text-transform: capitalize;
-  font-size: 1.313rem;
+  font-size: 1.438rem;
   width: fit-content;
   color: rgb(255, 255, 255);
   text-shadow: rgba(0, 0, 0, 0.25) 0rem 0.125rem 0.125rem;
   background: none;
-  margin-block: 1.313rem 1rem;
+  margin-block: 0.6rem 0rem;
 }
 @media (min-width: 36rem) {
   .content-wrapper
@@ -1058,7 +1059,7 @@ body {
     .home-1-scroller-container
     #slide-1
     .subtext {
-    margin-top: 0.625rem;
+    margin-block: 0.625rem 1.313rem;
     font-size: 2.188rem;
   }
 }
@@ -1254,7 +1255,7 @@ body {
     .home-1-wrapper
     .home-1-scroller-container
     .scroller-pagination {
-    bottom: -0.188rem;
+    bottom: 2.188rem;
   }
 }
 @media (min-width: 53.25rem) {
@@ -1263,7 +1264,7 @@ body {
     .home-1-wrapper
     .home-1-scroller-container
     .scroller-pagination {
-    bottom: 0.3rem;
+    bottom: 2.813rem;
   }
 }
 @media (min-width: 60.5rem) {
@@ -1272,7 +1273,7 @@ body {
     .home-1-wrapper
     .home-1-scroller-container
     .scroller-pagination {
-    bottom: -0.3rem;
+    bottom: 2.188rem;
   }
 }
 .content-wrapper
