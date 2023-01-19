@@ -1167,15 +1167,19 @@ body {
   #slide-3
   .subtext {
   text-transform: none;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
   color: #f4eeff;
+  text-shadow: none;
   background: none;
   font-size: 2rem;
   margin: 0rem;
-  background: -webkit-linear-gradient(top, rgb(255, 216, 0), rgb(232, 178, 98));
+  background: linear-gradient(180deg, #ffd800, #fdab32);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.1);
+  -webkit-text-stroke: 0.031rem rgba(0, 0, 0, 0.5);
 }
 @media (min-width: 60.5rem) {
   .content-wrapper
@@ -1196,6 +1200,7 @@ body {
   span.clock-timer-subtext {
   font-size: 1.25rem;
   margin-inline: 0.25rem 0.75rem;
+  margin-bottom: 0.22rem;
 }
 .content-wrapper
   .main-content
