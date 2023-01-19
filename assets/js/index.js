@@ -66,6 +66,51 @@ window.onload = () => {
     prevScrollPos = currentScrollPos;
   };
 
+  // Slide-3 countdown timer
+  // Get the current day and timing
+  const countDownToDate = new Date();
+  // Get the hour
+  const hours = countDownToDate.getHours();
+  // Generate a random number between 1 and 5
+  const randNum = Math.floor(Math.random() * 5) + 1;
+  // Finally set a random hour to the countdown date
+  countDownToDate.setHours(hours + randNum);
+  // Get the remaining hours - mins - secs to countdown date
+  function getRemainingTime(countDownToDate) {
+    const remTime = Date.parse(countDownToDate) - Date.parse(new Date());
+    const remSecs = Math.floor((remTime / 1000) % 60);
+    const remMins = Math.floor((remTime / 1000 / 60) % 60);
+    const remHours = Math.floor((remTime / (1000 * 60 * 60)) % 24);
+    return {
+      remTime,
+      remSecs,
+      remMins,
+      remHours,
+    };
+  }
+  // Output the data inside the -id-
+  function initClockTimer(id, countDownToDate) {
+    const timer = document.getElementById(id);
+    const hourSpan = document.querySelector(".clock-timer-hours");
+    const minsSpan = document.querySelector(".clock-timer-mins");
+    const secsSpan = document.querySelector(".clock-timer-secs");
+
+    function updateClockTimer() {
+      const r = getRemainingTime(countDownToDate);
+      hourSpan.innerHTML = r.remHours;
+      minsSpan.innerHTML = ("0" + r.remMins).slice(-2); // Add leading zero to the mins value
+      secsSpan.innerHTML = ("0" + r.remSecs).slice(-2); // Add leading zero to the seconds value
+      if (r.remTime <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+
+    updateClockTimer(); // Run function once at first to avoid delay
+    const timeinterval = setInterval(updateClockTimer, 1000);
+  }
+
+  initClockTimer("clock-timer", countDownToDate);
+
   // SLIDER
 
   // Get the latest slider's width
@@ -317,7 +362,7 @@ window.onload = () => {
       )[activeIndex];
       newActiveBullet.classList.add("autoSlide");
       actionHandler({ target: newActiveBullet });
-    }, 4000);
+    }, 5000);
   }
 };
 

@@ -1139,11 +1139,16 @@ body {
   .home-1-wrapper
   .home-1-scroller-container
   #slide-3
-  .subtext {
-  text-transform: none;
-  color: rgb(194, 194, 70);
-  background: none;
-  margin-block: 0rem 0.5rem;
+  .timer-clock {
+  display: inline-flex;
+  white-space: nowrap;
+  transform: scale(0.88);
+  transform-origin: left top;
+  background: url(../images/decorations/countdownBg.png) 0% 0%/100% 100%
+    no-repeat;
+  background-repeat: no-repeat;
+  padding: 0rem 0.625rem 0.438rem 0.625rem;
+  margin-bottom: 0.5rem;
 }
 @media (min-width: 36rem) {
   .content-wrapper
@@ -1151,9 +1156,46 @@ body {
     .home-1-wrapper
     .home-1-scroller-container
     #slide-3
-    .subtext {
+    .timer-clock {
     margin-bottom: 1rem;
   }
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  #slide-3
+  .subtext {
+  text-transform: none;
+  color: #f4eeff;
+  background: none;
+  font-size: 2rem;
+  margin: 0rem;
+  background: -webkit-linear-gradient(top, rgb(255, 216, 0), rgb(232, 178, 98));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 60.5rem) {
+  .content-wrapper
+    .main-content
+    .home-1-wrapper
+    .home-1-scroller-container
+    #slide-3
+    .subtext {
+    font-size: 2.5rem;
+  }
+}
+.content-wrapper
+  .main-content
+  .home-1-wrapper
+  .home-1-scroller-container
+  #slide-3
+  .subtext
+  span.clock-timer-subtext {
+  font-size: 1.25rem;
+  margin-inline: 0.25rem 0.75rem;
 }
 .content-wrapper
   .main-content

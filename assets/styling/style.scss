@@ -871,14 +871,45 @@ body {
               }
             }
 
-            .subtext {
-              text-transform: none;
-              color: rgb(194, 194, 70);
-              background: none;
-              margin-block: 0rem 0.5rem;
+            .timer-clock {
+              display: inline-flex;
+              white-space: nowrap;
+              transform: scale(0.88);
+              transform-origin: left top;
+              background: url(../images/decorations/countdownBg.png) 0% 0% /
+                100% 100% no-repeat;
+              background-repeat: no-repeat;
+              padding: 0rem 0.625rem 0.438rem 0.625rem;
+              margin-bottom: 0.5rem;
 
               @include sm {
                 margin-bottom: 1rem;
+              }
+            }
+
+            .subtext {
+              text-transform: none;
+              color: $colors-dark-text;
+              background: none;
+              font-size: 2rem;
+              margin: 0rem;
+              background: -webkit-linear-gradient(
+                top,
+                rgb(255, 216, 0),
+                rgb(232, 178, 98)
+              );
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.1);
+
+              @include lg {
+                font-size: 2.5rem;
+              }
+
+              span.clock-timer-subtext {
+                font-size: 1.25rem;
+                margin-inline: 0.25rem 0.75rem;
               }
             }
 
