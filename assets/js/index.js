@@ -1,11 +1,10 @@
+//to add animation for tables first decleartion of table variable
 let table1 = document.querySelector(".first-table");
 let table2 = document.querySelector(".second-table");
+//to make both table same length
 let width = table2.clientWidth;
-console.log(width);
-//table.style.width=width is not working
-//table1.style.width = "853px";
-console.log(table1.clientWidth);
 
+//when clicking button table change
 function changeTable() {
   if (table1.style.display === "none") {
     table1.style.display = "block";
@@ -17,6 +16,8 @@ function changeTable() {
 }
 
 //timer function
+//when first table is shown in the page counter starts
+
 function timer(className, condition) {
   let counts = setInterval(updated);
   let upto = 0;
@@ -29,26 +30,38 @@ function timer(className, condition) {
       count.innerHTML = element;
     }
   }
-}
-/* timer(".number1", 127);
-timer(".number2", 121);
-timer(".number3", 114);
-timer(".number4", 103);
-timer(".number5", 91);  */
+} //table content first not seen in the page when the table is shown in the page then elements are shown and start to count
 
+let head = document.querySelectorAll(".head");
+let subhead = document.querySelectorAll(".subhead");
+let number = document.querySelectorAll(".number");
+
+// intersection observer API
 const callBackFunction = function (entries) {
   console.log(entries[0]);
-  timer(".number1", 127);
-  timer(".number2", 121);
-  timer(".number3", 114);
-  timer(".number4", 103);
-  timer(".number5", 91);
+
+  setTimeout(() => {
+    for (let i = 0; i < head.length; i++) {
+      head[i].style.visibility = "visible";
+      subhead[i].style.visibility = "visible";
+      number[i].style.visibility = "visible";
+    }
+
+    timer(".number1", 127);
+    timer(".number2", 121);
+    timer(".number3", 114);
+    timer(".number4", 103);
+    timer(".number5", 91);
+  }, 3000);
 };
 const observer = new IntersectionObserver(callBackFunction, {
-  threshold: 0.5,
+  threshold: 0,
 });
 observer.observe(table1);
 setTimeout(() => observer.unobserve(table1), 5000);
+
+//to add animation for table element
+//declaration of every unit of tables
 
 let section1 = document.querySelector(".section1");
 let section1_vs = document.querySelector(".section1_vs");
@@ -65,28 +78,27 @@ let section4_vs = document.querySelector(".section4_vs");
 let section5 = document.querySelector(".section5");
 let section5_vs = document.querySelector(".section5_vs");
 
-function change(element1, element2) {
-  var interval = 2000,
-    i = 0;
+//every 5 second table change
+//when table change animation is start for the second table
 
+function change(element1, element2) {
   setInterval(function () {
-    i++;
-    if (i % 2 !== 0) {
-      /*  table1.style.display = "block";
-    table2.style.display = "none"; */
-      element1.classList.add("section1Class");
-      element1.classList.remove("section1_vsClass");
-      element2.classList.add("section1_vsClass");
-      element2.classList.remove("section1Class");
+    setTimeout(() => {
+      changeTable();
+    }, 1000);
+
+    if (table1.style.display !== "none") {
+      element1.classList.add("addingClass1");
+      element1.classList.remove("addingClass2");
+      element2.classList.add("addingClass2");
+      element2.classList.remove("addingClass1");
     } else {
-      /*   table2.style.display = "block";
-    table1.style.display = "none"; */
-      element1.classList.add("section1_vsClass");
-      element1.classList.remove("section1Class");
-      element2.classList.add("section1Class");
-      element2.classList.remove("section1_vsClass");
+      element1.classList.add("addingClass2");
+      element1.classList.remove("addingClass1");
+      element2.classList.add("addingClass1");
+      element2.classList.remove("addingClass2");
     }
-  }, interval);
+  }, 5000);
 }
 
 change(section1, section1_vs);

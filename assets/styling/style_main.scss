@@ -1,6 +1,7 @@
 // Imports
 @import "colors"; // og colors
 @import "media";
+@import "reset";
 //mixins for text properties
 @mixin text($fontSize, $fontWeight, $lineHeight, $marginBottom) {
   font-size: $fontSize;
@@ -158,6 +159,11 @@ a {
   justify-content: center;
   align-items: center;
 }
+.head,
+.number,
+.subhead {
+  visibility: hidden;
+}
 .table-heading {
   display: flex;
   align-items: center;
@@ -221,14 +227,14 @@ a {
 .arrow2 {
   @extend .arrow;
 }
-.section1Class {
+.addingClass1 {
   opacity: 1;
   margin-top: 0px;
   transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s;
 }
-.section1_vsClass {
+.addingClass2 {
   opacity: 0;
-  margin-top: 50%;
+  margin-top: 25%;
   transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s;
 }
 
