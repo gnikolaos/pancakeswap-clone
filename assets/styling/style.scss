@@ -712,14 +712,18 @@ body {
               position: absolute;
               min-height: 100%;
               right: 0px;
-              bottom: 0px;
+              bottom: 0.09rem;
 
+              @include xs {
+                right: -0.5rem;
+                bottom: 0.15rem;
+              }
               @include sm {
                 bottom: 0.513rem;
               }
 
               @include md {
-                bottom: 0.563rem;
+                bottom: 0.65rem;
               }
 
               @include lg {
@@ -751,6 +755,8 @@ body {
                   margin: 0px;
                   padding: 0px;
                   max-width: 100%;
+                  width: 208px;
+                  height: 208px;
 
                   @include lg {
                     width: 392px;
@@ -792,16 +798,16 @@ body {
           #slide-1 {
             .scroller-slide-image-container {
               right: 0rem;
-              bottom: -0.7rem;
+              bottom: -0.4rem;
               max-width: 63.125rem;
               min-height: auto;
 
               @include xs {
-                bottom: -1.3rem;
+                bottom: -0.9rem;
               }
 
               @include sm {
-                bottom: -0.5rem;
+                bottom: -0.2rem;
               }
 
               @include md {
@@ -847,7 +853,7 @@ body {
               bottom: -2.1rem;
 
               @include sm {
-                right: 0.063rem;
+                bottom: -2.3rem;
               }
 
               @include md {
@@ -916,8 +922,16 @@ body {
             }
 
             .dump-image {
-              width: 190px;
+              width: 340px;
               height: 144px;
+
+              @include sm {
+                width: 440px;
+              }
+
+              @include md {
+                width: 520px;
+              }
 
               @include lg {
                 min-width: 934px;
