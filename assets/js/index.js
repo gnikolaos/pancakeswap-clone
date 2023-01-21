@@ -98,7 +98,7 @@ function change(element1, element2) {
       element2.classList.add("addingClass1");
       element2.classList.remove("addingClass2");
     }
-  }, 5000);
+  }, 4000);
 }
 
 change(section1, section1_vs);

@@ -275,4 +275,28 @@ a {
     @extend .containerOfCoinImages;
     margin-top: 35rem;
   }
+  .first-table {
+    width: 652px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .table {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 2rem;
+  }
+  .table-content {
+    grid-template-columns: repeat(2, auto);
+    gap: 7rem;
+  }
+  .first-table {
+    width: 434px;
+  }
+  .table-content2 {
+    @extend .table-content;
+  }
+  .content2 {
+    border-left: none;
+    padding-left: 0px;
+  }
 }

@@ -427,4 +427,26 @@ a {
   .containerOfSecondImages {
     margin-top: 35rem;
   }
+  .first-table {
+    width: 652px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .table {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 2rem;
+  }
+  .table-content,
+  .table-content2 {
+    grid-template-columns: repeat(2, auto);
+    gap: 7rem;
+  }
+  .first-table {
+    width: 434px;
+  }
+  .content2 {
+    border-left: none;
+    padding-left: 0px;
+  }
 } /*# sourceMappingURL=style_main.css.map */
