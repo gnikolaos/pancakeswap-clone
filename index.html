@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
+    />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <link rel="stylesheet" href="assets/styling/style.css" />
     <link
@@ -230,7 +233,18 @@
                             <div class="scroller-slide-wrapper">
                               <div class="scroller-slide-text">
                                 <h2 class="text">Win $78.810 in Lottery</h2>
-                                <h2 class="subtext">2h 39m 33s</h2>
+                                <div class="timer-clock">
+                                  <h2 id="clock-timer" class="subtext">
+                                    <span class="clock-timer-hours"></span>
+                                    <span class="clock-timer-subtext">h</span>
+
+                                    <span class="clock-timer-mins"></span>
+                                    <span class="clock-timer-subtext">m</span>
+
+                                    <span class="clock-timer-secs"></span>
+                                    <span class="clock-timer-subtext">s</span>
+                                  </h2>
+                                </div>
                                 <a href="#">
                                   <button>
                                     <div class="button-text">Play Now</div>

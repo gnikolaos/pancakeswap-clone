@@ -520,7 +520,7 @@ body {
       width: 100%;
       max-width: 75rem;
       min-height: auto;
-      padding: 1rem;
+      padding: 1rem 1.5rem;
       color: white;
       overflow: hidden;
 
@@ -567,6 +567,7 @@ body {
           position: relative;
           margin-inline: auto;
           padding: 0px;
+          height: 100%;
 
           .scroller-wrapper {
             position: relative;
@@ -591,17 +592,17 @@ body {
               &-container {
                 border-radius: 2rem;
                 width: 100%;
-                max-height: max-content;
+                max-height: 100%;
                 overflow: visible;
               }
 
               &-wrapper {
                 display: flex;
                 position: relative;
-                padding: 1.5rem;
+                padding: 1.476rem;
                 flex-flow: row;
                 justify-content: space-between;
-                max-height: 12rem;
+                max-height: 192px;
               }
             }
 
@@ -711,14 +712,18 @@ body {
               position: absolute;
               min-height: 100%;
               right: 0px;
-              bottom: 0px;
+              bottom: 0.09rem;
 
+              @include xs {
+                right: -0.5rem;
+                bottom: 0.15rem;
+              }
               @include sm {
                 bottom: 0.513rem;
               }
 
               @include md {
-                bottom: 0.563rem;
+                bottom: 0.65rem;
               }
 
               @include lg {
@@ -750,6 +755,8 @@ body {
                   margin: 0px;
                   padding: 0px;
                   max-width: 100%;
+                  width: 208px;
+                  height: 208px;
 
                   @include lg {
                     width: 392px;
@@ -791,16 +798,16 @@ body {
           #slide-1 {
             .scroller-slide-image-container {
               right: 0rem;
-              bottom: 0.2rem;
+              bottom: -0.4rem;
               max-width: 63.125rem;
               min-height: auto;
 
               @include xs {
-                bottom: 0rem;
+                bottom: -0.9rem;
               }
 
               @include sm {
-                bottom: -0.5rem;
+                bottom: -0.2rem;
               }
 
               @include md {
@@ -822,15 +829,15 @@ body {
 
             .subtext {
               text-transform: capitalize;
-              font-size: 1.313rem;
+              font-size: 1.438rem;
               width: fit-content;
               color: rgb(255, 255, 255);
               text-shadow: rgb(0 0 0 / 25%) 0rem 0.125rem 0.125rem;
               background: none;
-              margin-block: 1.313rem 1rem;
+              margin-block: 0.6rem 0rem;
 
               @include sm {
-                margin-top: 0.625rem;
+                margin-block: 0.625rem 1.313rem;
                 font-size: 2.188rem;
               }
 
@@ -846,7 +853,7 @@ body {
               bottom: -2.1rem;
 
               @include sm {
-                right: 0.063rem;
+                bottom: -2.3rem;
               }
 
               @include md {
@@ -871,20 +878,60 @@ body {
               }
             }
 
-            .subtext {
-              text-transform: none;
-              color: rgb(194, 194, 70);
-              background: none;
-              margin-block: 0rem 0.5rem;
+            .timer-clock {
+              display: inline-flex;
+              white-space: nowrap;
+              transform: scale(0.88);
+              transform-origin: left top;
+              background: url(../images/decorations/countdownBg.png) 0% 0% /
+                100% 100% no-repeat;
+              background-repeat: no-repeat;
+              padding: 0rem 0.625rem 0.438rem 0.625rem;
+              margin-bottom: 0.5rem;
 
               @include sm {
                 margin-bottom: 1rem;
               }
             }
 
+            .subtext {
+              text-transform: none;
+              display: flex;
+              align-items: flex-end;
+              width: 100%;
+              color: $colors-dark-text;
+              text-shadow: none;
+              background: none;
+              font-size: 2rem;
+              margin: 0rem;
+              background: $colors-dark-gradientGold;
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              -webkit-text-stroke: 0.031rem rgba(0, 0, 0, 0.5);
+
+              @include lg {
+                font-size: 2.5rem;
+              }
+
+              span.clock-timer-subtext {
+                font-size: 1.25rem;
+                margin-inline: 0.25rem 0.75rem;
+                margin-bottom: 0.22rem;
+              }
+            }
+
             .dump-image {
-              width: 190px;
+              width: 340px;
               height: 144px;
+
+              @include sm {
+                width: 440px;
+              }
+
+              @include md {
+                width: 520px;
+              }
 
               @include lg {
                 min-width: 934px;
@@ -910,13 +957,13 @@ body {
             z-index: 10;
 
             @include sm {
-              bottom: -0.188rem;
+              bottom: 2.188rem;
             }
             @include md {
-              bottom: 0.3rem;
+              bottom: 2.813rem;
             }
             @include lg {
-              bottom: -0.3rem;
+              bottom: 2.188rem;
             }
 
             &-bullet {
