@@ -107,8 +107,8 @@ change(section4, section4_vs);
 change(section5, section5_vs);
 
 //theme adjustment
-const chk = document.getElementById("chk");
+/* const chk = document.getElementById("chk");
 
 chk.addEventListener("change", () => {
-  document.body.classList.toggle("light");
-});
+  document.body.classList.toggle("bgColor");
+}); */

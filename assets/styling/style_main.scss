@@ -240,60 +240,58 @@ a {
 }
 
 //theme adjustment
-.checkbox {
-  margin: 3rem;
-}
-body.light {
+
+body.bgColor {
   background-color: white;
 }
-body.light .secondPart {
+body.bgColor .secondPart {
   background-color: $colors-light-backgroundDisabled;
 }
-body.light .secondPart > svg {
+body.bgColor .secondPart > svg {
   fill: $colors-light-background;
 }
-body.light .svg svg {
+body.bgColor .svg svg {
   fill: #d8cbed;
 }
 
-body.light span {
+body.bgColor span {
   color: $colors-light-secondary;
 }
 
-body.light h2 {
+body.bgColor h2 {
   color: $colors-light-text;
 }
 
-body.light .subTitle {
+body.bgColor .subTitle {
   color: $colors-light-textSubtle;
 }
 
-body.light .buttonTrade,
-body.light .buttonExplore {
+body.bgColor .buttonTrade,
+body.bgColor .buttonExplore {
   background-color: $colors-light-primary;
   color: $colors-light-invertedContrast;
 }
-body.light .learnLink {
+body.bgColor .learnLink {
   color: $colors-light-primary;
 }
 
-body.light .content2 {
+body.bgColor .content2 {
   border-left: 1px solid $colors-light-inputSecondary;
 }
 
-body.light .head {
+body.bgColor .head {
   color: $colors-light-secondary;
 }
 
-body.light .number {
+body.bgColor .number {
   color: $colors-light-text;
 }
 
-body.light .subhead {
+body.bgColor .subhead {
   color: $colors-light-textSubtle;
 }
 
-body.ligh .arrow {
+body.bgColor .arrow {
   fill: $colors-light-textSubtle;
 }
 
