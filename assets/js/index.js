@@ -46,19 +46,18 @@ const callBackFunction = function (entries) {
       subhead[i].style.visibility = "visible";
       number[i].style.visibility = "visible";
     }
-
     timer(".number1", 127);
     timer(".number2", 121);
     timer(".number3", 114);
     timer(".number4", 103);
     timer(".number5", 91);
-  }, 3000);
+  }, 4000);
 };
 const observer = new IntersectionObserver(callBackFunction, {
   threshold: 0,
 });
 observer.observe(table1);
-setTimeout(() => observer.unobserve(table1), 5000);
+setTimeout(() => observer.unobserve(table1), 3000);
 
 //to add animation for table element
 //declaration of every unit of tables
