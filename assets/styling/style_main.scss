@@ -238,6 +238,64 @@ a {
   transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s;
 }
 
+//theme adjustment
+.checkbox {
+  margin: 3rem;
+}
+body.light {
+  background-color: white;
+}
+body.light .secondPart {
+  background-color: $colors-light-backgroundDisabled;
+}
+body.light .secondPart > svg {
+  fill: $colors-light-background;
+}
+body.light .svg svg {
+  fill: #d8cbed;
+}
+
+body.light span {
+  color: $colors-light-secondary;
+}
+
+body.light h2 {
+  color: $colors-light-text;
+}
+
+body.light .subTitle {
+  color: $colors-light-textSubtle;
+}
+
+body.light .buttonTrade,
+body.light .buttonExplore {
+  background-color: $colors-light-primary;
+  color: $colors-light-invertedContrast;
+}
+body.light .learnLink {
+  color: $colors-light-primary;
+}
+
+body.light .content2 {
+  border-left: 1px solid $colors-light-inputSecondary;
+}
+
+body.light .head {
+  color: $colors-light-secondary;
+}
+
+body.light .number {
+  color: $colors-light-text;
+}
+
+body.light .subhead {
+  color: $colors-light-textSubtle;
+}
+
+body.ligh .arrow {
+  fill: $colors-light-textSubtle;
+}
+
 @media screen and (max-width: 852px) {
   .tradeAnything {
     flex-direction: column-reverse;
@@ -279,6 +337,7 @@ a {
     width: 652px;
   }
 }
+
 @media screen and (max-width: 576px) {
   .table {
     justify-content: flex-start;

@@ -391,6 +391,69 @@ a {
   transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s;
 }
 
+.checkbox {
+  margin: 3rem;
+}
+
+body.light {
+  background-color: white;
+}
+
+body.light .secondPart {
+  background-color: #e9eaeb;
+}
+
+body.light .secondPart > svg {
+  fill: #faf9fa;
+}
+
+body.light .svg svg {
+  fill: #d8cbed;
+}
+
+body.light span {
+  color: #7645d9;
+}
+
+body.light h2 {
+  color: #280d5f;
+}
+
+body.light .subTitle {
+  color: #7a6eaa;
+}
+
+body.light .buttonTrade,
+body.light .buttonExplore {
+  background-color: #1fc7d4;
+  color: #fff;
+}
+
+body.light .learnLink {
+  color: #1fc7d4;
+}
+
+body.light .content2 {
+  border-left: 1px solid #d7caec;
+}
+
+body.light .head {
+  color: #7645d9;
+}
+
+body.light .number {
+  color: #280d5f;
+}
+
+body.light .subhead {
+  color: #7a6eaa;
+}
+
+body.ligh .arrow,
+body.ligh .arrow2 {
+  fill: #7a6eaa;
+}
+
 @media screen and (max-width: 852px) {
   .tradeAnything {
     flex-direction: column-reverse;
