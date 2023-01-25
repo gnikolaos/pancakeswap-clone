@@ -2124,6 +2124,8 @@ body {
   gap: 20px;
 }
 #footer #downFirstCol #changeColor {
+  display: flex;
+  place-items: center;
   width: 56px;
   height: 32px;
   border-radius: 25px;

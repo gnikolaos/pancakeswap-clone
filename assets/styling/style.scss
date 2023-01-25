@@ -1617,6 +1617,8 @@ body {
     align-items: center;
     gap: 20px;
     #changeColor {
+      display: flex;
+      place-items: center;
       width: 56px;
       height: 32px;
       border-radius: 25px;
