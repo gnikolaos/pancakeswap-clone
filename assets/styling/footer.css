@@ -59,15 +59,15 @@ body {
 .flyingCake .cake1 {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
 }
 .flyingCake .cake2 {
   position: absolute;
-  left: 0;
+  right: 0;
 }
 .flyingCake .cake3 {
   position: absolute;
-  left: 0px;
+  right: 0px;
 }
 
 #pancakeFlyingTop {
@@ -78,7 +78,6 @@ body {
 
 #pancakeFlyingBottom {
   position: relative;
-  left: 2000px;
   margin-bottom: 60px;
 }
 
@@ -104,13 +103,20 @@ body {
   flex-direction: column;
 }
 #startInSeconds svg {
-  position: absolute;
-  width: 100%;
-  overflow-y: hidden;
+  position: relative;
+  width: 300%;
+  height: 300%;
   display: block;
   top: -450px;
   left: 0;
-  opacity: 11;
+}
+
+#svgBg {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 #startInSecondsMain {
@@ -465,7 +471,11 @@ ul > li .footerHeader {
     z-index: 99;
     border-top: 1px solid #343434;
   }
-  #on-sm-screen #trade, #on-sm-screen #earn, #on-sm-screen #win, #on-sm-screen #nft, #on-sm-screen #hamburger {
+  #on-sm-screen #trade,
+  #on-sm-screen #earn,
+  #on-sm-screen #win,
+  #on-sm-screen #nft,
+  #on-sm-screen #hamburger {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -475,10 +485,15 @@ ul > li .footerHeader {
     line-height: 1.5;
     color: #b8add2;
   }
-  #on-sm-screen #trade svg, #on-sm-screen #earn svg, #on-sm-screen #win svg, #on-sm-screen #nft svg, #on-sm-screen #hamburger svg {
+  #on-sm-screen #trade svg,
+  #on-sm-screen #earn svg,
+  #on-sm-screen #win svg,
+  #on-sm-screen #nft svg,
+  #on-sm-screen #hamburger svg {
     fill: #b8add2;
   }
-  #pancakeFlyingBottom, #pancakeFlyingTop {
+  #pancakeFlyingBottom,
+  #pancakeFlyingTop {
     display: none;
   }
   #on-sm-screen {
@@ -502,7 +517,11 @@ ul > li .footerHeader {
     z-index: 99;
     border-top: 1px solid #343434;
   }
-  #on-sm-screen #trade, #on-sm-screen #earn, #on-sm-screen #win, #on-sm-screen #nft, #on-sm-screen #hamburger {
+  #on-sm-screen #trade,
+  #on-sm-screen #earn,
+  #on-sm-screen #win,
+  #on-sm-screen #nft,
+  #on-sm-screen #hamburger {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -512,10 +531,15 @@ ul > li .footerHeader {
     line-height: 1.5;
     color: #b8add2;
   }
-  #on-sm-screen #trade svg, #on-sm-screen #earn svg, #on-sm-screen #win svg, #on-sm-screen #nft svg, #on-sm-screen #hamburger svg {
+  #on-sm-screen #trade svg,
+  #on-sm-screen #earn svg,
+  #on-sm-screen #win svg,
+  #on-sm-screen #nft svg,
+  #on-sm-screen #hamburger svg {
     fill: #b8add2;
   }
-  #pancakeFlyingBottom, #pancakeFlyingTop {
+  #pancakeFlyingBottom,
+  #pancakeFlyingTop {
     display: none;
   }
   #mainFooterUpLinks {
@@ -555,7 +579,9 @@ ul > li .footerHeader {
     gap: 20px;
     margin-top: 30px;
   }
-  #mainFooter-smScreens #about, #mainFooter-smScreens #help, #mainFooter-smScreens #developers {
+  #mainFooter-smScreens #about,
+  #mainFooter-smScreens #help,
+  #mainFooter-smScreens #developers {
     order: 3;
     margin-left: 25px;
   }
