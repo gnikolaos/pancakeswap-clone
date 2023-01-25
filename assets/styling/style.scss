@@ -1370,8 +1370,8 @@ body {
 
   .active-sun {
     fill: #ffb237 !important;
-    height: 20px;
-    width: 20px;
+    height: 26px;
+    width: 26px;
     margin: 3px;
     padding: 3px;
     border-radius: 50px;
@@ -1532,6 +1532,11 @@ body {
     padding: 30px;
     display: flex;
     flex-direction: column;
+    #mainfooterContentsIn {
+      max-width: 1200px;
+      width: 100%;
+      margin-inline: auto;
+    }
   }
 
   #mainFooterUp {
@@ -1548,16 +1553,12 @@ body {
   #mainFooterUpLinks {
     @include footerGap(flex, 0px);
     justify-content: space-between;
-    margin: 0 50px;
+    // margin: 0 50px;
   }
 
   #mainFooterUpIcons {
     fill: c.$sm-icons_color;
     @include footerGap(flex, 25px);
-    padding-left: 50px;
-    //  justify-content: center;
-    // margin-left: 0;
-    // min-width: 1200px;
     margin: 30px 0;
     #telegramRegions {
       position: relative;
@@ -1621,8 +1622,8 @@ body {
 
   #mainFooterDown {
     @include footerGap(flex, 0px);
-    margin: 40px 50px 10px;
-    align-items: cent;
+    margin: 40px 0px 10px;
+    align-items: center;
     justify-content: space-between;
   }
 
@@ -1652,8 +1653,8 @@ body {
       }
 
       #likeMoon {
-        height: 20px;
-        width: 20px;
+        height: 26px;
+        width: 26px;
         margin: 3px;
         padding: 3px;
         border-radius: 50px;
@@ -1663,9 +1664,8 @@ body {
 
       #warningNo {
         position: relative;
-        // bottom: 200px;
-        height: 10x;
-        width: 20px;
+        height: 26px;
+        width: 26px;
         margin: 3px;
         fill: #27262c;
       }
@@ -1675,8 +1675,8 @@ body {
         z-index: 4;
         fill: #ffb237;
         display: none;
-        height: 10px;
-        width: 20px;
+        height: 26px;
+        width: 26px;
         margin: 3px;
         padding: 3px;
         border-radius: 50px;
@@ -1693,8 +1693,6 @@ body {
 
   #hr {
     border-bottom: 1px solid #343434;
-    margin: 0 50px;
-    // min-width: 1200px;
   }
 
   #cakePrice {
@@ -1918,7 +1916,6 @@ body {
       #mainFooterUpIcons {
         order: 4;
         padding-left: 25px;
-        // padding-top: 30px;
       }
       #hr {
         order: 5;

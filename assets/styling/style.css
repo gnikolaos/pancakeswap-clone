@@ -1915,8 +1915,8 @@ body {
 }
 #footer .active-sun {
   fill: #ffb237 !important;
-  height: 20px;
-  width: 20px;
+  height: 26px;
+  width: 26px;
   margin: 3px;
   padding: 3px;
   border-radius: 50px;
@@ -2056,6 +2056,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+#footer #mainfooterContents #mainfooterContentsIn {
+  max-width: 1200px;
+  width: 100%;
+  margin-inline: auto;
+}
 #footer #mainFooterUp {
   display: flex;
   flex-direction: column;
@@ -2064,13 +2069,11 @@ body {
   display: flex;
   gap: 0px;
   justify-content: space-between;
-  margin: 0 50px;
 }
 #footer #mainFooterUpIcons {
   fill: #b8add2;
   display: flex;
   gap: 25px;
-  padding-left: 50px;
   margin: 30px 0;
 }
 #footer #mainFooterUpIcons #telegramRegions {
@@ -2126,8 +2129,8 @@ body {
 #footer #mainFooterDown {
   display: flex;
   gap: 0px;
-  margin: 40px 50px 10px;
-  align-items: cent;
+  margin: 40px 0px 10px;
+  align-items: center;
   justify-content: space-between;
 }
 #footer #downFirstCol {
@@ -2157,8 +2160,8 @@ body {
   z-index: 3;
 }
 #footer #downFirstCol #changeColor #likeMoon {
-  height: 20px;
-  width: 20px;
+  height: 26px;
+  width: 26px;
   margin: 3px;
   padding: 3px;
   border-radius: 50px;
@@ -2167,8 +2170,8 @@ body {
 }
 #footer #downFirstCol #changeColor #warningNo {
   position: relative;
-  height: 10x;
-  width: 20px;
+  height: 26px;
+  width: 26px;
   margin: 3px;
   fill: #27262c;
 }
@@ -2177,8 +2180,8 @@ body {
   z-index: 4;
   fill: #ffb237;
   display: none;
-  height: 10px;
-  width: 20px;
+  height: 26px;
+  width: 26px;
   margin: 3px;
   padding: 3px;
   border-radius: 50px;
@@ -2191,7 +2194,6 @@ body {
 }
 #footer #hr {
   border-bottom: 1px solid #343434;
-  margin: 0 50px;
 }
 #footer #cakePrice a {
   color: #b8add2;

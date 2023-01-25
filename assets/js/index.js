@@ -33,13 +33,14 @@ window.onload = () => {
   xhr.onload = () => {
     if (xhr.status == 200) {
       const data = JSON.parse(xhr.responseText);
-      const appendText = document.getElementById("cake-price");
+      const appendText = document.querySelectorAll("#cake-price");
       // updates the site's title
       document.title =
         "Home | PancakeSwap - " + "$" + data["pancakeswap-token"]["usd"];
       // updates the cake price in navbar options section
-      appendText.innerHTML =
-        appendText.innerHTML + data["pancakeswap-token"]["usd"];
+      appendText.forEach((e) => {
+        e.innerHTML = e.innerHTML + data["pancakeswap-token"]["usd"];
+      });
     } else {
       document.title = "error";
     }
