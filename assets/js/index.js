@@ -50,6 +50,7 @@ window.onload = () => {
   let prevScrollPos = window.pageYOffset;
   window.onscroll = () => {
     let currentScrollPos = window.pageYOffset;
+    let goUp = document.getElementById("scrollUp");
     if (hasPhishingPopUp === "true") {
       if (prevScrollPos > currentScrollPos || currentScrollPos <= 126) {
         document.getElementById("head-area").style.top = "0";
@@ -64,6 +65,16 @@ window.onload = () => {
       }
     }
     prevScrollPos = currentScrollPos;
+
+    // Hiding the scroll to page top button at 400px away from the navbar
+    if (
+      document.documentElement.scrollTop > 400 ||
+      document.body.scrollTop > 400
+    ) {
+      goUp.style.display = "inline-flex";
+    } else {
+      goUp.style.display = "none";
+    }
   };
 
   // Slide-3 countdown timer
@@ -372,4 +383,32 @@ function closeBanner() {
   document.querySelector(".head-area").style.height = "3.5rem";
   document.querySelector(".main-content").style.marginTop = "3.563rem";
   hasPhishingPopUp = localStorage.setItem("hasPhishingPopUp", "false");
+}
+
+// Footer related
+// toggle dark mode for the page, buttons text color, and button svg color
+function changeColor() {
+  let color = document.querySelector("body").classList.toggle("bgColor");
+  document.getElementById("warningNo").classList.toggle("active-sun");
+  document.getElementById("likeMoon").classList.toggle("disabled-moon");
+  document
+    .getElementsByClassName("btn-color")[0]
+    .classList.toggle("btn-color-change");
+  document
+    .getElementsByClassName("btn-color")[1]
+    .classList.toggle("btn-color-change");
+  document
+    .getElementsByClassName("btn-color")[2]
+    .classList.toggle("btn-color-change");
+  document
+    .getElementsByClassName("btn-color")[3]
+    .classList.toggle("btn-color-change");
+
+  console.log(document.getElementById("warningNo").classList);
+}
+
+// function to return to top of page when click
+function toPageTop() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
