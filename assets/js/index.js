@@ -50,6 +50,7 @@ window.onload = () => {
   let prevScrollPos = window.pageYOffset;
   window.onscroll = () => {
     let currentScrollPos = window.pageYOffset;
+    let goUp = document.getElementById("scrollUp");
     if (hasPhishingPopUp === "true") {
       if (prevScrollPos > currentScrollPos || currentScrollPos <= 126) {
         document.getElementById("head-area").style.top = "0";
@@ -64,6 +65,16 @@ window.onload = () => {
       }
     }
     prevScrollPos = currentScrollPos;
+
+    // Hiding the scroll to page top button at 400px away from the navbar
+    if (
+      document.documentElement.scrollTop > 400 ||
+      document.body.scrollTop > 400
+    ) {
+      goUp.style.display = "inline-flex";
+    } else {
+      goUp.style.display = "none";
+    }
   };
 
   // Slide-3 countdown timer
@@ -374,7 +385,7 @@ function closeBanner() {
   hasPhishingPopUp = localStorage.setItem("hasPhishingPopUp", "false");
 }
 
-// Footer related 
+// Footer related
 // toggle dark mode for the page, buttons text color, and button svg color
 function changeColor() {
   let color = document.querySelector("body").classList.toggle("bgColor");
@@ -395,19 +406,6 @@ function changeColor() {
 
   console.log(document.getElementById("warningNo").classList);
 }
-
-// Hiding the scroll to page top button at 200px away from the navbar
-window.onscroll = () => {
-  let goUp = document.getElementById("scrollUp");
-  if (
-    document.documentElement.scrollTop > 200 ||
-    document.body.scrollTop > 200
-  ) {
-    goUp.style.display = "inline-flex";
-  } else {
-    goUp.style.display = "none";
-  }
-};
 
 // function to return to top of page when click
 function toPageTop() {
