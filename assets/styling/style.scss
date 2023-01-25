@@ -1389,22 +1389,21 @@ body {
     animation-name: flyingcake;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    .cake1 {
+    .cake {
       position: absolute;
-      top: 0;
-      right: 0;
     }
-    .cake2 {
-      position: absolute;
-      right: 0;
-    }
-    .cake3 {
-      position: absolute;
+
+    .cake-right {
       right: 0px;
+    }
+
+    .cake-left {
+      left: 0px;
     }
   }
 
   #pancakeFlyingTop {
+    width: 100%;
     position: relative;
     bottom: 400px;
     margin-bottom: 400px;
@@ -1460,8 +1459,8 @@ body {
   }
 
   #startInSecondsMain {
+    width: 100%;
     text-align: center;
-    // margin: 80px 20px;
     line-height: 1.5;
     h1 {
       font-size: 2.5rem;
@@ -1484,6 +1483,16 @@ body {
     }
   }
 
+  .cake-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .cake-container {
+    position: absolute;
+    width: 100%;
+  }
+
   #learn {
     color: #1fc7d4;
     font-weight: 600;
@@ -1496,16 +1505,21 @@ body {
     margin-bottom: 0;
   }
 
-  #startInContainer {
-    // min-width: 1200px;
+  #startInWrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin-inline: auto;
     position: relative;
-    // height: 400px;
+  }
+
+  #startInContainer {
     display: flex;
-    margin: 10px 0 70px;
-    flex-direction: row;
+    width: 100%;
+    flex-flow: row;
     align-items: center;
     text-align: center;
     justify-content: space-around;
+    margin: 10px 0 70px;
   }
 
   img {
@@ -1837,6 +1851,17 @@ body {
     #pancakeFlyingTop {
       display: none;
     }
+    #startInSeconds svg {
+      top: -360px;
+    }
+    #startInContainer {
+      display: block;
+
+      padding: 48px;
+    }
+    #mainfooterContents {
+      padding-bottom: 60px;
+    }
   }
 
   @media (min-width: $sm-screen) and (max-width: 851px) {
@@ -1902,6 +1927,7 @@ body {
       }
     }
     #startInSecondsMain {
+      width: 100%;
       margin: 0 25px;
       h1 {
         font-size: 30px;

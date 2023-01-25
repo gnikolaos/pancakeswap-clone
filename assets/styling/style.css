@@ -1933,20 +1933,17 @@ body {
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
-#footer .flyingCake .cake1 {
+#footer .flyingCake .cake {
   position: absolute;
-  top: 0;
-  right: 0;
 }
-#footer .flyingCake .cake2 {
-  position: absolute;
-  right: 0;
-}
-#footer .flyingCake .cake3 {
-  position: absolute;
+#footer .flyingCake .cake-right {
   right: 0px;
 }
+#footer .flyingCake .cake-left {
+  left: 0px;
+}
 #footer #pancakeFlyingTop {
+  width: 100%;
   position: relative;
   bottom: 400px;
   margin-bottom: 400px;
@@ -1992,6 +1989,7 @@ body {
   overflow: hidden;
 }
 #footer #startInSecondsMain {
+  width: 100%;
   text-align: center;
   line-height: 1.5;
 }
@@ -2014,6 +2012,14 @@ body {
 #footer #startInSecondsMain button:hover {
   background-color: #41a0a7;
 }
+#footer .cake-wrapper {
+  position: relative;
+  width: 100%;
+}
+#footer .cake-container {
+  position: absolute;
+  width: 100%;
+}
 #footer #learn {
   color: #1fc7d4;
   font-weight: 600;
@@ -2025,14 +2031,20 @@ body {
   background: #27262c;
   margin-bottom: 0;
 }
-#footer #startInContainer {
+#footer #startInWrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin-inline: auto;
   position: relative;
+}
+#footer #startInContainer {
   display: flex;
-  margin: 10px 0 70px;
-  flex-direction: row;
+  width: 100%;
+  flex-flow: row;
   align-items: center;
   text-align: center;
   justify-content: space-around;
+  margin: 10px 0 70px;
 }
 #footer img {
   width: 240px;
@@ -2294,6 +2306,16 @@ body {
   #footer #pancakeFlyingTop {
     display: none;
   }
+  #footer #startInSeconds svg {
+    top: -360px;
+  }
+  #footer #startInContainer {
+    display: block;
+    padding: 48px;
+  }
+  #footer #mainfooterContents {
+    padding-bottom: 60px;
+  }
   #footer #mainFooter-smScreens {
     display: none;
   }
@@ -2302,6 +2324,16 @@ body {
   #footer #pancakeFlyingBottom,
   #footer #pancakeFlyingTop {
     display: none;
+  }
+  #footer #startInSeconds svg {
+    top: -360px;
+  }
+  #footer #startInContainer {
+    display: block;
+    padding: 48px;
+  }
+  #footer #mainfooterContents {
+    padding-bottom: 60px;
   }
   #footer #mainFooterUpLinks {
     display: flex;
@@ -2356,6 +2388,7 @@ body {
     margin-left: 25px;
   }
   #footer #startInSecondsMain {
+    width: 100%;
     margin: 0 25px;
   }
   #footer #startInSecondsMain h1 {
