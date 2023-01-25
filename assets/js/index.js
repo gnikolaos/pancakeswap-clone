@@ -57,7 +57,7 @@ const observer = new IntersectionObserver(callBackFunction, {
   threshold: 0,
 });
 observer.observe(table1);
-setTimeout(() => observer.unobserve(table1), 3000);
+setTimeout(() => observer.unobserve(table1), 5000);
 
 //to add animation for table element
 //declaration of every unit of tables
