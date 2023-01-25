@@ -1,0 +1,77 @@
+// Resetting margins, paddings, and borders + Typography
+html {
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px; // 16px
+  vertical-align: baseline;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Kanit, sans-serif;
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+body {
+  line-height: 1;
+  font-size: 1rem;
+}
+
+// ETC
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+// Attributes & states
+[hidden] {
+  display: none !important;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+// Screen reader only utility
+.sr-only {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  left: -9999px;
+  top: -9999px;
+}
