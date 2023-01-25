@@ -1,40 +1,11 @@
-html {
-  /* width */
-  /* Track */
-  /* Handle */
-}
-html::-webkit-scrollbar {
-  width: 8px;
-}
-html::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 2px rgb(88, 88, 88);
-  border-radius: 2px;
-}
-html::-webkit-scrollbar-thumb {
-  background-color: #b8add2;
-  border-radius: 10px;
-}
-html::-webkit-scrollbar-button {
-  height: 10px;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Kanit, sans-serif;
-  background-color: #08060b;
-}
-
-.bgColor {
+#footer .bgColor {
   background-color: #fff;
 }
-
-.btn-color-change {
+#footer .btn-color-change {
   color: #fff;
   fill: #fff;
 }
-
-.active-sun {
+#footer .active-sun {
   fill: #ffb237 !important;
   height: 20px;
   width: 20px;
@@ -43,44 +14,39 @@ body {
   border-radius: 50px;
   background-color: #27262c;
 }
-
-.disabled-moon {
+#footer .disabled-moon {
   background-color: transparent !important;
   fill: #27262c !important;
 }
-
-.flyingCake {
+#footer .flyingCake {
   max-height: 100%;
   position: relative;
   animation-name: flyingcake;
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
-.flyingCake .cake1 {
+#footer .flyingCake .cake1 {
   position: absolute;
   top: 0;
   right: 0;
 }
-.flyingCake .cake2 {
+#footer .flyingCake .cake2 {
   position: absolute;
   right: 0;
 }
-.flyingCake .cake3 {
+#footer .flyingCake .cake3 {
   position: absolute;
   right: 0px;
 }
-
-#pancakeFlyingTop {
+#footer #pancakeFlyingTop {
   position: relative;
   bottom: 400px;
   margin-bottom: 400px;
 }
-
-#pancakeFlyingBottom {
+#footer #pancakeFlyingBottom {
   position: relative;
   margin-bottom: 60px;
 }
-
 @keyframes flyingcake {
   0% {
     left: 0;
@@ -95,14 +61,14 @@ body {
     top: 0;
   }
 }
-#startInSeconds {
+#footer #startInSeconds {
   width: 100%;
   background: linear-gradient(rgb(118, 69, 217) 0%, rgb(81, 33, 177) 100%);
   position: relative;
   display: flex;
   flex-direction: column;
 }
-#startInSeconds svg {
+#footer #startInSeconds svg {
   position: relative;
   width: 300%;
   height: 300%;
@@ -110,26 +76,24 @@ body {
   top: -450px;
   left: 0;
 }
-
-#svgBg {
+#footer #svgBg {
   display: flex;
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-
-#startInSecondsMain {
+#footer #startInSecondsMain {
   text-align: center;
   line-height: 1.5;
 }
-#startInSecondsMain h1 {
+#footer #startInSecondsMain h1 {
   font-size: 2.5rem;
 }
-#startInSecondsMain h1, #startInSecondsMain:nth-child(2) {
+#footer #startInSecondsMain h1, #footer #startInSecondsMain:nth-child(2) {
   color: #f4eeff;
 }
-#startInSecondsMain button {
+#footer #startInSecondsMain button {
   font-size: 16px;
   font-weight: 600;
   background-color: #1fc7d4;
@@ -138,24 +102,21 @@ body {
   border-radius: 15px;
   cursor: pointer;
 }
-#startInSecondsMain button:hover {
+#footer #startInSecondsMain button:hover {
   background-color: #41a0a7;
 }
-
-#learn {
+#footer #learn {
   color: #1fc7d4;
   font-weight: 600;
 }
-
-#mainFooter {
+#footer #mainFooter {
   position: relative;
   z-index: 5;
   width: 100%;
   background: #27262c;
   margin-bottom: 0;
 }
-
-#startInContainer {
+#footer #startInContainer {
   position: relative;
   display: flex;
   margin: 10px 0 70px;
@@ -164,52 +125,47 @@ body {
   text-align: center;
   justify-content: space-around;
 }
-
-img {
+#footer img {
   width: 240px;
   height: 224px;
   margin: 0;
 }
-
-#mainfooterContents {
+#footer #mainfooterContents {
   padding: 30px;
   display: flex;
   flex-direction: column;
 }
-
-#mainFooterUp {
+#footer #mainFooterUp {
   display: flex;
   flex-direction: column;
 }
-
-#mainFooterUpLinks {
+#footer #mainFooterUpLinks {
   display: flex;
   gap: 0px;
   justify-content: space-between;
   margin: 0 50px;
 }
-
-#mainFooterUpIcons {
+#footer #mainFooterUpIcons {
   fill: #b8add2;
   display: flex;
   gap: 25px;
   padding-left: 50px;
   margin: 30px 0;
 }
-#mainFooterUpIcons #telegramRegions {
+#footer #mainFooterUpIcons #telegramRegions {
   position: relative;
 }
-#mainFooterUpIcons #telegramRegions #telegramRegionChannel {
+#footer #mainFooterUpIcons #telegramRegions #telegramRegionChannel {
   display: none;
 }
-#mainFooterUpIcons #telegramRegions #telegramRegionChannel {
+#footer #mainFooterUpIcons #telegramRegions #telegramRegionChannel {
   position: relative;
   bottom: 30px;
 }
-#mainFooterUpIcons #telegramRegions #telegramRegionChannel a {
+#footer #mainFooterUpIcons #telegramRegions #telegramRegionChannel a {
   color: #b8add2;
 }
-#mainFooterUpIcons #telegramRegions:hover #telegramRegionChannel {
+#footer #mainFooterUpIcons #telegramRegions:hover #telegramRegionChannel {
   display: inline-flex;
   flex-direction: column;
   text-align: left;
@@ -217,56 +173,48 @@ img {
   line-height: 1.5;
   color: #b8add2;
 }
-
-#logoFooter > svg {
+#footer #logoFooter > svg {
   margin-top: 25px;
   color: rosybrown;
 }
-
-#logoFooter > svg > path:first-child {
+#footer #logoFooter > svg > path:first-child {
   fill: #fff;
 }
-
-ul {
+#footer ul {
   list-style-type: none;
   line-height: 2;
   padding-left: 0;
 }
-
-a {
+#footer a {
   text-decoration: none;
 }
-
-ul > li:nth-child(7) {
+#footer ul > li:nth-child(7) {
   width: 1.5ch;
   text-align: left;
 }
-
-ul > li a {
+#footer ul > li a {
   color: #f4eeff;
 }
-ul > li #contact {
+#footer ul > li #contact {
   color: #ffb237;
 }
-ul > li .footerHeader {
+#footer ul > li .footerHeader {
   color: #9a6aff;
   font-weight: 600;
 }
-
-#mainFooterDown {
+#footer #mainFooterDown {
   display: flex;
   gap: 0px;
   margin: 40px 50px 10px;
   align-items: cent;
   justify-content: space-between;
 }
-
-#downFirstCol {
+#footer #downFirstCol {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-#downFirstCol #changeColor {
+#footer #downFirstCol #changeColor {
   width: 56px;
   height: 32px;
   border-radius: 25px;
@@ -274,10 +222,10 @@ ul > li .footerHeader {
   background-color: #807a90;
   position: relative;
 }
-#downFirstCol #changeColor:hover {
+#footer #downFirstCol #changeColor:hover {
   background-image: linear-gradient(to right, #807a90, #9a6aff);
 }
-#downFirstCol #changeColor input {
+#footer #downFirstCol #changeColor input {
   opacity: 0;
   position: absolute;
   cursor: pointer;
@@ -285,7 +233,7 @@ ul > li .footerHeader {
   height: 100%;
   z-index: 3;
 }
-#downFirstCol #changeColor #likeMoon {
+#footer #downFirstCol #changeColor #likeMoon {
   height: 20px;
   width: 20px;
   margin: 3px;
@@ -294,14 +242,14 @@ ul > li .footerHeader {
   background-color: #27262c;
   fill: #9a6aff;
 }
-#downFirstCol #changeColor #warningNo {
+#footer #downFirstCol #changeColor #warningNo {
   position: relative;
   height: 10x;
   width: 20px;
   margin: 3px;
   fill: #27262c;
 }
-#downFirstCol #changeColor #warning {
+#footer #downFirstCol #changeColor #warning {
   position: relative;
   z-index: 4;
   fill: #ffb237;
@@ -313,37 +261,33 @@ ul > li .footerHeader {
   border-radius: 50px;
   background-color: #27262c;
 }
-
-#buyCake {
+#footer #buyCake {
   display: flex;
   gap: 20px;
   align-items: center;
 }
-
-#hr {
+#footer #hr {
   border-bottom: 1px solid #343434;
   margin: 0 50px;
 }
-
-#cakePrice a {
+#footer #cakePrice a {
   color: #b8add2;
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: center;
 }
-#cakePrice svg:hover {
+#footer #cakePrice svg:hover {
   transition: all 0.2s ease-in-out;
   transform: scale(1.2);
 }
-
-#lang {
+#footer #lang {
   position: relative;
 }
-#lang:hover #langBtn button {
+#footer #lang:hover #langBtn button {
   display: block;
 }
-#lang #langEn {
+#footer #lang #langEn {
   color: #b8add2;
   display: inline-flex;
   align-items: center;
@@ -353,10 +297,10 @@ ul > li .footerHeader {
   gap: 5px;
   cursor: pointer;
 }
-#lang #langEn svg {
+#footer #lang #langEn svg {
   fill: #b8add2;
 }
-#lang #langBtn {
+#footer #lang #langBtn {
   position: absolute;
   z-index: 1;
   display: inline-flex;
@@ -372,31 +316,31 @@ ul > li .footerHeader {
   /* Track */
   /* Handle */
 }
-#lang #langBtn:hover {
+#footer #lang #langBtn:hover {
   display: block;
   position: absolute;
   z-index: 10;
 }
-#lang #langBtn::-webkit-scrollbar {
+#footer #lang #langBtn::-webkit-scrollbar {
   width: 8px;
 }
-#lang #langBtn::-webkit-scrollbar-track {
+#footer #lang #langBtn::-webkit-scrollbar-track {
   box-shadow: inset 0 0 2px rgb(88, 88, 88);
   border-radius: 2px;
 }
-#lang #langBtn::-webkit-scrollbar-thumb {
+#footer #lang #langBtn::-webkit-scrollbar-thumb {
   background-color: #b8add2;
   border-radius: 10px;
 }
-#lang #langBtn::-webkit-scrollbar-button {
+#footer #lang #langBtn::-webkit-scrollbar-button {
   height: 10px;
 }
-#lang #langBtn:hover {
+#footer #lang #langBtn:hover {
   border-radius: 20px;
   width: 160px;
   position: relative;
 }
-#lang #langBtn .languages {
+#footer #lang #langBtn .languages {
   display: none;
   color: #f4eeff;
   text-align: center;
@@ -406,14 +350,13 @@ ul > li .footerHeader {
   padding: 0 20px;
   background-color: #27262c;
 }
-#lang #langBtn .languages:hover {
+#footer #lang #langBtn .languages:hover {
   text-align: center;
   display: block;
   cursor: pointer;
   color: #b8add2;
 }
-
-#buyCakeBtn {
+#footer #buyCakeBtn {
   display: flex;
   gap: 8px;
   background-color: #1fc7d4;
@@ -424,14 +367,13 @@ ul > li .footerHeader {
   font-weight: 600;
   color: #000;
 }
-#buyCakeBtn svg {
+#footer #buyCakeBtn svg {
   margin-top: 3px;
 }
-#buyCakeBtn:hover {
+#footer #buyCakeBtn:hover {
   background-color: #41a0a7;
 }
-
-#scrollUp {
+#footer #scrollUp {
   display: inline-flex;
   width: 48px;
   height: 48px;
@@ -445,20 +387,19 @@ ul > li .footerHeader {
   right: 70px;
   cursor: pointer;
 }
-#scrollUp:hover {
+#footer #scrollUp:hover {
   background-color: #41a0a7;
 }
-
 @media (min-width: 852px) {
-  #on-sm-screen {
+  #footer #on-sm-screen {
     display: none;
   }
-  #mainFooter-smScreens {
+  #footer #mainFooter-smScreens {
     display: none;
   }
 }
 @media (min-width: 576px) and (max-width: 851px) {
-  #on-sm-screen {
+  #footer #on-sm-screen {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -471,11 +412,11 @@ ul > li .footerHeader {
     z-index: 99;
     border-top: 1px solid #343434;
   }
-  #on-sm-screen #trade,
-  #on-sm-screen #earn,
-  #on-sm-screen #win,
-  #on-sm-screen #nft,
-  #on-sm-screen #hamburger {
+  #footer #on-sm-screen #trade,
+  #footer #on-sm-screen #earn,
+  #footer #on-sm-screen #win,
+  #footer #on-sm-screen #nft,
+  #footer #on-sm-screen #hamburger {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -485,26 +426,26 @@ ul > li .footerHeader {
     line-height: 1.5;
     color: #b8add2;
   }
-  #on-sm-screen #trade svg,
-  #on-sm-screen #earn svg,
-  #on-sm-screen #win svg,
-  #on-sm-screen #nft svg,
-  #on-sm-screen #hamburger svg {
+  #footer #on-sm-screen #trade svg,
+  #footer #on-sm-screen #earn svg,
+  #footer #on-sm-screen #win svg,
+  #footer #on-sm-screen #nft svg,
+  #footer #on-sm-screen #hamburger svg {
     fill: #b8add2;
   }
-  #pancakeFlyingBottom,
-  #pancakeFlyingTop {
+  #footer #pancakeFlyingBottom,
+  #footer #pancakeFlyingTop {
     display: none;
   }
-  #on-sm-screen {
+  #footer #on-sm-screen {
     padding: 10px 90px;
   }
-  #mainFooter-smScreens {
+  #footer #mainFooter-smScreens {
     display: none;
   }
 }
 @media (max-width: 575px) {
-  #on-sm-screen {
+  #footer #on-sm-screen {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -517,11 +458,11 @@ ul > li .footerHeader {
     z-index: 99;
     border-top: 1px solid #343434;
   }
-  #on-sm-screen #trade,
-  #on-sm-screen #earn,
-  #on-sm-screen #win,
-  #on-sm-screen #nft,
-  #on-sm-screen #hamburger {
+  #footer #on-sm-screen #trade,
+  #footer #on-sm-screen #earn,
+  #footer #on-sm-screen #win,
+  #footer #on-sm-screen #nft,
+  #footer #on-sm-screen #hamburger {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -531,38 +472,38 @@ ul > li .footerHeader {
     line-height: 1.5;
     color: #b8add2;
   }
-  #on-sm-screen #trade svg,
-  #on-sm-screen #earn svg,
-  #on-sm-screen #win svg,
-  #on-sm-screen #nft svg,
-  #on-sm-screen #hamburger svg {
+  #footer #on-sm-screen #trade svg,
+  #footer #on-sm-screen #earn svg,
+  #footer #on-sm-screen #win svg,
+  #footer #on-sm-screen #nft svg,
+  #footer #on-sm-screen #hamburger svg {
     fill: #b8add2;
   }
-  #pancakeFlyingBottom,
-  #pancakeFlyingTop {
+  #footer #pancakeFlyingBottom,
+  #footer #pancakeFlyingTop {
     display: none;
   }
-  #mainFooterUpLinks {
+  #footer #mainFooterUpLinks {
     display: flex;
     flex-direction: column;
   }
-  #logoFooter {
+  #footer #logoFooter {
     order: 1;
   }
-  #mainfooterContents {
+  #footer #mainfooterContents {
     display: none;
   }
-  #mainFooter-smScreens {
+  #footer #mainFooter-smScreens {
     display: flex;
     flex-direction: column;
   }
-  #mainFooter-smScreens #logoFooter {
+  #footer #mainFooter-smScreens #logoFooter {
     order: 1;
     margin: 20px 25px 0;
     padding-bottom: 20px;
     border-bottom: 1px solid #343434;
   }
-  #mainFooter-smScreens #mainFooterDown {
+  #footer #mainFooter-smScreens #mainFooterDown {
     display: flex;
     flex-direction: column;
     order: 2;
@@ -570,40 +511,40 @@ ul > li .footerHeader {
     margin: 0 10px;
     padding: 30px 10px;
   }
-  #mainFooter-smScreens #mainFooterDown #buyCake {
+  #footer #mainFooter-smScreens #mainFooterDown #buyCake {
     order: 1;
     justify-content: space-between;
   }
-  #mainFooter-smScreens #mainFooterDown #downFirstCol {
+  #footer #mainFooter-smScreens #mainFooterDown #downFirstCol {
     order: 2;
     gap: 20px;
     margin-top: 30px;
   }
-  #mainFooter-smScreens #about,
-  #mainFooter-smScreens #help,
-  #mainFooter-smScreens #developers {
+  #footer #mainFooter-smScreens #about,
+  #footer #mainFooter-smScreens #help,
+  #footer #mainFooter-smScreens #developers {
     order: 3;
     margin-left: 25px;
   }
-  #mainFooter-smScreens #mainFooterUpIcons {
+  #footer #mainFooter-smScreens #mainFooterUpIcons {
     order: 4;
     padding-left: 25px;
   }
-  #mainFooter-smScreens #hr {
+  #footer #mainFooter-smScreens #hr {
     order: 5;
     margin-bottom: 90px;
     margin-left: 25px;
   }
-  #startInSecondsMain {
+  #footer #startInSecondsMain {
     margin: 0 25px;
   }
-  #startInSecondsMain h1 {
+  #footer #startInSecondsMain h1 {
     font-size: 30px;
     font-weight: 600;
   }
-  #scrollUp {
+  #footer #scrollUp {
     right: 20px;
   }
 }
 
-/*# sourceMappingURL=footer.css.map */
+/*# sourceMappingURL=style.css.map */
