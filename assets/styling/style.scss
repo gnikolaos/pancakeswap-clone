@@ -49,19 +49,27 @@ body {
   }
   .tradeAnything {
     display: flex;
+    flex-flow: column-reverse;
+    align-items: flex-end;
     justify-content: center;
     margin-top: 5rem;
+    padding-block: 5rem;
+    overflow: hidden;
+  }
+  @media screen and (min-width: 852px) {
+    flex-flow: row;
+    align-items: center;
   }
   .paragraphOne {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 5rem;
+    padding: 5rem;
     align-self: flex-start;
   }
   .paragraphTwo {
     @extend .paragraphOne;
-    margin-top: 10rem;
+    margin-top: 1rem;
   }
   .containerOfCoinImages {
     max-height: 512px;
@@ -71,7 +79,7 @@ body {
   }
   .containerOfSecondImages {
     @extend .containerOfCoinImages;
-    margin-top: 10rem;
+    margin-top: 1rem;
   }
   .images {
     width: 252px;
@@ -183,8 +191,6 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 968px;
-    margin-inline: auto;
   }
   .table-header,
   .table-body {
@@ -218,29 +224,52 @@ body {
   }
   .table-content {
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(2, auto);
     gap: 32px;
     position: relative;
-    height: 80px;
   }
-  .table-content2 {
-    @extend .table-content;
+
+  @media screen and (min-width: 576px) {
+    .table-content {
+      gap: 16px;
+      grid-template-columns: repeat(5, auto);
+    }
+  }
+
+  @media screen and (min-width: 852px) {
+    .table-content {
+      gap: 32px;
+    }
   }
 
   #heading-b,
   #body-b {
     opacity: 1;
+    margin-top: -9px;
+  }
+  @media screen and (min-width: 576px) {
+    #body-b {
+      margin-top: 0px;
+    }
   }
 
   .content1 {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.5px;
   }
   .content2 {
     @extend .content1;
     border-left: 1px solid $colors-dark-inputSecondary;
     padding-left: 16px;
+  }
+  @media screen and (min-width: 576px) {
+    .content1 {
+      gap: 0.5rem;
+    }
+    .content2 {
+      @extend .content1;
+    }
   }
 
   .head {
@@ -372,7 +401,7 @@ body {
       @extend .paragraphOne;
       margin-top: 0;
       margin-left: 64px;
-      margin-top: 10rem;
+      margin-top: 1rem;
     }
     .earnPassive {
       flex-direction: row-reverse;
@@ -403,22 +432,33 @@ body {
     .table {
       justify-content: flex-start;
       align-items: flex-start;
-      margin-left: 2rem;
-    }
-    .table-content {
-      grid-template-columns: repeat(2, auto);
-      gap: 7rem;
-      height: 550px;
+      padding-left: 2rem;
     }
     .first-table {
       width: 434px;
-    }
-    .table-content2 {
-      @extend .table-content;
     }
     .content2 {
       border-left: none;
       padding-left: 0px;
     }
+  }
+  .secontPart-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 968px;
+    padding-block: 16px;
+  }
+  @media screen and (min-width: 968px) {
+    padding-block: 48px;
+  }
+  @media screen and (min-width: 576px) {
+    padding-block: 32px;
+  }
+  @media screen and (min-width: 370) {
+    padding-block: 24px;
   }
 }

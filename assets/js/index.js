@@ -382,6 +382,13 @@ window.onload = () => {
   const tableBodyB = document.querySelector("#body-b");
   const headText = document.querySelector("#heading-b");
   const tableBtn = document.querySelector("#table-button");
+  let tableHeight = document.querySelector(".table-body").offsetHeight;
+
+  function updateTableHeight() {
+    tableHeight = document.querySelector(".table-body").offsetHeight;
+    return tableHeight;
+  }
+
   let tableInterval;
   let head = document.querySelectorAll(".head");
   let subhead = document.querySelectorAll(".subhead");
@@ -445,14 +452,15 @@ window.onload = () => {
 
   //when clicking button table change
   function changeTable(e) {
+    tableHeight = updateTableHeight();
     if (headText.innerHTML === "Farms") {
       tableBodyA.classList.remove("fade-in");
       tableBodyB.classList.remove("fade-out");
       headText.innerHTML = "Syrup Pools";
       tableBodyA.classList.add("fade-out");
-      tableBodyA.style.transform = `translate3d(0px, 80px, 0px)`;
+      tableBodyA.style.transform = `translate3d(0px, ${tableHeight}px, 0px)`;
       tableBodyB.classList.add("fade-in");
-      tableBodyB.style.transform = `translate3d(0px, -80px, 0px)`;
+      tableBodyB.style.transform = `translate3d(0px, -${tableHeight}px, 0px)`;
     } else {
       tableBodyB.classList.remove("fade-in");
       tableBodyA.classList.remove("fade-out");
@@ -460,7 +468,7 @@ window.onload = () => {
       tableBodyA.classList.add("fade-in");
       tableBodyA.style.transform = `translate3d(0px, 0px, 0px)`;
       tableBodyB.classList.add("fade-out");
-      tableBodyB.style.transform = `translate3d(0px, 80px, 0px)`;
+      tableBodyB.style.transform = `translate3d(0px, ${tableHeight}px, 0px)`;
     }
     clearInterval(tableInterval);
     startAutoTable();
@@ -479,7 +487,7 @@ window.onload = () => {
       let newActiveTable = document.querySelectorAll("#body")[activeIndex];
       //  newActiveTable.classList.add("tableOn");
       changeTable({ target: newActiveTable });
-    }, 5000);
+    }, 500000);
   }
 };
 
