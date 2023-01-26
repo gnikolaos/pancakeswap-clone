@@ -55,6 +55,11 @@ const callBackFunction = function (entries) {
       timer(".number4", 103);
       timer(".number5", 91);
     }, 2000);
+    change(section1, section1_vs);
+    change(section2, section2_vs);
+    change(section3, section3_vs);
+    change(section4, section4_vs);
+    change(section5, section5_vs);
   }
 };
 const observer = new IntersectionObserver(callBackFunction);
@@ -82,7 +87,7 @@ let section5_vs = document.querySelector(".section5_vs");
 //every 5 second table change
 //when table change animation is start for the second table
 
-/* function change(element1, element2) {
+function change(element1, element2) {
   setInterval(function () {
     setTimeout(() => {
       changeTable();
@@ -99,14 +104,8 @@ let section5_vs = document.querySelector(".section5_vs");
       element2.classList.add("addingClass1");
       element2.classList.remove("addingClass2");
     }
-  }, 4000);
+  }, 5000);
 }
-
-change(section1, section1_vs);
-change(section2, section2_vs);
-change(section3, section3_vs);
-change(section4, section4_vs);
-change(section5, section5_vs); */
 
 //theme adjustment
 /* const chk = document.getElementById("chk");
