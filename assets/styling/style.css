@@ -6,7 +6,8 @@ html {
 * {
   box-sizing: inherit;
 }
-*:before, *:after {
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -72,18 +73,22 @@ body {
 }
 
 @media screen and (max-width: 852px) {
-  #home-4 .paragraphOne, #home-4 .paragraphTwo {
+  #home-4 .paragraphOne,
+  #home-4 .paragraphTwo {
     align-self: center;
   }
 }
 #home-4 .tradeAnything {
   display: flex;
+  width: 100%;
+  max-width: 968px;
   flex-flow: column-reverse;
   align-items: flex-end;
   justify-content: center;
   margin-top: 5rem;
   padding-block: 5rem;
   overflow: hidden;
+  margin-inline: auto;
 }
 @media screen and (min-width: 852px) {
   #home-4 {
@@ -91,7 +96,8 @@ body {
     align-items: center;
   }
 }
-#home-4 .paragraphOne, #home-4 .paragraphTwo {
+#home-4 .paragraphOne,
+#home-4 .paragraphTwo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,7 +107,8 @@ body {
 #home-4 .paragraphTwo {
   margin-top: 1rem;
 }
-#home-4 .containerOfCoinImages, #home-4 .containerOfSecondImages {
+#home-4 .containerOfCoinImages,
+#home-4 .containerOfSecondImages {
   max-height: 512px;
   max-width: 512px;
   position: relative;
@@ -120,13 +127,17 @@ body {
   vertical-align: baseline;
 }
 #home-4 .secondPart {
+  position: relative;
+  overflow: hidden;
   background-color: #3c3742;
   width: 100%;
   padding-bottom: 48px;
 }
 #home-4 .secondPart > svg {
+  position: absolute;
+  top: 0;
   fill: #08060b;
-  width: 100%;
+  width: 150%;
   height: 100%;
   max-height: 48px;
 }
@@ -194,7 +205,8 @@ body {
   line-height: 1.5;
   margin-bottom: 0;
 }
-#home-4 .containerOfCoinImages :nth-child(1), #home-4 .containerOfSecondImages :nth-child(1) {
+#home-4 .containerOfCoinImages :nth-child(1),
+#home-4 .containerOfSecondImages :nth-child(1) {
   animation: 3s ease-in-out 1s infinite normal none running image;
 }
 @keyframes image {
@@ -208,7 +220,8 @@ body {
     transform: translate(0px, 0px);
   }
 }
-#home-4 .containerOfCoinImages :nth-child(2), #home-4 .containerOfSecondImages :nth-child(2) {
+#home-4 .containerOfCoinImages :nth-child(2),
+#home-4 .containerOfSecondImages :nth-child(2) {
   animation: 3s ease-in-out 1s infinite normal none running image;
 }
 @keyframes image {
@@ -222,7 +235,8 @@ body {
     transform: translate(0px, 0px);
   }
 }
-#home-4 .containerOfCoinImages :nth-child(3), #home-4 .containerOfSecondImages :nth-child(3) {
+#home-4 .containerOfCoinImages :nth-child(3),
+#home-4 .containerOfSecondImages :nth-child(3) {
   animation: 3s ease-in-out 1s infinite normal none running image;
 }
 @keyframes image {
@@ -300,7 +314,8 @@ body {
     height: 80px;
   }
 }
-#home-4 .table-heading, #home-4 .table-heading2 {
+#home-4 .table-heading,
+#home-4 .table-heading2 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -338,7 +353,8 @@ body {
     margin-top: 0px;
   }
 }
-#home-4 .content1, #home-4 .content2 {
+#home-4 .content1,
+#home-4 .content2 {
   display: flex;
   flex-direction: column;
   gap: 0.5px;
@@ -348,7 +364,8 @@ body {
   padding-left: 16px;
 }
 @media screen and (min-width: 576px) {
-  #home-4 .content1, #home-4 .content2 {
+  #home-4 .content1,
+  #home-4 .content2 {
     gap: 0.5rem;
   }
 }
@@ -368,7 +385,8 @@ body {
 #home-4 .second-table {
   opacity: 0;
 }
-#home-4 .arrow-button, #home-4 .arrow-button2 {
+#home-4 .arrow-button,
+#home-4 .arrow-button2 {
   display: flex;
   background-color: transparent;
   border: none;
@@ -376,7 +394,8 @@ body {
   padding: 0px;
   margin-inline: 15px;
 }
-#home-4 .arrow, #home-4 .arrow2 {
+#home-4 .arrow,
+#home-4 .arrow2 {
   align-self: center;
   fill: #b8add2;
 }
@@ -443,7 +462,8 @@ body {
 #home-4 body.bgColor .subhead {
   color: #7a6eaa;
 }
-#home-4 body.bgColor .arrow, #home-4 body.bgColor .arrow2 {
+#home-4 body.bgColor .arrow,
+#home-4 body.bgColor .arrow2 {
   fill: #7a6eaa;
 }
 @media screen and (max-width: 852px) {
@@ -451,7 +471,8 @@ body {
     flex-direction: column-reverse;
     align-items: center;
   }
-  #home-4 .paragraphOne, #home-4 .paragraphTwo {
+  #home-4 .paragraphOne,
+  #home-4 .paragraphTwo {
     align-self: center;
     margin-right: 64px;
     margin-top: 5rem;
@@ -465,7 +486,8 @@ body {
     flex-direction: row-reverse;
     align-items: center;
   }
-  #home-4 .containerOfCoinImages, #home-4 .containerOfSecondImages {
+  #home-4 .containerOfCoinImages,
+  #home-4 .containerOfSecondImages {
     height: 192px;
     width: 192px;
     margin-bottom: 24px;
