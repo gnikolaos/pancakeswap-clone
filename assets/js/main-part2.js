@@ -40,7 +40,6 @@ let content = document.querySelector(".table-content");
 // intersection observer API
 const callBackFunction = function (entries) {
   console.log(entries[0]);
-
   if (entries[0].isIntersecting == true) {
     setTimeout(() => {
       for (let i = 0; i < head.length; i++) {
@@ -55,6 +54,7 @@ const callBackFunction = function (entries) {
       timer(".number4", 103);
       timer(".number5", 91);
     }, 2000);
+
     change(section1, section1_vs);
     change(section2, section2_vs);
     change(section3, section3_vs);
