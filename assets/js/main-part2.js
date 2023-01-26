@@ -35,29 +35,31 @@ function timer(className, condition) {
 let head = document.querySelectorAll(".head");
 let subhead = document.querySelectorAll(".subhead");
 let number = document.querySelectorAll(".number");
+let content = document.querySelector(".table-content");
 
 // intersection observer API
 const callBackFunction = function (entries) {
   console.log(entries[0]);
 
-  setTimeout(() => {
-    for (let i = 0; i < head.length; i++) {
-      head[i].style.visibility = "visible";
-      subhead[i].style.visibility = "visible";
-      number[i].style.visibility = "visible";
-    }
-    timer(".number1", 127);
-    timer(".number2", 121);
-    timer(".number3", 114);
-    timer(".number4", 103);
-    timer(".number5", 91);
-  }, 4000);
+  if (entries[0].isIntersecting == true) {
+    setTimeout(() => {
+      for (let i = 0; i < head.length; i++) {
+        head[i].style.visibility = "visible";
+        subhead[i].style.visibility = "visible";
+        number[i].style.visibility = "visible";
+      }
+
+      timer(".number1", 127);
+      timer(".number2", 121);
+      timer(".number3", 114);
+      timer(".number4", 103);
+      timer(".number5", 91);
+    }, 2000);
+  }
 };
-const observer = new IntersectionObserver(callBackFunction, {
-  threshold: 0,
-});
-observer.observe(table1);
-setTimeout(() => observer.unobserve(table1), 5000);
+const observer = new IntersectionObserver(callBackFunction);
+observer.observe(content);
+//setTimeout(() => observer.unobserve(content), 5000);
 
 //to add animation for table element
 //declaration of every unit of tables
@@ -80,7 +82,7 @@ let section5_vs = document.querySelector(".section5_vs");
 //every 5 second table change
 //when table change animation is start for the second table
 
-function change(element1, element2) {
+/* function change(element1, element2) {
   setInterval(function () {
     setTimeout(() => {
       changeTable();
@@ -104,7 +106,7 @@ change(section1, section1_vs);
 change(section2, section2_vs);
 change(section3, section3_vs);
 change(section4, section4_vs);
-change(section5, section5_vs);
+change(section5, section5_vs); */
 
 //theme adjustment
 /* const chk = document.getElementById("chk");
