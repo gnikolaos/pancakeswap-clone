@@ -3,17 +3,7 @@ let table1 = document.querySelector(".first-table");
 let table2 = document.querySelector(".second-table");
 //to make both table same length
 let width = table2.clientWidth;
-
-//when clicking button table change
-function changeTable() {
-  if (table1.style.display === "none") {
-    table1.style.display = "block";
-    table2.style.display = "none";
-  } else {
-    table1.style.display = "none";
-    table2.style.display = "block";
-  }
-}
+let tableInterval;
 
 //timer function
 //when first table is shown in the page counter starts
@@ -39,8 +29,7 @@ let content = document.querySelector(".table-content");
 
 // intersection observer API
 const callBackFunction = function (entries) {
-  console.log(entries[0]);
-
+  console.log(entries)
   if (entries[0].isIntersecting == true) {
     setTimeout(() => {
       for (let i = 0; i < head.length; i++) {
@@ -88,7 +77,7 @@ let section5_vs = document.querySelector(".section5_vs");
 //when table change animation is start for the second table
 
 function change(element1, element2) {
-  setInterval(function () {
+  tableInterval = setInterval(function () {
     setTimeout(() => {
       changeTable();
     }, 1000);
@@ -107,6 +96,20 @@ function change(element1, element2) {
   }, 5000);
 }
 
+//when clicking button table change
+function changeTable() {
+  if (table1.style.display === "none") {
+    table1.style.display = "block";
+    table2.style.display = "none";
+    clearInterval(tableInterval);
+  } else {
+    table1.style.display = "none";
+    table2.style.display = "block";
+    clearInterval(tableInterval);
+  }
+  observer.observe(content);
+  callBackFunction();
+}
 //theme adjustment
 /* const chk = document.getElementById("chk");
 

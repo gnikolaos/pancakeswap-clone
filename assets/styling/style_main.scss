@@ -61,6 +61,7 @@
 .secondPart {
   background-color: $colors-dark-backgroundDisabled;
   width: 100%;
+  padding-bottom: 48px;
 }
 .secondPart > svg {
   fill: $colors-dark-background;
@@ -77,8 +78,8 @@
 .earnPassive {
   display: flex;
   justify-content: center;
-  margin-top: 10rem;
-  margin-bottom: 5rem;
+  // margin-top: 8rem;
+  // margin-bottom: 5rem;
 }
 
 .tradeNow,
@@ -158,6 +159,9 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 .head,
 .number,
@@ -168,7 +172,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 10rem;
+  margin-top: 24px;
 }
 .table-heading2 {
   @extend .table-heading;
@@ -177,7 +181,7 @@ a {
   display: grid;
   grid-template-columns: repeat(5, auto);
   gap: 1rem;
-  margin-bottom: 10rem;
+  margin-bottom: 8rem;
   position: relative;
   height: 80px;
 }
@@ -207,6 +211,7 @@ a {
 }
 .first-table {
   width: 853px;
+  display: block;
 }
 .second-table {
   display: none;
