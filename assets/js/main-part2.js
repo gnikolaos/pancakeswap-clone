@@ -29,7 +29,7 @@ let content = document.querySelector(".table-content");
 
 // intersection observer API
 const callBackFunction = function (entries) {
-  console.log(entries)
+  console.log(entries);
   if (entries[0].isIntersecting == true) {
     setTimeout(() => {
       for (let i = 0; i < head.length; i++) {
