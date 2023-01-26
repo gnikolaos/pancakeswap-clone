@@ -54,44 +54,108 @@ body {
     flex-flow: column-reverse;
     align-items: flex-end;
     justify-content: center;
-    margin-top: 5rem;
-    padding-block: 5rem;
+    padding-block: 16px;
+    min-height: auto;
     overflow: hidden;
     margin-inline: auto;
   }
   @media screen and (min-width: 852px) {
-    flex-flow: row;
-    align-items: center;
+    .tradeAnything {
+      flex-flow: row;
+      align-items: center;
+    }
+    .images {
+      left: 0;
+      right: auto;
+    }
+  }
+  @media screen and (min-width: 576px) {
+    .tradeAnything {
+      padding-block: 32px;
+    }
+  }
+  @media screen and (min-width: 370px) {
+    .tradeAnything {
+      padding-inline: 24px;
+    }
   }
   .paragraphOne {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 5rem;
+    flex: 1 1 0%;
     align-self: flex-start;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .subTitle {
+      color: #b8add2;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
   }
+  @media screen and (min-width: 852px) {
+    .paragraphOne {
+      align-self: center;
+      margin-right: 64px;
+    }
+  }
+
+  @media screen and (min-width: 968px) {
+    .paragraphOne h2 {
+      font-size: 40px;
+    }
+  }
+
   .paragraphTwo {
     @extend .paragraphOne;
     margin-top: 1rem;
   }
   .containerOfCoinImages {
-    max-height: 512px;
-    max-width: 512px;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0;
     position: relative;
-    width: 252px;
+    .containerOfCoinImages-container {
+      position: relative;
+      max-height: 512px;
+      height: 192px;
+      img {
+        height: 192px;
+      }
+    }
+  }
+  @media screen and (min-width: 852px) {
+    .containerOfCoinImages {
+      flex: 1 1 0%;
+      .containerOfCoinImages-container {
+        height: 428px;
+        img {
+          height: 428px;
+        }
+      }
+    }
   }
   .containerOfSecondImages {
     @extend .containerOfCoinImages;
     margin-top: 1rem;
   }
   .images {
-    width: 252px;
-    height: 252px;
+    height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
-    object-fit: contain;
-    vertical-align: baseline;
+    right: 0;
+
+    img {
+      max-height: 428px;
+      width: auto;
+      height: auto;
+    }
   }
   .secondPart {
     position: relative;
@@ -165,17 +229,17 @@ body {
     @include text(16px, 600, 1.5, 0);
   }
 
-  .containerOfCoinImages :nth-child(1) {
+  .containerOfCoinImages-container :nth-child(1) {
     animation: 3s ease-in-out 1s infinite normal none running image;
     @include animation(image, 3px, 15px);
   }
 
-  .containerOfCoinImages :nth-child(2) {
+  .containerOfCoinImages-container :nth-child(2) {
     animation: 3s ease-in-out 1s infinite normal none running image;
     @include animation(image, 5px, 10px);
   }
 
-  .containerOfCoinImages :nth-child(3) {
+  .containerOfCoinImages-container :nth-child(3) {
     animation: 3s ease-in-out 1s infinite normal none running image;
     @include animation(image, 6px, 5px);
   }
@@ -394,11 +458,6 @@ body {
   }
 
   @media screen and (max-width: 852px) {
-    .tradeAnything {
-      flex-direction: column-reverse;
-      align-items: center;
-    }
-
     .paragraphOne {
       align-self: center;
       margin-right: 64px;
@@ -413,18 +472,6 @@ body {
     .earnPassive {
       flex-direction: row-reverse;
       align-items: center;
-    }
-    .containerOfCoinImages {
-      height: 192px;
-      width: 192px;
-      margin-bottom: 24px;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .images {
-      width: 160px;
-      height: 160px;
     }
     .containerOfSecondImages {
       @extend .containerOfCoinImages;
