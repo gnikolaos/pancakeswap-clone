@@ -104,6 +104,29 @@ body {
   transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
 }
 
+// home-4 mixins 
+//mixins for text properties
+@mixin text($fontSize, $fontWeight, $lineHeight, $marginBottom) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  margin-bottom: $marginBottom;
+}
+//mixin for animation properties
+@mixin animation($animationName, $parameterX, $parameterY) {
+  @keyframes #{$animationName} {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate($parameterX, $parameterY);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+}
+
 // APP
 .app {
   .mobile-nav-items {
@@ -1356,6 +1379,484 @@ body {
     }
   }
 }
+
+// Home 4
+#home-4 {
+  @media screen and (max-width: 852px) {
+    .paragraphOne {
+      align-self: center;
+    }
+  }
+  .tradeAnything {
+    display: flex;
+    width: 100%;
+    max-width: 968px;
+    flex-flow: column-reverse;
+    align-items: flex-end;
+    justify-content: center;
+    padding-block: 16px;
+    min-height: auto;
+    overflow: hidden;
+    margin-inline: auto;
+  }
+  @media screen and (min-width: 852px) {
+    .tradeAnything {
+      flex-flow: row;
+      align-items: center;
+    }
+    .images {
+      left: 0;
+      right: auto;
+    }
+  }
+  @media screen and (min-width: 576px) {
+    .tradeAnything {
+      padding-block: 32px;
+    }
+  }
+  @media screen and (min-width: 370px) {
+    .tradeAnything {
+      padding-inline: 24px;
+    }
+  }
+  .paragraphOne {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+    align-self: flex-start;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .subTitle {
+      color: #b8add2;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+  }
+  @media screen and (min-width: 852px) {
+    .paragraphOne {
+      align-self: center;
+      margin-right: 64px;
+    }
+  }
+
+  @media screen and (min-width: 968px) {
+    .paragraphOne h2 {
+      font-size: 40px;
+    }
+  }
+
+  .paragraphTwo {
+    @extend .paragraphOne;
+    margin-top: 1rem;
+  }
+  .containerOfCoinImages {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0;
+    position: relative;
+    .containerOfCoinImages-container {
+      position: relative;
+      max-height: 512px;
+      height: 192px;
+      img {
+        height: 192px;
+      }
+    }
+  }
+  @media screen and (min-width: 852px) {
+    .containerOfCoinImages {
+      flex: 1 1 0%;
+      .containerOfCoinImages-container {
+        height: 428px;
+        img {
+          height: 428px;
+        }
+      }
+    }
+  }
+  .containerOfSecondImages {
+    @extend .containerOfCoinImages;
+    margin-top: 1rem;
+  }
+  .images {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    img {
+      max-height: 428px;
+      width: auto;
+      height: auto;
+    }
+  }
+  .secondPart {
+    position: relative;
+    overflow: hidden;
+    background-color: $colors-dark-backgroundDisabled;
+    width: 100%;
+    padding-bottom: 48px;
+  }
+
+  .secondPart > svg {
+    position: absolute;
+    top: 0;
+    fill: $colors-dark-background;
+    width: 150%;
+    height: 100%;
+    max-height: 48px;
+  }
+  .svg svg {
+    fill: #201335;
+    width: 100%;
+    height: 100%;
+    max-height: 48px;
+  }
+  .earnPassive {
+    display: flex;
+    justify-content: center;
+    // margin-top: 8rem;
+    // margin-bottom: 5rem;
+  }
+
+  .tradeNow,
+  .explore {
+    display: flex;
+    align-items: center;
+  }
+  span,
+  h2 {
+    @include text(32px, 600, 1.5, 24px);
+  }
+  span {
+    color: $colors-dark-secondary;
+  }
+  h2 {
+    color: $colors-dark-text;
+  }
+  .subTitle {
+    color: $colors-dark-textSubtle;
+    @include text(16px, 400, 1.5, 24px);
+  }
+  .buttonTrade,
+  .buttonExplore {
+    @include text(16px, 600, 0, 0);
+    align-items: center;
+    border: 0px;
+    border-radius: 16px;
+    box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    height: 48px;
+    padding: 0px 24px;
+    background-color: $colors-dark-primary;
+    color: $colors-dark-invertedContrast;
+    margin-right: 16px;
+  }
+  a {
+    text-decoration: none;
+  }
+  .learnLink {
+    color: $colors-dark-primary;
+    @include text(16px, 600, 1.5, 0);
+  }
+
+  .containerOfCoinImages-container :nth-child(1) {
+    animation: 3s ease-in-out 1s infinite normal none running image;
+    @include animation(image, 3px, 15px);
+  }
+
+  .containerOfCoinImages-container :nth-child(2) {
+    animation: 3s ease-in-out 1s infinite normal none running image;
+    @include animation(image, 5px, 10px);
+  }
+
+  .containerOfCoinImages-container :nth-child(3) {
+    animation: 3s ease-in-out 1s infinite normal none running image;
+    @include animation(image, 6px, 5px);
+  }
+
+  .containerOfSecondImages :nth-child(1) {
+    animation: 3s ease-in-out 1s infinite normal none running image;
+    @include animation(image, 3px, 15px);
+  }
+
+  .containerOfSecondImages :nth-child(2) {
+    animation: 3s ease-in-out 1s infinite normal none running image;
+    @include animation(image, 5px, 10px);
+  }
+
+  .containerOfSecondImages :nth-child(3) {
+    animation: 3s ease-in-out 1s infinite normal none running image;
+    @include animation(image, 6px, 5px);
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .table-header,
+  .table-body {
+    position: relative;
+  }
+  .table-header {
+    display: flex;
+    margin-bottom: 24px;
+  }
+  .table-body {
+    height: 240px;
+    overflow: hidden;
+    @media screen and (min-width: 576px) {
+      height: 80px;
+    }
+  }
+
+  .table-heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 24px;
+  }
+  .table-heading2 {
+    @extend .table-heading;
+  }
+  .head,
+  .number,
+  .subhead {
+    visibility: hidden;
+  }
+  .table-content {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 32px;
+    position: relative;
+  }
+
+  @media screen and (min-width: 576px) {
+    .table-content {
+      gap: 16px;
+      grid-template-columns: repeat(5, auto);
+    }
+  }
+
+  @media screen and (min-width: 852px) {
+    .table-content {
+      gap: 32px;
+    }
+  }
+
+  #heading-b,
+  #body-b {
+    opacity: 1;
+    margin-top: -9px;
+  }
+  @media screen and (min-width: 576px) {
+    #body-b {
+      margin-top: 0px;
+    }
+  }
+
+  .content1 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5px;
+  }
+  .content2 {
+    @extend .content1;
+    border-left: 1px solid $colors-dark-inputSecondary;
+    padding-left: 16px;
+  }
+  @media screen and (min-width: 576px) {
+    .content1 {
+      gap: 0.5rem;
+    }
+    .content2 {
+      @extend .content1;
+    }
+  }
+
+  .head {
+    color: $colors-dark-secondary;
+  }
+  .number {
+    color: $colors-dark-text;
+  }
+  .subhead {
+    color: $colors-dark-textSubtle;
+  }
+  .first-table {
+    width: 853px;
+    opacity: 1;
+  }
+  .second-table {
+    opacity: 0;
+  }
+  .arrow-button {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    width: 48px;
+    padding: 0px;
+    margin-inline: 15px;
+  }
+
+  .arrow-button2 {
+    @extend .arrow-button;
+  }
+  .arrow {
+    align-self: center;
+    fill: $colors-dark-textSubtle;
+  }
+  .arrow2 {
+    @extend .arrow;
+  }
+  .fade-in {
+    animation: fadeIn 1.5s;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .fade-out {
+    animation: fadeOut 1.5s;
+  }
+  @keyframes fadeOut {
+    100% {
+      opacity: 1;
+    }
+    0% {
+      opacity: 0;
+    }
+  }
+
+  //theme adjustment
+
+  body.bgColor {
+    background-color: white;
+  }
+  body.bgColor .secondPart {
+    background-color: $colors-light-backgroundDisabled;
+  }
+  body.bgColor .secondPart > svg {
+    fill: $colors-light-background;
+  }
+  body.bgColor .svg svg {
+    fill: #d8cbed;
+  }
+
+  body.bgColor span {
+    color: $colors-light-secondary;
+  }
+
+  body.bgColor h2 {
+    color: $colors-light-text;
+  }
+
+  body.bgColor .subTitle {
+    color: $colors-light-textSubtle;
+  }
+
+  body.bgColor .buttonTrade,
+  body.bgColor .buttonExplore {
+    background-color: $colors-light-primary;
+    color: $colors-light-invertedContrast;
+  }
+  body.bgColor .learnLink {
+    color: $colors-light-primary;
+  }
+
+  body.bgColor .content2 {
+    border-left: 1px solid $colors-light-inputSecondary;
+  }
+
+  body.bgColor .head {
+    color: $colors-light-secondary;
+  }
+
+  body.bgColor .number {
+    color: $colors-light-text;
+  }
+
+  body.bgColor .subhead {
+    color: $colors-light-textSubtle;
+  }
+
+  body.bgColor .arrow {
+    fill: $colors-light-textSubtle;
+  }
+
+  @media screen and (max-width: 852px) {
+    .paragraphOne {
+      align-self: center;
+      margin-right: 64px;
+      margin-top: 5rem;
+    }
+    .paragraphTwo {
+      @extend .paragraphOne;
+      margin-top: 0;
+      margin-left: 64px;
+      margin-top: 1rem;
+    }
+    .earnPassive {
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+    .containerOfSecondImages {
+      @extend .containerOfCoinImages;
+      margin-top: 35rem;
+    }
+    .first-table {
+      width: 652px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .table {
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-left: 2rem;
+    }
+    .first-table {
+      width: 434px;
+    }
+    .content2 {
+      border-left: none;
+      padding-left: 0px;
+    }
+  }
+  .secontPart-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 968px;
+    padding-block: 16px;
+  }
+  @media screen and (min-width: 968px) {
+    padding-block: 48px;
+  }
+  @media screen and (min-width: 576px) {
+    padding-block: 32px;
+  }
+  @media screen and (min-width: 370) {
+    padding-block: 24px;
+  }
+}
+
 
 // Footer related
 #footer {

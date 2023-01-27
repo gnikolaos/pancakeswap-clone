@@ -376,6 +376,119 @@ window.onload = () => {
       actionHandler({ target: newActiveBullet });
     }, 555000);
   }
+
+  //Table slider
+  const tableBodyA = document.querySelector("#body-a");
+  const tableBodyB = document.querySelector("#body-b");
+  const headText = document.querySelector("#heading-b");
+  const tableBtn = document.querySelector("#table-button");
+  let tableHeight = document.querySelector(".table-body").offsetHeight;
+
+  function updateTableHeight() {
+    tableHeight = document.querySelector(".table-body").offsetHeight;
+    return tableHeight;
+  }
+
+  let tableInterval;
+  let head = document.querySelectorAll(".head");
+  let subhead = document.querySelectorAll(".subhead");
+  let number = document.querySelectorAll(".number");
+  let content = document.querySelector(".table-body");
+  tableBtn.addEventListener("click", changeTable);
+  // timer
+  function timer(className, condition) {
+    let counts = setInterval(updated);
+    let upto = 0;
+    let element = document.querySelector(className).innerHTML;
+    let count = document.querySelector(className);
+    function updated() {
+      count.innerHTML = ++upto + "%";
+      if (upto === condition) {
+        clearInterval(counts);
+        count.innerHTML = element;
+      }
+    }
+  }
+  // intersection observer API
+  setTimeout(() => {
+    tableBodyA.classList.add("fade-in");
+  }, 1700);
+  const callBackFunction = function (entries) {
+    if (entries[0].isIntersecting == true) {
+      setTimeout(() => {
+        for (let i = 0; i < head.length; i++) {
+          head[i].style.visibility = "visible";
+          subhead[i].style.visibility = "visible";
+          number[i].style.visibility = "visible";
+        }
+
+        timer(".number1", 127);
+        timer(".number2", 121);
+        timer(".number3", 114);
+        timer(".number4", 103);
+        timer(".number5", 91);
+      }, 1700);
+    }
+  };
+  const observer = new IntersectionObserver(callBackFunction);
+  observer.observe(content);
+  //to add animation for table element
+  //declaration of every unit of tables
+
+  let section1 = document.querySelector(".section1");
+  let section1_vs = document.querySelector(".section1_vs");
+
+  let section2 = document.querySelector(".section2");
+  let section2_vs = document.querySelector(".section2_vs");
+
+  let section3 = document.querySelector(".section3");
+  let section3_vs = document.querySelector(".section3_vs");
+
+  let section4 = document.querySelector(".section4");
+  let section4_vs = document.querySelector(".section4_vs");
+
+  let section5 = document.querySelector(".section5");
+  let section5_vs = document.querySelector(".section5_vs");
+
+  //when clicking button table change
+  function changeTable(e) {
+    tableHeight = updateTableHeight();
+    if (headText.innerHTML === "Farms") {
+      tableBodyA.classList.remove("fade-in");
+      tableBodyB.classList.remove("fade-out");
+      headText.innerHTML = "Syrup Pools";
+      tableBodyA.classList.add("fade-out");
+      tableBodyA.style.transform = `translate3d(0px, ${tableHeight}px, 0px)`;
+      tableBodyB.classList.add("fade-in");
+      tableBodyB.style.transform = `translate3d(0px, -${tableHeight}px, 0px)`;
+    } else {
+      tableBodyB.classList.remove("fade-in");
+      tableBodyA.classList.remove("fade-out");
+      headText.innerHTML = "Farms";
+      tableBodyA.classList.add("fade-in");
+      tableBodyA.style.transform = `translate3d(0px, 0px, 0px)`;
+      tableBodyB.classList.add("fade-out");
+      tableBodyB.style.transform = `translate3d(0px, ${tableHeight}px, 0px)`;
+    }
+    clearInterval(tableInterval);
+    startAutoTable();
+  }
+  startAutoTable();
+  // Start auto change
+  function startAutoTable() {
+    // Get the active table
+    activeTable = document.querySelector(".tableOn");
+    // Get the index of the active table
+    let activeIndex = Array.from(document.querySelectorAll(".body")).indexOf(
+      activeTable
+    );
+    tableInterval = setInterval(() => {
+      activeIndex = (activeIndex + 1) % 2;
+      let newActiveTable = document.querySelectorAll("#body")[activeIndex];
+      //  newActiveTable.classList.add("tableOn");
+      changeTable({ target: newActiveTable });
+    }, 5000);
+  }
 };
 
 // HIDE THE PHISHING WARNING CONTAINER
