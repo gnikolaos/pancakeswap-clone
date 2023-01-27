@@ -104,7 +104,7 @@ body {
   transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
 }
 
-// home-4 mixins 
+// home-4 mixins
 //mixins for text properties
 @mixin text($fontSize, $fontWeight, $lineHeight, $marginBottom) {
   font-size: $fontSize;
@@ -1394,7 +1394,7 @@ body {
     flex-flow: column-reverse;
     align-items: flex-end;
     justify-content: center;
-    padding-block: 16px;
+    padding-block: 16px 32px;
     min-height: auto;
     overflow: hidden;
     margin-inline: auto;
@@ -1411,7 +1411,7 @@ body {
   }
   @media screen and (min-width: 576px) {
     .tradeAnything {
-      padding-block: 32px;
+      padding-block: 32px 64px;
     }
   }
   @media screen and (min-width: 370px) {
@@ -1442,7 +1442,6 @@ body {
   @media screen and (min-width: 852px) {
     .paragraphOne {
       align-self: center;
-      margin-right: 64px;
     }
   }
 
@@ -1800,8 +1799,7 @@ body {
   @media screen and (max-width: 852px) {
     .paragraphOne {
       align-self: center;
-      margin-right: 64px;
-      margin-top: 5rem;
+      margin-top: 24px;
     }
     .paragraphTwo {
       @extend .paragraphOne;
@@ -1846,17 +1844,29 @@ body {
     max-width: 968px;
     padding-block: 16px;
   }
+  .home-4-svg {
+    position: relative;
+    overflow: hidden;
+    svg {
+      width: 150%;
+    }
+  }
   @media screen and (min-width: 968px) {
-    padding-block: 48px;
+    .secontPart-container {
+      padding-block: 48px;
+    }
   }
   @media screen and (min-width: 576px) {
-    padding-block: 32px;
+    .secontPart-container {
+      padding-block: 32px;
+    }
   }
   @media screen and (min-width: 370) {
-    padding-block: 24px;
+    .secontPart-container {
+      padding-block: 24px;
+    }
   }
 }
-
 
 // Footer related
 #footer {
