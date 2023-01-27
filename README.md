@@ -75,4 +75,4 @@ Usage example for the break-point mixins in a basic SCSS code:
 
 #### Live demo
 
-[Press here](#) to see the result.
+[Press here](https://pancakeswap-clone-nine.vercel.app/) to see the result.
