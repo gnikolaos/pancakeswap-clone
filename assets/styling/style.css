@@ -1979,6 +1979,7 @@ body {
 }
 #home-4 .paragraphTwo {
   margin-top: 1rem;
+  width: 100%;
 }
 #home-4 .containerOfCoinImages,
 #home-4 .containerOfSecondImages {
@@ -1988,13 +1989,17 @@ body {
   position: relative;
 }
 #home-4 .containerOfCoinImages .containerOfCoinImages-container,
-#home-4 .containerOfSecondImages .containerOfCoinImages-container {
+#home-4 .containerOfSecondImages .containerOfCoinImages-container,
+#home-4 .containerOfCoinImages .containerOfSecondImages-container,
+#home-4 .containerOfSecondImages .containerOfSecondImages-container {
   position: relative;
   max-height: 512px;
   height: 192px;
 }
 #home-4 .containerOfCoinImages .containerOfCoinImages-container img,
-#home-4 .containerOfSecondImages .containerOfCoinImages-container img {
+#home-4 .containerOfSecondImages .containerOfCoinImages-container img,
+#home-4 .containerOfCoinImages .containerOfSecondImages-container img,
+#home-4 .containerOfSecondImages .containerOfSecondImages-container img {
   height: 192px;
 }
 @media screen and (min-width: 852px) {
@@ -2003,11 +2008,15 @@ body {
     flex: 1 1 0%;
   }
   #home-4 .containerOfCoinImages .containerOfCoinImages-container,
-  #home-4 .containerOfSecondImages .containerOfCoinImages-container {
+  #home-4 .containerOfSecondImages .containerOfCoinImages-container,
+  #home-4 .containerOfCoinImages .containerOfSecondImages-container,
+  #home-4 .containerOfSecondImages .containerOfSecondImages-container {
     height: 428px;
   }
   #home-4 .containerOfCoinImages .containerOfCoinImages-container img,
-  #home-4 .containerOfSecondImages .containerOfCoinImages-container img {
+  #home-4 .containerOfSecondImages .containerOfCoinImages-container img,
+  #home-4 .containerOfCoinImages .containerOfSecondImages-container img,
+  #home-4 .containerOfSecondImages .containerOfSecondImages-container img {
     height: 428px;
   }
 }
@@ -2028,9 +2037,9 @@ body {
 #home-4 .secondPart {
   position: relative;
   overflow: hidden;
-  background-color: #3c3742;
+  background: linear-gradient(166.77deg, #3b4155, #3a3045);
   width: 100%;
-  padding-bottom: 48px;
+  padding: 48px 0px;
 }
 #home-4 .secondPart > svg {
   position: absolute;
@@ -2048,7 +2057,16 @@ body {
 }
 #home-4 .earnPassive {
   display: flex;
+  flex-flow: column-reverse;
+  width: 100%;
+  align-items: flex-end;
   justify-content: center;
+}
+@media screen and (min-width: 852px) {
+  #home-4 .earnPassive {
+    flex-flow: row-reverse;
+    align-items: center;
+  }
 }
 #home-4 .tradeNow,
 #home-4 .explore {
@@ -2242,10 +2260,10 @@ body {
 #home-4 #heading-b,
 #home-4 #body-b {
   opacity: 1;
-  margin-top: -9px;
+  margin-top: 26px;
 }
 @media screen and (min-width: 576px) {
-  #home-4 #body-b {
+  #home-4 #heading-b {
     margin-top: 0px;
   }
 }
@@ -2267,6 +2285,9 @@ body {
 }
 #home-4 .head {
   color: #9a6aff;
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 12px;
 }
 #home-4 .number {
   color: #f4eeff;
@@ -2368,18 +2389,6 @@ body {
     align-self: center;
     margin-top: 24px;
   }
-  #home-4 .paragraphTwo {
-    margin-top: 0;
-    margin-left: 64px;
-    margin-top: 1rem;
-  }
-  #home-4 .earnPassive {
-    flex-direction: row-reverse;
-    align-items: center;
-  }
-  #home-4 .containerOfSecondImages {
-    margin-top: 35rem;
-  }
   #home-4 .first-table {
     width: 652px;
   }
@@ -2388,7 +2397,6 @@ body {
   #home-4 .table {
     justify-content: flex-start;
     align-items: flex-start;
-    padding-left: 2rem;
   }
   #home-4 .first-table {
     width: 434px;
@@ -2407,6 +2415,7 @@ body {
   width: 100%;
   max-width: 968px;
   padding-block: 16px;
+  padding-inline: 24px;
 }
 #home-4 .home-4-svg {
   position: relative;

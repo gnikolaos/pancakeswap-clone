@@ -1454,13 +1454,15 @@ body {
   .paragraphTwo {
     @extend .paragraphOne;
     margin-top: 1rem;
+    width: 100%;
   }
   .containerOfCoinImages {
     height: 100%;
     width: 100%;
     margin-bottom: 0;
     position: relative;
-    .containerOfCoinImages-container {
+    .containerOfCoinImages-container,
+    .containerOfSecondImages-container {
       position: relative;
       max-height: 512px;
       height: 192px;
@@ -1469,10 +1471,12 @@ body {
       }
     }
   }
+
   @media screen and (min-width: 852px) {
     .containerOfCoinImages {
       flex: 1 1 0%;
-      .containerOfCoinImages-container {
+      .containerOfCoinImages-container,
+      .containerOfSecondImages-container {
         height: 428px;
         img {
           height: 428px;
@@ -1499,9 +1503,9 @@ body {
   .secondPart {
     position: relative;
     overflow: hidden;
-    background-color: $colors-dark-backgroundDisabled;
+    background: $colors-dark-gradientCardHeader;
     width: 100%;
-    padding-bottom: 48px;
+    padding: 48px 0px;
   }
 
   .secondPart > svg {
@@ -1520,9 +1524,16 @@ body {
   }
   .earnPassive {
     display: flex;
+    flex-flow: column-reverse;
+    width: 100%;
+    align-items: flex-end;
     justify-content: center;
-    // margin-top: 8rem;
-    // margin-bottom: 5rem;
+  }
+  @media screen and (min-width: 852px) {
+    .earnPassive {
+      flex-flow: row-reverse;
+      align-items: center;
+    }
   }
 
   .tradeNow,
@@ -1655,10 +1666,10 @@ body {
   #heading-b,
   #body-b {
     opacity: 1;
-    margin-top: -9px;
+    margin-top: 26px;
   }
   @media screen and (min-width: 576px) {
-    #body-b {
+    #heading-b {
       margin-top: 0px;
     }
   }
@@ -1684,6 +1695,10 @@ body {
 
   .head {
     color: $colors-dark-secondary;
+    font-weight: 600;
+    line-height: 1.5;
+    // margin-bottom: 8px;
+    font-size: 12px;
   }
   .number {
     color: $colors-dark-text;
@@ -1803,17 +1818,10 @@ body {
     }
     .paragraphTwo {
       @extend .paragraphOne;
-      margin-top: 0;
-      margin-left: 64px;
-      margin-top: 1rem;
     }
-    .earnPassive {
-      flex-direction: row-reverse;
-      align-items: center;
-    }
+
     .containerOfSecondImages {
       @extend .containerOfCoinImages;
-      margin-top: 35rem;
     }
     .first-table {
       width: 652px;
@@ -1824,7 +1832,6 @@ body {
     .table {
       justify-content: flex-start;
       align-items: flex-start;
-      padding-left: 2rem;
     }
     .first-table {
       width: 434px;
@@ -1843,6 +1850,7 @@ body {
     width: 100%;
     max-width: 968px;
     padding-block: 16px;
+    padding-inline: 24px;
   }
   .home-4-svg {
     position: relative;

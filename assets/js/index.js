@@ -374,7 +374,7 @@ window.onload = () => {
       )[activeIndex];
       newActiveBullet.classList.add("autoSlide");
       actionHandler({ target: newActiveBullet });
-    }, 555000);
+    }, 5000);
   }
 
   //Table slider
